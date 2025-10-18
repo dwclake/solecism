@@ -1,0 +1,12 @@
+/* @author: dwclake
+ * @created: 10-17-2025
+ *
+ * Stylesheet responsible for styling the Home view
+ */
+
+.home-view {
+    display: grid;
+
+    justify-content: center;
+    align-content: center;
+}

@@ -1,0 +1,54 @@
+{
+    "name": "solecism",
+    "productName": "solecism.app",
+    "version": "0.0.0",
+    "description": "",
+    "main": ".webpack/main",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish"
+    },
+    "keywords": [],
+    "author": {
+        "name": "dwclake",
+        "email": "clake.dw@gmail.com"
+    },
+    "license": "Apache-2.0, MIT",
+    "devDependencies": {
+        "@electron-forge/cli": "^7.10.2",
+        "@electron-forge/maker-deb": "^7.10.2",
+        "@electron-forge/maker-rpm": "^7.10.2",
+        "@electron-forge/maker-squirrel": "^7.10.2",
+        "@electron-forge/maker-zip": "^7.10.2",
+        "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+        "@electron-forge/plugin-fuses": "^7.10.2",
+        "@electron-forge/plugin-webpack": "^7.10.2",
+        "@electron/fuses": "^1.8.0",
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
+        "@types/react-redux": "^7.1.34",
+        "@types/react-router": "^5.1.20",
+        "@types/react-router-dom": "^5.3.3",
+        "@types/redux": "^3.6.31",
+        "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+        "css-loader": "^6.11.0",
+        "electron": "38.3.0",
+        "fork-ts-checker-webpack-plugin": "^7.3.0",
+        "node-loader": "^2.1.0",
+        "style-loader": "^3.3.4",
+        "ts-loader": "^9.5.4",
+        "typescript": "~4.5.4"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^2.9.1",
+        "electron-squirrel-startup": "^1.0.1",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "react-redux": "^9.2.0",
+        "react-router": "^7.9.4",
+        "react-router-dom": "^7.9.4",
+        "redux": "^5.0.1"
+    }
+}

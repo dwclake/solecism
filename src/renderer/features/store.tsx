@@ -1,5 +1,5 @@
-/* @Author: dwclake
- * @Created: 10-17-2025
+/* @author: dwclake
+ * @created: 10-17-2025
  *
  * The redux store for the website
  */

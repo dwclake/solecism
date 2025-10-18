@@ -1,5 +1,5 @@
-/* @Author: dwclake
- * @Created: 10-17-2025
+/* @author: dwclake
+ * @created: 10-17-2025
  *
  * The main component for the website, providing client-side routing
  */

@@ -1,5 +1,5 @@
-/* @Author: dwclake
- * @Created: 10-17-2025
+/* @author: dwclake
+ * @created: 10-17-2025
  *
  * The entrypoint for the frontend, linked from index.html
  */

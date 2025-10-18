@@ -1,3 +1,7 @@
+/* @Author: dwclake
+ * @Created: 10-17-2025
+ */
+
 import { app, ipcMain, BrowserWindow, Notification } from "electron"
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string

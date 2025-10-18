@@ -12,7 +12,7 @@ import { setIsOpen } from "./features/dropdown/Dropdown"
 import { Dropdown } from "./components/ui/dropdown"
 import "./styles/Layout.css"
 
-import Logo from "../assets/svg/ruka-green-transparent.svg"
+import logo from "../../assets/svg/ruka-green-transparent.svg"
 
 export const Layout = () => {
     return (
@@ -39,7 +39,7 @@ const Header = () => {
 
     return (
         <header className="header-container" >
-            <img className="header-logo" src={Logo} alt="logo" />
+            <img className="header-logo" src={logo} alt="logo" />
             <h1 className="header-title">Solecism</h1>
             <Dropdown className="header-nav-dropdown">
                 <NavLink to="/" onClick={onClick}>Home</NavLink>

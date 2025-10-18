@@ -1,6 +1,6 @@
 {
     "name": "solecism",
-    "productName": "solecism.app",
+    "productName": "Solecism.app",
     "version": "0.0.0",
     "description": "",
     "main": ".webpack/main",

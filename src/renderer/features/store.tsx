@@ -14,7 +14,7 @@ import {
 import Dropdown from "./dropdown/Dropdown"
 
 const root = combineReducers({
-    Dropdown: Dropdown
+    dropdown: Dropdown
 })
 
 export const store = configureStore({

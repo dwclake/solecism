@@ -15,12 +15,13 @@ type Props = {
 }
 
 export const Dropdown = ({ children, className }: Props) => {
-    const isOpen = useSelector(state => state.Dropdown.isOpen)
+    const isOpen = useSelector(state => state.dropdown.isOpen)
     const dispatch = useDispatch()
 
     return (
         <div className={className}>
             {!isOpen ? (
+                // Make use Button component
                 <button className={`${className}-button`} onClick={() => dispatch(setIsOpen(true))}>
                     Nav
                 </button>

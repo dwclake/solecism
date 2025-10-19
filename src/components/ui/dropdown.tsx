@@ -7,29 +7,32 @@
 import { useDispatch, useSelector } from "../../features/store"
 import { setIsOpen } from "../../features/dropdown/Dropdown"
 
+// Make it so the style object is passed in so it's generic
 type Props = {
      children: React.ReactNode[],
-     className: string
+     styles: {
+         [key: string]: string
+     }
 }
 
-export const Dropdown = ({ children, className }: Props) => {
+export const Dropdown = ({ children, styles }: Props) => {
     const isOpen = useSelector(state => state.dropdown.isOpen)
     const dispatch = useDispatch()
 
     return (
-        <div className={className}>
+        <div className={styles.dropdown}>
             {!isOpen ? (
                 // Make use Button component
-                <button className={`${className}-button`} onClick={() => dispatch(setIsOpen(true))}>
+                <button className={styles.dropdownButton} onClick={() => dispatch(setIsOpen(true))}>
                     Nav
                 </button>
             ) : (
                 <>
-                    <button className={`${className}-button`} onClick={() => dispatch(setIsOpen(false))}>
+                    <button className={styles.dropdownButton} onClick={() => dispatch(setIsOpen(false))}>
                         Nav
                     </button>
-                    <ul className={`${className}-list`}>{
-                        children.map((child, i) => <li key={`${className}-${i}`}>{child}</li>)
+                    <ul className={styles.dropdownList}>{
+                        children.map((child, i) => <li key={`${styles.dropdownList}-${i}`}>{child}</li>)
                     }</ul>
                 </>
             )}

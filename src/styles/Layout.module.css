@@ -1,0 +1,29 @@
+/* @author: dwclake
+ * @created: 10-17-2025
+ *
+ * Stylesheet responsible for styling the Layout component,
+ * which includes the header, main content area, and the footer
+ */
+
+ /* Layout */
+.container {
+    display: grid;
+    grid-template-rows: 80px 1fr 80px;
+    grid-template-areas: "header" "main" "footer";
+    overflow: auto;
+
+    height: 100%;
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+/* Main */
+.main {
+    grid-area: main;
+
+    overflow-y: auto;
+    margin: 0rem 1rem 0rem 1rem;
+
+    background-color: rgb(173, 161, 155);
+}

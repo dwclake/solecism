@@ -1,25 +1,9 @@
-/* @author: dwclake
- * @created: 10-17-2025
- *
- * Stylesheet responsible for styling the Layout component,
- * which includes the header, main content area, and the footer
+/* @Author: dwclake
+ * @Created: 10-18-2025
  */
 
- /* Layout */
-.layout-container {
-    display: grid;
-    grid-template-rows: 80px 1fr 80px;
-    grid-template-areas: "header" "main" "footer";
-    overflow: auto;
-
-    height: 100%;
-    width: 100%;
-
-    border-radius: 10px;
-}
-
 /* Header */
-.header-container {
+.container {
     grid-area: header;
 
     display: grid;
@@ -32,14 +16,14 @@
 
     align-content: center;
 
-    background-color: #000000;
+    background-color: rgb(173, 161, 155);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Header logo */
-.header-logo {
+.logo {
     grid-area: logo;
 
     display: flex;
@@ -55,7 +39,7 @@
 }
 
 /* Header title */
-.header-title {
+.title {
     grid-area: title;
     display: flex;
     padding: 0rem 1rem;
@@ -64,11 +48,11 @@
     justify-self: center;
 
     font-size: 2rem;
-    color: #ffffff;
+    color: rgb(55, 44, 47);
 }
 
 /* Header navigation */
-.header-nav-dropdown {
+.dropdown {
     grid-area: nav;
 
     display: flex;
@@ -78,18 +62,18 @@
     align-items: center;
 }
 
-.header-nav-dropdown-button {
+.dropdownButton, button {
     justify-content: left;
 
     font-size: 1rem;
-    background-color: #000000;
-    color: #ffffff;
-    border: 3px solid #ffffff;
+    background-color: rgb(173, 161, 155);
+    color: rgb(55, 44, 47);
+    border: 2px solid rgb(99, 88, 91);
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.header-nav-dropdown-list {
+.dropdownList {
     display: box;
     max-width: 150px;
     height: auto;
@@ -104,32 +88,32 @@
     justify-items: center;
 
     list-style: none;
-    background-color: #000000;
-    border: 3px solid #ffffff;
+    background-color: rgb(173, 161, 155);
+    border: 2px solid rgb(99, 88, 91);
     border-radius: 10px;
 }
 
-.header-nav-dropdown-list li {
+.dropdownList li {
     justify-content: center;
 
     padding: 0.5rem 0rem;
 }
 
-.header-nav-dropdown-list a {
+.dropdownList a {
     padding: 0.2rem;
 
     text-decoration: none;
-    color: #ffffff;
-    border: 3px solid #ffffff;
+    color: rgb(55, 44, 47);
+    border: 2px solid rgb(99, 88, 91);
     border-radius: 10px;
 }
 
-.header-nav-dropdown-list a.active {
-    border: 2px solid #ffffff;
+.dropdownList a.active {
+    border: 2px solid rgb(99, 88, 91);
 }
 
 /* Header socials */
-.header-socials {
+.socials {
     grid-area: social;
 
     display: flex !important;
@@ -140,50 +124,22 @@
     justify-self: right;
 }
 
-.header-socials-list {
+.socialsList {
     display: flex;
     padding: 0rem 2rem;
 
     list-style: none;
 }
 
-.head-socials-list li {
+.socialsList li {
     justify-content: center;
 
     padding: 0.5rem 0rem;
 }
 
-.header-socials-list a {
+.socialsList a {
     padding: 0rem 2rem;
 
     text-decoration: none;
-    color: #ffffff;
-}
-
-/* Main */
-.main {
-    grid-area: main;
-
-    overflow-y: auto;
-    margin: 0rem 1rem 0rem 1rem;
-
-    background-color: #000000;
-}
-
-/* Footer */
-.footer-container {
-    grid-area: footer;
-
-    display: grid;
-    max-height: 80px;
-    width: auto;
-    margin: 0rem 1rem 1rem 1rem;
-
-    align-items: center;
-    justify-content: center;
-
-    background-color: #000000;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    color: rgb(55, 44, 47);
 }

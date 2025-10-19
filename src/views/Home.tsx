@@ -8,7 +8,7 @@
 import { WebGLCanvas } from "../components/ui/webglcanvas"
 import { init, render } from "../animations/flower/RainbowFlower"
 
-import "../styles/Home.css"
+import styles from "../styles/Home.module.css"
 
 export const Home = () => {
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -16,7 +16,7 @@ export const Home = () => {
     }
 
     return (
-        <div className="home-view">
+        <div className={styles.view}>
             <a href="Animation thanks to Dr. GPT" onClick={handleClick}>
                 <WebGLCanvas width="600" height="600" onInit={init} onRender={render} />
             </a>

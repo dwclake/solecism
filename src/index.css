@@ -59,6 +59,6 @@ html, body, #root {
     margin: 0;
     padding: 0;
 
-    color: #ffffff;
-    background-color: #000000;
+    color: rgb(55, 44, 47);
+    background-color: rgb(99, 88, 91);
 }

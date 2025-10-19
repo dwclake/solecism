@@ -4,7 +4,7 @@
  * Stylesheet responsible for styling the Home view
  */
 
-.home-view {
+.view {
     display: grid;
 
     justify-content: center;

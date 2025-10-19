@@ -1,0 +1,21 @@
+/* @Author: dwclake
+ * @Created: 10-18-2025
+ */
+
+/* Footer */
+.container {
+    grid-area: footer;
+
+    display: grid;
+    max-height: 80px;
+    width: auto;
+    margin: 0rem 1rem 1rem 1rem;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(173, 161, 155);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}

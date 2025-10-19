@@ -5,10 +5,12 @@
  * displaying my contact information and some fun facts about me
  */
 
+import WebGLRecorder from "../components/WebGLRecorder"
+
 export const About = () => {
     return (
         <>
-            <p>About things</p>
+            <WebGLRecorder />
         </>
     )
 }

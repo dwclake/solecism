@@ -4,7 +4,7 @@
  * The component responsible for rendering a WebGL2 canvas
  */
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, forwardRef, useImperativeHandle } from "react"
 
 type Props = {
     width: string,
@@ -14,11 +14,28 @@ type Props = {
     onInit?: (gl: WebGL2RenderingContext) => void
 }
 
-export const WebGLCanvas = ({ width, height, className = "canvas", onRender, onInit }: Props) => {
-    const ref = useRef<HTMLCanvasElement>(null)
+export const WebGLCanvas = forwardRef<HTMLCanvasElement, Props>(({ width, height, className = "canvas", onRender, onInit }, ref) => {
+    const canvasRef = useRef<HTMLCanvasElement>(null)
+    useImperativeHandle(ref, () => canvasRef.current as HTMLCanvasElement)
 
     useEffect(() => {
-        const canvas = ref.current!
+        const canvas = canvasRef.current!
+
+        const INTERNAL_WIDTH = 1024
+        const INTERNAL_HEIGHT = 1024
+
+        canvas.width = INTERNAL_WIDTH
+        canvas.height = INTERNAL_HEIGHT
+
+        canvas.style.width = `${window.innerHeight}px`
+        canvas.style.height = `${window.innerHeight}px`
+
+        const resize = () => {
+            canvas.style.width = `${window.innerHeight}px`
+            canvas.style.height = `${window.innerHeight}px`
+        }
+        window.addEventListener("resize", resize)
+
         const gl = canvas.getContext("webgl2", {
           alpha: true,
           premultipliedAlpha: false,
@@ -43,8 +60,11 @@ export const WebGLCanvas = ({ width, height, className = "canvas", onRender, onI
 
         animationFrameId = requestAnimationFrame(render)
 
-        return () => cancelAnimationFrame(animationFrameId)
+        return () => {
+            cancelAnimationFrame(animationFrameId)
+            window.removeEventListener("resize", resize)
+        }
     }, [onRender, onInit])
 
-    return <canvas className={className} ref={ref} width={width} height={height}></canvas>
-}
+    return <canvas className={className} ref={canvasRef} width={width} height={height}></canvas>
+})

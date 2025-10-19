@@ -27,6 +27,7 @@ export const Layout = () => {
 }
 
 // Instead of head and footer, have top and bottom toolbars. Put in separate files
+// Switch to css modules
 
 const Header = () => {
     const dispatch = useDispatch()

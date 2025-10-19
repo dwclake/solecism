@@ -4,8 +4,6 @@
  * The component responsible for rendering a dropdown menu
  */
 
-import { useState } from "react"
-
 import { useDispatch, useSelector } from "../../features/store"
 import { setIsOpen } from "../../features/dropdown/Dropdown"
 

@@ -11,7 +11,7 @@ import {
     RouterProvider
 } from "react-router-dom"
 
-import { Layout } from "./Layout"
+import { Layout } from "./components/Layout"
 import {
     About,
     GoHome,

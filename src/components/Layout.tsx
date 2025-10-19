@@ -7,10 +7,10 @@
 
 import { NavLink, Outlet } from "react-router-dom"
 
-import { useDispatch, useSelector } from "./features/store"
-import { setIsOpen } from "./features/dropdown/Dropdown"
-import { Dropdown } from "./components/ui/dropdown"
-import "./styles/Layout.css"
+import { useDispatch, useSelector } from "../features/store"
+import { setIsOpen } from "../features/dropdown/Dropdown"
+import { Dropdown } from "./ui/dropdown"
+import "../styles/Layout.css"
 
 import logo from "../../assets/svg/ruka-green-transparent.svg"
 
@@ -26,6 +26,8 @@ export const Layout = () => {
     )
 }
 
+// Instead of head and footer, have top and bottom toolbars. Put in separate files
+
 const Header = () => {
     const dispatch = useDispatch()
 
@@ -34,7 +36,7 @@ const Header = () => {
     }
 
     const sendNotification = () => {
-        window.electron.notification.send('Hello from React!');
+        window.electron.notification.send('Hello from React!')
     }
 
     return (

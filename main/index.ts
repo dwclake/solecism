@@ -18,6 +18,7 @@ const createWindow = (): void => {
         height: 600,
         width: 800,
         titleBarStyle: "hidden",
+        ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {}),
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,

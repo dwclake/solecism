@@ -1,8 +1,7 @@
 /* @author: dwclake
  * @created: 10-17-2025
- *
- * The view for the home page, which is reposnsible for showing
- * a brief introduction of myself, my interests and skills
+ * 
+ * The view for the home page
  */
 
 import { WebGLCanvas } from "../components/ui/webglcanvas"

@@ -4,14 +4,14 @@
 
 /* Footer */
 .container {
-    grid-area: footer;
+    grid-area: infobar;
 
     display: grid;
-    max-height: 80px;
+    max-height: 30px;
     width: auto;
-    margin: 0rem 1rem 1rem 1rem;
+    margin: 0rem 0rem 0rem 0rem;
 
-    align-items: center;
+    align-content: center;
     justify-content: center;
 
     background-color: rgb(173, 161, 155);

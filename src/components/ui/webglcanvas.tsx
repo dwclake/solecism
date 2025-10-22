@@ -27,15 +27,6 @@ export const WebGLCanvas = forwardRef<HTMLCanvasElement, Props>(({ width, height
         canvas.width = INTERNAL_WIDTH
         canvas.height = INTERNAL_HEIGHT
 
-        canvas.style.width = `${window.innerHeight}px`
-        canvas.style.height = `${window.innerHeight}px`
-
-        const resize = () => {
-            canvas.style.width = `${window.innerHeight}px`
-            canvas.style.height = `${window.innerHeight}px`
-        }
-        window.addEventListener("resize", resize)
-
         const gl = canvas.getContext("webgl2", {
           alpha: true,
           premultipliedAlpha: false,
@@ -62,7 +53,6 @@ export const WebGLCanvas = forwardRef<HTMLCanvasElement, Props>(({ width, height
 
         return () => {
             cancelAnimationFrame(animationFrameId)
-            window.removeEventListener("resize", resize)
         }
     }, [onRender, onInit])
 

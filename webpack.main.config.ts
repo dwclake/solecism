@@ -4,7 +4,7 @@ import { rules } from "./webpack.rules"
 import { plugins } from "./webpack.plugins"
 
 export const mainConfig: Configuration = {
-    entry: "./main/index.ts",
+    entry: "./main/main.ts",
     target: "electron-main",
     module: {
         rules

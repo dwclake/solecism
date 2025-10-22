@@ -16,9 +16,7 @@ export const Home = () => {
 
     return (
         <div className={styles.view}>
-            <a href="Animation thanks to Dr. GPT" onClick={handleClick}>
-                <WebGLCanvas width="600" height="600" onInit={init} onRender={render} />
-            </a>
+            <p>Home stuff</p>
         </div>
     )
 }

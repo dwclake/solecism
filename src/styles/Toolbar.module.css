@@ -4,15 +4,15 @@
 
 /* Header */
 .container {
-    grid-area: header;
+    grid-area: toolbar;
 
     display: grid;
-    grid-template-columns: 50px 25rem 50px 2fr;
-    grid-template-areas: "logo title nav social";
-    max-height: 80px;
+    grid-template-columns: 75px 30px 7rem 50px 1fr;
+    grid-template-areas: "buttons logo title nav social";
+    max-height: 30px;
     width: auto;
 
-    margin: 1rem 1rem 0rem 1rem;
+    margin: 0rem 0rem 0rem 0rem;
 
     align-content: center;
 
@@ -28,12 +28,12 @@
 
     display: flex;
     object-fit: contain;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
 
     position: relative;
-    top: 1rem;
-    left: 1rem;
+    top: 0.3rem;
+    left: 0.6rem;
 
     align-items: center;
 }
@@ -47,7 +47,7 @@
     align-items: center;
     justify-self: center;
 
-    font-size: 2rem;
+    font-size: 1rem;
     color: rgb(55, 44, 47);
 }
 
@@ -65,7 +65,7 @@
 .dropdownButton, button {
     justify-content: left;
 
-    font-size: 1rem;
+    font-size: 0.8rem;
     background-color: rgb(173, 161, 155);
     color: rgb(55, 44, 47);
     border: 2px solid rgb(99, 88, 91);
@@ -102,6 +102,7 @@
 .dropdownList a {
     padding: 0.2rem;
 
+    font-size: 0.8rem;
     text-decoration: none;
     color: rgb(55, 44, 47);
     border: 2px solid rgb(99, 88, 91);
@@ -131,15 +132,6 @@
     list-style: none;
 }
 
-.socialsList li {
-    justify-content: center;
-
-    padding: 0.5rem 0rem;
-}
-
-.socialsList a {
-    padding: 0rem 2rem;
-
-    text-decoration: none;
-    color: rgb(55, 44, 47);
+.socialsButton {
+    margin: 0rem 2rem;
 }

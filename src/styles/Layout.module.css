@@ -8,9 +8,9 @@
  /* Layout */
 .container {
     display: grid;
-    grid-template-rows: 80px 1fr 80px;
-    grid-template-areas: "header" "main" "footer";
-    overflow: auto;
+    grid-template-rows: 30px 1fr 30px;
+    grid-template-areas: "toolbar" "main" "infobar";
+    overflow: hidden;
 
     height: 100%;
     width: 100%;
@@ -22,8 +22,8 @@
 .main {
     grid-area: main;
 
-    overflow-y: auto;
-    margin: 0rem 1rem 0rem 1rem;
+    overflow: hidden;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 
     background-color: rgb(173, 161, 155);
 }

@@ -3,19 +3,25 @@
  */
 
 import sqlite3 from "sqlite3"
-import sqlite from "sqlite"
+import { open } from "sqlite"
 
-export const db = await sqlite.open({
-    filename: "./data/solecism.db",
-    driver: sqlite3.cached.Database
-})
+export default { documents }
 
-await db.exec(`
-    CREATE TABLE IF NOT EXISTS documents (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title TEXT NOT NULL,
-        content TEXT NOT NULL,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
-    );
-`)
+async function documents() {
+    const db = await open({
+        filename: "./data/documents.db",
+        driver: sqlite3.Database
+    })
+
+    await db.exec(`
+        CREATE TABLE IF NOT EXISTS documents (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            content TEXT NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+    `)
+
+    return db
+}

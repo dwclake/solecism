@@ -5,7 +5,7 @@
  * the footer, and outlet for the main content
  */
 
-import { NavLink, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
 import { Toolbar } from "./Toolbar"
 import { Infobar } from "./Infobar"

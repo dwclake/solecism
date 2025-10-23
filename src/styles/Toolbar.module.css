@@ -15,6 +15,7 @@
     margin: 0rem 0rem 0rem 0rem;
 
     align-content: center;
+    align-items: center;
 
     background-color: rgb(173, 161, 155);
     border-top-left-radius: 10px;
@@ -33,9 +34,6 @@
     height: 30px;
     width: 30px;
 
-    position: relative;
-    top: 0.3rem;
-    left: 0.6rem;
 
     align-items: center;
 }
@@ -44,9 +42,7 @@
 .title {
     grid-area: title;
     display: flex;
-    padding: 0rem 1rem;
 
-    align-items: center;
     justify-self: center;
 
     font-size: 1rem;
@@ -56,7 +52,6 @@
 /* Header navigation */
 .dropdown {
     grid-area: nav;
-
     display: flex;
 
     position: relative;
@@ -84,8 +79,8 @@
     padding: 0.5rem 0.5rem;
 
     position: absolute;
-    top: 2.5rem;
-    left: 3rem;
+    top: 0.5rem;
+    left: 2rem;
     z-index: 10;
 
     align-items: center;
@@ -113,8 +108,9 @@
     border-radius: 10px;
 }
 
-.dropdownList a.active {
-    border: 2px solid rgb(99, 88, 91);
+.dropdownList .active {
+    color: rgb(123, 111, 105);
+    border: 2px solid rgb(123, 111, 105);
 }
 
 /* Header socials */

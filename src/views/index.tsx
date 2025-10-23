@@ -3,7 +3,6 @@
  */
 
 import { About } from "./About"
-import { GoHome } from "./GoHome"
 import { Home } from "./Home"
 
-export { About, GoHome, Home }
+export { About, Home }

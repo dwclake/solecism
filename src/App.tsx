@@ -14,15 +14,13 @@ import {
 import { Layout } from "./components/Layout"
 import {
     About,
-    GoHome,
     Home
 } from "./views"
 
 const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/"                element={ <Layout /> }>
-        <Route index               element={ <Home /> }/>
-        <Route path="/main_window/index.html"  element={ <GoHome /> }/>
-        <Route path="/about"       element={ <About /> }/>
+    <Route path="/webview"              element={ <Layout /> }>
+        <Route path="index.html"        element={ <Home /> }/>
+        <Route path="about"             element={ <About /> }/>
     </Route>
 ))
 

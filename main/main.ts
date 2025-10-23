@@ -6,8 +6,8 @@ import { app, ipcMain, BrowserWindow, Notification } from "electron"
 
 import db from "./database"
 
-declare const MAIN_WINDOW_WEBPACK_ENTRY: string
-declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string
+declare const WEBVIEW_WEBPACK_ENTRY: string
+declare const WEBVIEW_PRELOAD_WEBPACK_ENTRY: string
 
 if (require("electron-squirrel-startup")) {
     app.quit()
@@ -35,11 +35,11 @@ const createWindow = (): void => {
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
-            preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
+            preload: WEBVIEW_PRELOAD_WEBPACK_ENTRY
         }
     })
 
-    window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
+    window.loadURL(WEBVIEW_WEBPACK_ENTRY)
 }
 
 app.whenReady().then(createWindow)

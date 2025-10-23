@@ -7,7 +7,7 @@
     grid-area: toolbar;
 
     display: grid;
-    grid-template-columns: 80px 50px 100px 50px 1fr;
+    grid-template-columns: 70px 80px 100px 50px 1fr;
     grid-template-areas: "buttons logo title nav social";
     height: 30px;
     width: 100%;
@@ -33,6 +33,7 @@
     width: 30px;
 
     align-items: center;
+    justify-self: center;
 }
 
 /* Header title */
@@ -58,10 +59,10 @@
     app-region: no-drag;
 }
 
-.dropdownButton, button {
+button {
     justify-content: left;
 
-    font-size: 1rem;
+    font-size: 1.2rem;
     background-color: rgb(173, 161, 155);
     color: rgb(55, 44, 47);
     border: 2px solid rgb(99, 88, 91);

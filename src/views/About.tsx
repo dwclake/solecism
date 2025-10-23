@@ -10,12 +10,7 @@ export const About = () => {
     return (
         <>
             <div className={styles.view}>
-                <h1>About Solecism</h1>
-                <p>Solecism is a creative writing app for short story writers, novelists, and poets.</p>
-                <h2>Contact Information</h2>
-                <ul>
-                    <li></li>
-                </ul>
+                <p>About stuff</p>
             </div>
         </>
     )

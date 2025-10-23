@@ -9,9 +9,10 @@ import { Provider } from "react-redux"
 
 import { store } from "./features/store"
 import { App } from "./App"
-import "./index.css"
+import "./styles/index.css"
 
 const container = document.getElementById("root")!
+
 const app = (
     <Provider store={store}>
         <App />

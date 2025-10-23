@@ -28,16 +28,16 @@ export const Toolbar = () => {
             <WebGLCanvas className={styles.logo} width="600" height="600" onInit={init} onRender={render} />
             <h1 className={styles.title}>Solecism</h1>
             <Dropdown styles={styles}>
-                <NavLink 
-                    to="/webview/index.html" 
+                <NavLink
+                    to="/"
                     end
                     onClick={onClick}
                     className={({ isActive }) => isActive ? styles.active : undefined}
                 >
                     Home
                 </NavLink>
-                <NavLink 
-                    to="/webview/about" 
+                <NavLink
+                    to="/about"
                     onClick={onClick}
                     className={({ isActive }) => isActive ? styles.active : undefined}
                 >

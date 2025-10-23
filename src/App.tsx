@@ -5,7 +5,7 @@
  */
 
 import {
-    createBrowserRouter,
+    createHashRouter,
     createRoutesFromElements,
     Route,
     RouterProvider
@@ -17,10 +17,10 @@ import {
     Home
 } from "./views"
 
-const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/webview"              element={ <Layout /> }>
-        <Route path="index.html"        element={ <Home /> }/>
-        <Route path="about"             element={ <About /> }/>
+const router = createHashRouter(createRoutesFromElements(
+    <Route path="/"         element={ <Layout /> }>
+        <Route index        element={ <Home /> }/>
+        <Route path="about" element={ <About /> }/>
     </Route>
 ))
 

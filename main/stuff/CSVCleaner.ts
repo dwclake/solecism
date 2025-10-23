@@ -1,7 +1,7 @@
 import fs from "fs"
 import rl from "readline"
 
-import { sleep } from "./utils"
+import { sleep } from "../utils"
 
 type Options = { buffer: number, path: string }
 

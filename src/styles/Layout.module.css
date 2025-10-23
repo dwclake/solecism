@@ -11,6 +11,7 @@
     grid-template-rows: 30px 1fr 30px;
     grid-template-areas: "toolbar" "main" "infobar";
     overflow: hidden;
+    box-sizing: border-box;
 
     height: 100%;
     width: 100%;
@@ -23,7 +24,7 @@
     grid-area: main;
 
     overflow: hidden;
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin: 2px 0;
 
     background-color: rgb(173, 161, 155);
 }

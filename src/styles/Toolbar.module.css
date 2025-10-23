@@ -7,12 +7,10 @@
     grid-area: toolbar;
 
     display: grid;
-    grid-template-columns: 75px 30px 7rem 50px 1fr;
+    grid-template-columns: 80px 50px 100px 50px 1fr;
     grid-template-areas: "buttons logo title nav social";
-    max-height: 30px;
-    width: auto;
-
-    margin: 0rem 0rem 0rem 0rem;
+    height: 30px;
+    width: 100%;
 
     align-content: center;
     align-items: center;
@@ -34,7 +32,6 @@
     height: 30px;
     width: 30px;
 
-
     align-items: center;
 }
 
@@ -43,9 +40,8 @@
     grid-area: title;
     display: flex;
 
-    justify-self: center;
 
-    font-size: 1rem;
+    font-size: 2rem;
     color: rgb(55, 44, 47);
 }
 
@@ -57,6 +53,7 @@
     position: relative;
 
     align-items: center;
+    justify-self: center;
 
     app-region: no-drag;
 }
@@ -64,7 +61,7 @@
 .dropdownButton, button {
     justify-content: left;
 
-    font-size: 0.8rem;
+    font-size: 1rem;
     background-color: rgb(173, 161, 155);
     color: rgb(55, 44, 47);
     border: 2px solid rgb(99, 88, 91);
@@ -76,11 +73,11 @@
     display: box;
     max-width: 150px;
     height: auto;
-    padding: 0.5rem 0.5rem;
+    padding: 10px 10px;
 
     position: absolute;
-    top: 0.5rem;
-    left: 2rem;
+    top: 10px;
+    left: 20px;
     z-index: 10;
 
     align-items: center;
@@ -95,13 +92,13 @@
 .dropdownList li {
     justify-content: center;
 
-    padding: 0.5rem 0rem;
+    padding: 10px 0;
 }
 
 .dropdownList a {
-    padding: 0.2rem;
+    padding: 5px;
 
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-decoration: none;
     color: rgb(55, 44, 47);
     border: 2px solid rgb(99, 88, 91);
@@ -127,13 +124,13 @@
 
 .socialsList {
     display: flex;
-    padding: 0rem 2rem;
+    padding: 0 20px;
 
     list-style: none;
 }
 
 .socialsButton {
-    margin: 0rem 2rem;
+    margin: 0 20px;
 
     app-region: no-drag;
 }

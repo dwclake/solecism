@@ -28,8 +28,8 @@ if (require("electron-squirrel-startup")) {
 
 const createWindow = (): void => {
     const window = new BrowserWindow({
-        height: 600,
-        width: 800,
+        minHeight: 600,
+        minWidth: 800,
         titleBarStyle: "hidden",
         ...(process.platform !== 'darwin' ? { titleBarOverlay: true } : {}),
         webPreferences: {

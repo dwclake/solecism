@@ -8,7 +8,7 @@ type Options = { buffer: number, path: string }
 /**
  *
  */
-export default class CsvCleaner {
+export default class CSVCleaner {
     stream
     readline
     iterator

@@ -48,9 +48,9 @@ ipcMain.on("notify", (_, message) => {
     new Notification({ title: "Notification", body: message }).show()
 })
 
-// import CsvCleaner from "./CsvCleaner"
+// import CSVCleaner from "./CSVCleaner"
 
-// const cleaner = new CsvCleaner({
+// const cleaner = new CSVCleaner({
 //     buffer: 10,
 //     path: "./data/ID.010.csv"
 // })

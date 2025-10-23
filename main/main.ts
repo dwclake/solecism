@@ -48,7 +48,7 @@ ipcMain.on("notify", (_, message) => {
     new Notification({ title: "Notification", body: message }).show()
 })
 
-// import CSVCleaner from "./CSVCleaner"
+// import CSVCleaner from "./stuff/CSVCleaner"
 
 // const cleaner = new CSVCleaner({
 //     buffer: 10,

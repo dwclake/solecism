@@ -22,14 +22,13 @@ export const Dropdown = ({ children, styles }: Props) => {
     return (
         <div className={styles.dropdown}>
             {!isOpen ? (
-                // Make use Button component
                 <button className={styles.dropdownButton} onClick={() => dispatch(setIsOpen(true))}>
-                    Nav
+                    nav
                 </button>
             ) : (
                 <>
                     <button className={styles.dropdownButton} onClick={() => dispatch(setIsOpen(false))}>
-                        Nav
+                          x
                     </button>
                     <ul className={styles.dropdownList}>{
                         children.map((child, i) => <li key={`${styles.dropdownList}-${i}`}>{child}</li>)

@@ -26,7 +26,7 @@ export const Toolbar = () => {
     return (
         <header className={styles.container}>
             <WebGLCanvas className={styles.logo} width="600" height="600" onInit={init} onRender={render} />
-            <h1 className={styles.title}>Solecism</h1>
+            <h1 className={styles.title}>solecism</h1>
             <Dropdown styles={styles}>
                 <NavLink
                     to="/"
@@ -45,7 +45,7 @@ export const Toolbar = () => {
                 </NavLink>
             </Dropdown>
             <nav className={styles.socials}>
-                <button className={styles.socialsButton} onClick={sendNotification}>Click me</button>
+                <button className={styles.socialsButton} onClick={sendNotification}>click me</button>
             </nav>
         </header>
     )

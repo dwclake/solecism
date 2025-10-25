@@ -1,3 +1,7 @@
+/**
+ * @author: dwclake
+ * @created: 10-18-2025
+ */
 
 declare module "*.jpg" {
   const value: string;
@@ -10,6 +14,11 @@ declare module "*.svg" {
 }
 
 declare module "*.ico" {
+  const value: string;
+  export default value;
+}
+
+declare module "*.icns" {
   const value: string;
   export default value;
 }

@@ -1,0 +1,15 @@
+/**
+ * @author: dwclake
+ * @created: 10-22-2025
+ *
+ * Stylesheet responsible for styling the About view
+ */
+
+.view {
+    display: grid;
+
+    justify-content: center;
+    align-content: center;
+
+    font-size: 2rem;
+}

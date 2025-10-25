@@ -1,10 +1,11 @@
-/* @author: dwclake
+/**
+ * @author: dwclake
  * @created: 10-17-2025
  *
  * The view for the about page
  */
 
-import styles from "../styles/About.module.css"
+import styles from "../styles/About.module.css";
 
 export const About = () => {
     return (
@@ -13,5 +14,5 @@ export const About = () => {
                 <p>About stuff</p>
             </div>
         </>
-    )
+    );
 }

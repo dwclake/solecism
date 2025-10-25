@@ -1,3 +1,7 @@
+/**
+ * @author: dwclake
+ * @created: 10-18-2025
+ */
 
 declare module "*.jpg" {
   const value: string;

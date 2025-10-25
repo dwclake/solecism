@@ -1,44 +1,45 @@
-/* @author: dwclake
+/**
+ * @author: dwclake
  * @created: 10-17-2025
  */
 
-import { useRef, useState } from "react"
+import { useRef, useState } from "react";
 
-import { WebGLCanvas } from "./ui/webglcanvas"
-import { init, render } from "../animations/flower/RainbowFlower"
+import { WebGLCanvas } from "./ui/webglcanvas";
+import { init, render } from "../animations/flower/RainbowFlower";
 
 export default function WebGLRecorder() {
-    const canvasRef = useRef<HTMLCanvasElement>(null)
-    const recorderRef = useRef<MediaRecorder | null>(null)
-    const chunksRef = useRef<Blob[]>([])
-    const [recording, setRecording] = useState(false)
-    const [duration, setDuration] = useState(5)
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const recorderRef = useRef<MediaRecorder | null>(null);
+    const chunksRef = useRef<Blob[]>([]);
+    const [recording, setRecording] = useState(false);
+    const [duration, setDuration] = useState(5);
 
     const startRecording = () => {
-        const canvas = canvasRef.current!
-        const stream = canvas.captureStream(60)
+        const canvas = canvasRef.current!;
+        const stream = canvas.captureStream(60);
 
-        const mimeType = "video/mp4;codecs=avc1"
-        const recorder = new MediaRecorder(stream, { mimeType })
+        const mimeType = "video/mp4;codecs=avc1";
+        const recorder = new MediaRecorder(stream, { mimeType });
 
-        chunksRef.current = []
+        chunksRef.current = [];
         recorder.ondataavailable = (e) => {
-            if (e.data.size > 0) chunksRef.current.push(e.data)
+            if (e.data.size > 0) chunksRef.current.push(e.data);
         }
 
         recorder.onstop = () => {
-            const blob = new Blob(chunksRef.current, { type: mimeType })
-            const url = URL.createObjectURL(blob)
-            const a = document.createElement("a")
-            a.href = url
-            a.download = "webgl-animation.mp4"
-            a.click()
-            URL.revokeObjectURL(url)
+            const blob = new Blob(chunksRef.current, { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "webgl-animation.mp4";
+            a.click();
+            URL.revokeObjectURL(url);
         };
 
-        recorder.start()
-        recorderRef.current = recorder
-        setRecording(true)
+        recorder.start();
+        recorderRef.current = recorder;
+        setRecording(true);
 
         setTimeout(() => stopRecording(), duration * 1000);
     };

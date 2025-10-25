@@ -32,4 +32,4 @@ export const rules: Required<ModuleOptions>["rules"] = [
             filename: "assets/[name][ext][query]"
         }
     }
-]
+];

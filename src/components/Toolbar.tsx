@@ -1,26 +1,27 @@
-/* @Author: dwclake
- * @Created: 10-18-2025
+/**
+ * @author: dwclake
+ * @created: 10-18-2025
  */
 
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
-import { useDispatch } from "../features/store"
-import { setIsOpen } from "../features/dropdown/Dropdown"
-import { Dropdown } from "./ui/dropdown"
-import { WebGLCanvas } from "../components/ui/webglcanvas"
-import { init, render } from "../animations/flower/RainbowFlower"
+import { useDispatch } from "../features/store";
+import { setIsOpen } from "../features/dropdown/Dropdown";
+import { Dropdown } from "./ui/dropdown";
+import { WebGLCanvas } from "../components/ui/webglcanvas";
+import { init, render } from "../animations/flower/RainbowFlower";
 
-import styles from "../styles/Toolbar.module.css"
+import styles from "../styles/Toolbar.module.css";
 
 export const Toolbar = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const onClick = () => {
-        dispatch(setIsOpen(false))
+        dispatch(setIsOpen(false));
     }
 
     const sendNotification = () => {
-        window.electron.notification.send('Hello from React!')
+        window.electron.notification.send('Hello from React!');
     }
 
     return (
@@ -48,5 +49,5 @@ export const Toolbar = () => {
                 <button className={styles.socialsButton} onClick={sendNotification}>click me</button>
             </nav>
         </header>
-    )
+    );
 }

@@ -1,4 +1,5 @@
-/* @author: dwclake
+/**
+ * @author: dwclake
  * @created: 10-17-2025
  */
 
@@ -55,4 +56,4 @@ export const FlowerShader = {
         // Final composite
         fragColor = vec4(color * brightness, alpha);
     }`,
-}
+};

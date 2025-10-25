@@ -1,11 +1,12 @@
-/* @author: dwclake
+/**
+ * @author: dwclake
  * @created: 10-17-2025
  *
  * The component responsible for rendering a dropdown menu
  */
 
-import { useDispatch, useSelector } from "../../features/store"
-import { setIsOpen } from "../../features/dropdown/Dropdown"
+import { useDispatch, useSelector } from "../../features/store";
+import { setIsOpen } from "../../features/dropdown/Dropdown";
 
 // Make it so the style object is passed in so it's generic
 type Props = {
@@ -16,8 +17,8 @@ type Props = {
 }
 
 export const Dropdown = ({ children, styles }: Props) => {
-    const isOpen = useSelector(state => state.dropdown.isOpen)
-    const dispatch = useDispatch()
+    const isOpen = useSelector(state => state.dropdown.isOpen);
+    const dispatch = useDispatch();
 
     return (
         <div className={styles.dropdown}>
@@ -36,5 +37,5 @@ export const Dropdown = ({ children, styles }: Props) => {
                 </>
             )}
         </div>
-    )
+    );
 }

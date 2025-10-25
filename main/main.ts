@@ -6,7 +6,7 @@
 import { app, ipcMain, BrowserWindow, Notification } from "electron";
 
 import "./handlers";
-import db from "./database";
+import database from "./database";
 
 declare const WEBVIEW_WEBPACK_ENTRY: string;
 declare const WEBVIEW_PRELOAD_WEBPACK_ENTRY: string;
@@ -15,13 +15,13 @@ if (require("electron-squirrel-startup")) {
     app.quit();
 }
 
-const documents = await db.documents();
-// documents.run(`INSERT INTO documents (title, content) VALUES (?, ?)`, [
+const db = await database.open();
+// db.run(`INSERT INTO documents (title, content) VALUES (?, ?)`, [
 //     "Sample Document",
 //     "This is a sample document created on app startup."
 // ]);
 
-// documents.all(`SELECT * FROM documents`).then((rows) => {
+// db.all(`SELECT * FROM documents`).then((rows) => {
 //     console.log("Documents in database:");
 //     rows.forEach((row) => {
 //         console.log(`${row.id}: ${row.title} - ${row.content} (Created at: ${row.created_at})`);

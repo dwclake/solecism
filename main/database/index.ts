@@ -4,29 +4,21 @@
  */
 
 import sqlite3 from "sqlite3";
-import { open } from "sqlite";
+import { open as sqliteOpen } from "sqlite";
 
-export default { documents }
+import tables from "./tables";
+import actions from "./actions";
+import schemas from "./schemas"
 
-/**
- *
- * @returns
- */
-async function documents() {
-    const db = await open({
-        filename: "./data/documents.db",
+export default { open, actions, schemas };
+
+async function open() {
+    const db = await sqliteOpen({
+        filename: "./data/solecism.db",
         driver: sqlite3.Database
     });
 
-    await db.exec(`
-        CREATE TABLE IF NOT EXISTS documents (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            title TEXT NOT NULL,
-            content TEXT NOT NULL,
-            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
-        );
-    `);
+    await tables.documents(db);
 
     return db;
 }

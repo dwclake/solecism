@@ -11,21 +11,27 @@
     display: grid;
     grid-template-rows: 30px 1fr 30px;
     grid-template-areas: "toolbar" "main" "infobar";
-    overflow: hidden;
     box-sizing: border-box;
 
     height: 100%;
     width: 100%;
 
     border-radius: 10px;
+
+    gap: 2px;
 }
 
 /* Main */
 .main {
     grid-area: main;
+    display: flex;
+    overflow: auto;
 
-    overflow: hidden;
-    margin: 2px 0;
+    width: 100%;
+    height: 100%;
+
+    align-self: stretch;
+    justify-self: stretch;
 
     background-color: rgb(173, 161, 155);
 }

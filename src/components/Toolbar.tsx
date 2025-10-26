@@ -7,11 +7,12 @@ import { NavLink } from "react-router-dom";
 
 import { useDispatch } from "../features/store";
 import { setIsOpen } from "../features/dropdown/Dropdown";
-import { Dropdown } from "./ui/dropdown";
+import { Button, Dropdown } from "./ui";
 import { WebGLCanvas } from "../components/ui/webglcanvas";
 import { init, render } from "../animations/flower/RainbowFlower";
 
 import styles from "../styles/Toolbar.module.css";
+import button from "../styles/button.module.css";
 
 export const Toolbar = () => {
     const dispatch = useDispatch();
@@ -28,7 +29,7 @@ export const Toolbar = () => {
         <header className={styles.container}>
             <WebGLCanvas className={styles.logo} width="600" height="600" onInit={init} onRender={render} />
             <h1 className={styles.title}>solecism</h1>
-            <Dropdown styles={styles}>
+            <Dropdown styles={styles} button={button}>
                 <NavLink
                     to="/"
                     end
@@ -46,7 +47,7 @@ export const Toolbar = () => {
                 </NavLink>
             </Dropdown>
             <nav className={styles.socials}>
-                <button className={styles.socialsButton} onClick={sendNotification}>click me</button>
+                <Button styles={button} onClick={sendNotification}>click me</Button>
             </nav>
         </header>
     );

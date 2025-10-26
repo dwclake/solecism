@@ -8,8 +8,8 @@
     grid-area: toolbar;
 
     display: grid;
-    grid-template-columns: 70px 80px 100px 50px 1fr;
-    grid-template-areas: "buttons logo title nav social";
+    grid-template-columns: 70px 80px 100px 50px 1fr 70px;
+    grid-template-areas: "traffic-lights logo title nav social spacer";
     height: 30px;
     width: 100%;
 
@@ -56,19 +56,6 @@
 
     align-items: center;
     justify-self: center;
-
-    app-region: no-drag;
-}
-
-button {
-    justify-content: left;
-
-    font-size: 1.2rem;
-    background-color: rgb(173, 161, 155);
-    color: rgb(55, 44, 47);
-    border: 2px solid rgb(99, 88, 91);
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .dropdownList {
@@ -129,10 +116,4 @@ button {
     padding: 0 20px;
 
     list-style: none;
-}
-
-.socialsButton {
-    margin: 0 20px;
-
-    app-region: no-drag;
 }

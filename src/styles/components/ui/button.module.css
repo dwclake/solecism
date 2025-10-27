@@ -8,11 +8,11 @@
     box-sizing: border-box;
 
     font-size: 1.2rem;
-    background-color: rgb(173, 161, 155);
-    color: rgb(55, 44, 47);
-    border: 2px solid rgb(99, 88, 91);
+    background-color: var(--colour-bg);
+    color: var(--colour-text);
+    border: 2px solid var(--colour-accent);
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px var(--colour-shade2);
 
     transition: transform 0.1s ease;
 
@@ -21,21 +21,33 @@
 
 .button:hover {
     transform: translateY(0.5px) translateX(0.5px);
-    background-color: rgb(153, 171, 135);
-    color: rgb(35, 24, 27);
-    border: 2px solid rgb(79, 68, 71);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: var(--colour-good);
+    color: var(--colour-text);
+    border: 2px solid var(--colour-accent);
+    box-shadow: 1px 1px 2px var(--colour-shade2);
+}
+
+.button:hover.active {
+    transform: translateY(0.5px) translateX(0.5px);
+    background-color: var(--colour-bad);
+    color: var(--colour-fade);
+    border: 2px solid var(--colour-accent);
+    box-shadow: 1px 1px 2px var(--colour-shade2);
+}
+
+.button.active {
+    color: var(--colour-fade);
 }
 
 .button:disabled {
     transform: translateY(0.5px) translateX(0.5px);
-    background-color: rgb(193, 141, 135);
-    color: rgb(35, 24, 27);
-    border: 2px solid rgb(79, 68, 71);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: var(--colour-bad);
+    color: var(--colour-text);
+    border: 2px solid var(--colour-accent);
+    box-shadow: 1px 1px 2px var(--colour-shade2);
 }
 
 .button:active {
     transform: translateY(2px) translateX(2px);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 2px var(--colour-shade);
 }

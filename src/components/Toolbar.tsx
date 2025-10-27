@@ -35,14 +35,14 @@ export const Toolbar = () => {
                     to="/"
                     end
                     onClick={onClick}
-                    className={({ isActive }) => `${button.button} ${isActive ? dropdown.active : undefined}`}
+                    className={({ isActive }) => `${button.button} ${isActive ? button.active : undefined}`}
                 >
                     Home
                 </NavLink>
                 <NavLink
                     to="/about"
                     onClick={onClick}
-                    className={({ isActive }) => `${button.button} ${isActive ? dropdown.active : undefined}`}
+                    className={({ isActive }) => `${button.button} ${isActive ? button.active : undefined}`}
                 >
                     About
                 </NavLink>

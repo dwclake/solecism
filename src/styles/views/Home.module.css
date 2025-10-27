@@ -34,10 +34,10 @@
 
    padding: 2rem;
 
-   border: 2px solid rgb(55, 44, 47);
+   border: 2px solid var(--colour-text);
    border-radius: 10px;
-   color: rgb(223, 211, 205);
-   background-color: rgb(99, 88, 91);
+   color: var(--colour-tint);
+   background-color: var(--colour-accent);
 
    resize: none;
 }

@@ -16,10 +16,10 @@
     align-content: center;
     align-items: center;
 
-    background-color: rgb(173, 161, 155);
+    background-color: var(--colour-bg);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 5px var(--colour-shade);
 
     app-region: drag;
 }
@@ -44,7 +44,7 @@
 
 
     font-size: 2rem;
-    color: rgb(55, 44, 47);
+    color: var(--colour-text);
 }
 
 /* Header socials */

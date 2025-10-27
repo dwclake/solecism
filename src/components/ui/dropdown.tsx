@@ -15,13 +15,10 @@ type Props = {
      children: React.ReactNode[],
      styles: {
          [key: string]: string
-     },
-     button: {
-         [key: string]: string
      }
 }
 
-export const Dropdown = ({ children, styles, button }: Props) => {
+export const Dropdown = ({ children, styles }: Props) => {
     const isOpen = useSelector(state => state.dropdown.isOpen);
     const dispatch = useDispatch();
 
@@ -32,16 +29,18 @@ export const Dropdown = ({ children, styles, button }: Props) => {
     return (
         <div className={styles.dropdown}>
             {!isOpen ? (
-                <Button styles={button} onClick={handleClick}>
+                <Button styles={styles} onClick={handleClick}>
                     nav
                 </Button>
             ) : (
-                <Button styles={button} onClick={handleClick}>
+                <Button styles={styles} onClick={handleClick}>
                         x
                 </Button>
             )}
             <ul className={`${styles.dropdownList} ${isOpen ? styles.open : undefined}`}>{
-                children.map((child, i) => <li key={`${styles.dropdownList}-${i}`}>{child}</li>)
+                children.map((child, i) => {
+                    return <li key={`${styles.dropdownList}-${i}`}>{child}</li>
+                })
             }</ul>
         </div>
     );

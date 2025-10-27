@@ -25,22 +25,24 @@ export const Dropdown = ({ children, styles, button }: Props) => {
     const isOpen = useSelector(state => state.dropdown.isOpen);
     const dispatch = useDispatch();
 
+    const handleClick = () => {
+        dispatch(setIsOpen(!isOpen))
+    }
+
     return (
         <div className={styles.dropdown}>
             {!isOpen ? (
-                <Button styles={button} onClick={() => dispatch(setIsOpen(true))}>
+                <Button styles={button} onClick={handleClick}>
                     nav
                 </Button>
             ) : (
-                <>
-                    <Button styles={button} onClick={() => dispatch(setIsOpen(false))}>
-                          x
-                    </Button>
-                    <ul className={styles.dropdownList}>{
-                        children.map((child, i) => <li key={`${styles.dropdownList}-${i}`}>{child}</li>)
-                    }</ul>
-                </>
+                <Button styles={button} onClick={handleClick}>
+                        x
+                </Button>
             )}
+            <ul className={`${styles.dropdownList} ${isOpen ? styles.open : undefined}`}>{
+                children.map((child, i) => <li key={`${styles.dropdownList}-${i}`}>{child}</li>)
+            }</ul>
         </div>
     );
 }

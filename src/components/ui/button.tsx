@@ -5,7 +5,7 @@
  */
 
 type Props = {
-    children?: React.ReactNode[] | string;
+    children?: React.ReactNode[] | React.ReactElement | string;
     onClick?: () => void;
     styles: {
         [key: string]: string

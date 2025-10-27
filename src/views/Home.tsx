@@ -38,8 +38,8 @@ export const Home = () => {
 
     return (
         <div className={styles.view}>
-            <div className={styles.editor}>
-                <textarea className={styles.editorText} ref={textareaRef} />
+            <div className={styles.container}>
+                <textarea className={styles.editor} ref={textareaRef} />
             </div>
         </div>
     );

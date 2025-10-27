@@ -11,7 +11,7 @@ export const About = () => {
     return (
         <>
             <div className={styles.view}>
-                <p>About stuff</p>
+                <p className={styles.p}>About stuff</p>
             </div>
         </>
     );

@@ -4,7 +4,8 @@
  */
 
 .button {
-    justify-content: left;
+    display: flex;
+    box-sizing: border-box;
 
     font-size: 1.2rem;
     background-color: rgb(173, 161, 155);

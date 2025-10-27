@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SCSS variables go here starting with $ */
+$bg: rgb(173, 161, 155);
+$accent: rgb(99, 88, 91);
+
+:root {
+    --colour-bg: rgb(173, 161, 155);
+    --colour-text: rgb(55, 44, 47);
+    --colour-accent: rgb(99, 88, 91);
+    --colour-shade: rgba(0, 0, 0, 0.1);
+    --colour-shade2: rgba(0, 0, 0, 0.2);
+    --colour-tint: rgb(223, 211, 205);
+    --colour-fade: rgb(123, 111, 105);
+    --colour-good: rgb(153, 171, 135);
+    --colour-bad: rgb(193, 141, 135);
+}
+
+:root[data-theme="dark"] {
+    --colour-bg: rgb(173, 161, 155);
+    --colour-text: rgb(55, 44, 47);
+    --colour-accent: rgb(99, 88, 91);
+    --colour-shade: rgba(0, 0, 0, 0.1);
+    --colour-shade2: rgba(0, 0, 0, 0.2);
+    --colour-tint: rgb(223, 211, 205);
+    --colour-fade: rgb(123, 111, 105);
+    --colour-good: rgb(153, 171, 135);
+    --colour-bad: rgb(193, 141, 135);
+}
+
+
+.abril-fatface-regular {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: regular;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.courier-prime-regular {
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.courier-prime-bold {
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.courier-prime-regular-italic {
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.courier-prime-bold-italic {
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.intel-one-mono {
+    font-family: "Intel One Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: medium;
+    font-style: normal;
+}
+
+/* Default styling */
+html, body, #root {
+    height: 100%;
+    width: 100%;
+
+    font-size: 10px;
+
+    padding: 0;
+    margin: 0;
+
+    color: var(--colour-text);
+    background-color: $accent;
+}

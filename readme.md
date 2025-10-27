@@ -1,4 +1,4 @@
-# Solecism
+# Solecism &nbsp; <img src="https://github.com/dwclake/solecism/blob/17fd1e38d4ba6631901f4e86718fd9bc0d5498ba/assets/icon/solecism.ico" alt="Solecism" width="50" />
 
 > *A **SOLECISM** is a breach of grammatical etiquette, an unconventional combination of words within a phrase or sentence.*
 

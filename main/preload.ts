@@ -5,6 +5,8 @@
 
 import { contextBridge, ipcRenderer } from "electron";
 
+import schemas from "./database/schemas";
+
 contextBridge.exposeInMainWorld("electron", {
     document: {
         /**
@@ -15,18 +17,12 @@ contextBridge.exposeInMainWorld("electron", {
         create: (title: string) => {
             return new Promise(async (resolve, reject) => {
                 try {
-                    const { ok, id } = await ipcRenderer.invoke("create-document", title);
+                    const { ok, document } = await ipcRenderer.invoke("document-create", title);
                     if (!ok) {
-                        return resolve({
-                            ok: false,
-                            id: undefined
-                        });
+                        return resolve({ ok: false, document: undefined });
                     }
 
-                    resolve({
-                        ok: true,
-                        id
-                    });
+                    resolve({ ok: true, document });
                 } catch (err) {
                     reject(err);
                 }
@@ -35,25 +31,26 @@ contextBridge.exposeInMainWorld("electron", {
         /**
          *
          * @param id
-         */
-        delete: (id: number) => {
-
-        },
-        /**
-         *
-         * @param id
          * @returns
          */
-        open: (id: number) => {
-            return "filecontent";
+        open: async (id: number) => {
+            const { ok, document } = await ipcRenderer.invoke("document-open", id);
         },
         /**
          *
          * @param id
+         * @param title
          * @param content
          */
-        save: (id: number, content: string) => {
-
+        save: async (id: number, title?: string, content?: string) => {
+            const { ok, document } = await ipcRenderer.invoke("document-save", id, title, content);
+        },
+        /**
+         *
+         * @param id
+         */
+        remove: async (id: number) => {
+            const { ok, document } = await ipcRenderer.invoke("document-remove", id);
         }
     },
     notification: {

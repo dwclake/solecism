@@ -5,15 +5,15 @@
 
 import { NavLink } from "react-router-dom";
 
-import { useDispatch } from "../features/store";
-import { setIsOpen } from "../features/dropdown/Dropdown";
-import { Button, Dropdown } from "./ui";
-import { WebGLCanvas } from "../components/ui/webglcanvas";
-import { init, render } from "../animations/flower/RainbowFlower";
+import { useDispatch } from "./features/store";
+import { setIsOpen } from "./features/dropdown/Dropdown";
+import { Button, Dropdown } from "./components/ui";
+import { WebGLCanvas } from "./components/ui/webglcanvas";
+import { init, render } from "./animations/flower/RainbowFlower";
 
-import toolbar from "../styles/components/Toolbar.module.css";
-import button from "../styles/components/ui/button.module.css";
-import dropdown from "../styles/components/ui/dropdown.module.css";
+import toolbar from "./styles/Toolbar.module.css";
+import button from "./styles/components/ui/button.module.css";
+import dropdown from "./styles/components/ui/dropdown.module.css";
 
 export const Toolbar = () => {
     const dispatch = useDispatch();

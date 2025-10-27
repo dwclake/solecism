@@ -8,8 +8,8 @@
 
 import { Outlet } from "react-router-dom";
 
-import { Toolbar } from "./components/Toolbar";
-import { Infobar } from "./components/Infobar";
+import { Toolbar } from "./Toolbar";
+import { Infobar } from "./Infobar";
 import styles from "./styles/Layout.module.css";
 
 export const Layout = () => {

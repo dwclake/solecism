@@ -3,7 +3,7 @@
  * @created: 10-26-2025
  */
 
-.dropdown {
+.container {
     grid-area: nav;
     display: flex;
 
@@ -13,7 +13,7 @@
     justify-self: center;
 }
 
-.dropdownList {
+.list {
     display: block;
     max-width: 150px;
     height: auto;
@@ -39,7 +39,7 @@
     visibility: hidden;
 }
 
-.dropdownList.open {
+.list.open {
     z-index: 10;
 
     opacity: 1;
@@ -55,19 +55,19 @@
 
 }
 
-.dropdownList li {
+.list li {
     justify-content: center;
 
     padding: 5px 0;
 }
 
-.dropdownList a {
+.list a {
     padding: 0px 5px;
 
     text-decoration: none;
     color: rgb(55, 44, 47);
 }
 
-.dropdownList .active {
+.list .active {
     color: rgb(123, 111, 105);
 }

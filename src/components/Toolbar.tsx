@@ -23,14 +23,14 @@ export const Toolbar = () => {
     }
 
     const sendNotification = () => {
-        window.electron.notification.send('Hello from React!');
+        window.electron.notification.send("Hello from React!");
     }
 
     return (
         <header className={toolbar.container}>
             <WebGLCanvas className={toolbar.logo} width="600" height="600" onInit={init} onRender={render} />
             <h1 className={toolbar.title}>solecism</h1>
-            <Dropdown styles={{ ...dropdown, ...button }}>
+            <Dropdown dropdown={dropdown} button={button}>
                 <NavLink
                     to="/"
                     end

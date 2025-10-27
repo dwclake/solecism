@@ -7,7 +7,7 @@
 
 import { useEffect, useRef } from "react";
 
-import styles from "../styles/views/Home.module.css";
+import styles from "../styles/views/Home.module.scss";
 
 export const Home = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -19,7 +19,7 @@ export const Home = () => {
             var end = this.selectionEnd;
 
             this.value = this.value.substring(0, start) +
-                "    " + 
+                "    " +
                 this.value.substring(end);
 
             this.selectionStart = this.selectionEnd = start + 4;

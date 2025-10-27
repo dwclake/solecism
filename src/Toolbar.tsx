@@ -11,9 +11,9 @@ import { Button, Dropdown } from "./components/ui";
 import { WebGLCanvas } from "./components/ui/webglcanvas";
 import { init, render } from "./animations/flower/RainbowFlower";
 
-import toolbar from "./styles/Toolbar.module.css";
-import button from "./styles/components/ui/button.module.css";
-import dropdown from "./styles/components/ui/dropdown.module.css";
+import toolbar from "./styles/Toolbar.module.scss";
+import button from "./styles/components/ui/button.module.scss";
+import dropdown from "./styles/components/ui/dropdown.module.scss";
 
 export const Toolbar = () => {
     const dispatch = useDispatch();

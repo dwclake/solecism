@@ -23,7 +23,8 @@ ipcMain.handle("document-create", (_, title: string) => {
 
 	        resolve({ ok: true, document });
 	    } catch (err) {
-	        reject(err);
+	        console.log(err);
+			resolve({ ok: false, document: undefined });
 	    }
 	});
 });
@@ -41,7 +42,8 @@ ipcMain.handle("document-open", async (_, id: number) => {
 
 	        resolve({ ok: true, document });
 	    } catch (err) {
-	        reject(err);
+	        console.log(err);
+			resolve({ ok: false, document: undefined });
 	    }
 	});
 });
@@ -59,7 +61,8 @@ ipcMain.handle("document-save", async (_, id: number, title?: string, content?: 
 
 	        resolve({ ok: true, document });
 	    } catch (err) {
-	        reject(err);
+	        console.log(err);
+			resolve({ ok: false, document: undefined });
 	    }
 	});
 });
@@ -77,7 +80,8 @@ ipcMain.handle("document-remove", async (_, id: number) => {
 
 	        resolve({ ok: true, document });
 	    } catch (err) {
-	        reject(err);
+	        console.log(err);
+			resolve({ ok: false, document: undefined });
 	    }
 	});
 });

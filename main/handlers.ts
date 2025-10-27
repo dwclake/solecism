@@ -14,7 +14,7 @@ const db = await open();
  *
  */
 ipcMain.handle("document-create", (_, title: string) => {
-	return new Promise(async (resolve, reject) => {
+	return new Promise(async (resolve) => {
 		try {
 	        const { ok, document } = await actions.documents.create(db, title);
 	        if (!ok) {
@@ -33,7 +33,7 @@ ipcMain.handle("document-create", (_, title: string) => {
  *
  */
 ipcMain.handle("document-open", async (_, id: number) => {
-	return new Promise(async (resolve, reject) => {
+	return new Promise(async (resolve) => {
 		try {
 	        const { ok, document } = await actions.documents.open(db, id);
 	        if (!ok) {
@@ -52,7 +52,7 @@ ipcMain.handle("document-open", async (_, id: number) => {
  *
  */
 ipcMain.handle("document-save", async (_, id: number, title?: string, content?: string) => {
-	return new Promise(async (resolve, reject) => {
+	return new Promise(async (resolve) => {
 		try {
 	        const { ok, document } = await actions.documents.save(db, id, title, content);
 	        if (!ok) {
@@ -71,7 +71,7 @@ ipcMain.handle("document-save", async (_, id: number, title?: string, content?: 
  *
  */
 ipcMain.handle("document-remove", async (_, id: number) => {
-	return new Promise(async (resolve, reject) => {
+	return new Promise(async (resolve) => {
 		try {
 	        const { ok, document } = await actions.documents.remove(db, id);
 	        if (!ok) {

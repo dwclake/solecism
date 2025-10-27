@@ -11,9 +11,9 @@ import { Button, Dropdown } from "./ui";
 import { WebGLCanvas } from "../components/ui/webglcanvas";
 import { init, render } from "../animations/flower/RainbowFlower";
 
-import toolbar from "../styles/Toolbar.module.css";
-import button from "../styles/ui/button.module.css";
-import dropdown from "../styles/ui/dropdown.module.css";
+import toolbar from "../styles/components/Toolbar.module.css";
+import button from "../styles/components/ui/button.module.css";
+import dropdown from "../styles/components/ui/dropdown.module.css";
 
 export const Toolbar = () => {
     const dispatch = useDispatch();
@@ -23,7 +23,7 @@ export const Toolbar = () => {
     }
 
     const sendNotification = () => {
-        window.electron.notification.send("Hello from React!");
+        window.electron.os.notify.send("Hello from React!");
     }
 
     return (

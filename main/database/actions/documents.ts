@@ -5,7 +5,7 @@
 
 import { type Database } from "sqlite";
 
-import schemas from "../schemas";
+import schemas from "@schemas";
 
 export default { create, open, save, remove };
 

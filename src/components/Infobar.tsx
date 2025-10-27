@@ -3,7 +3,7 @@
  * @created: 10-18-2025
  */
 
-import styles from "../styles/Infobar.module.css";
+import styles from "../styles/components/Infobar.module.css";
 
 export const Infobar = () => {
     return (

@@ -3,15 +3,50 @@
  * @created: 10-18-2025
  */
 
+import schemas from "@schemas";
+
 export interface Electron {
     document: {
-        create: (title: string) => Promise<{ ok: boolean; id: number | undefined }>;
-        delete: (id: number) => void;
-        open: (id: number) => string;
-        save: (id: number, content: string) => void;
+        /**
+		 *
+		 * @param title
+		 * @returns
+		 */
+        create: (title: string) => schemas.DocumentReturn;
+         /**
+		 *
+		 * @param id
+		 * @returns
+		 */
+        open: (id: number) => schemas.DocumentReturn;
+        /**
+		 *
+		 * @param id
+		 * @returns
+		 */
+        save: (id: number, title?: string, content?: string) => schemas.DocumentReturn;
+        /**
+		 *
+		 * @param id
+		 * @param title
+		 * @param content
+		 * @returns
+		 */
+        remove: (id: number) => schemas.DocumentReturn;
     },
-    notification: {
-        send: (msg: string) => void;
+    os: {
+        /**
+         *
+         * @returns
+         */
+        check: () => string;
+        notify: {
+            /**
+             *
+             * @param msg
+             */
+            send: (msg: string) => void;
+        }
     }
 }
 

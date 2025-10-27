@@ -15,7 +15,7 @@ contextBridge.exposeInMainWorld("electron", {
 			 * @param title
 			 * @returns
 			 */
-			create: async (title: string) => {
+			create: async (title: string): schemas.DocumentReturn => {
 				const { ok, document } = await ipcRenderer.invoke("document-create", title);
 				if (!ok) {
 					return { ok: false, document: undefined };
@@ -28,7 +28,7 @@ contextBridge.exposeInMainWorld("electron", {
 			 * @param id
 			 * @returns
 			 */
-			open: async (id: number) => {
+			open: async (id: number): schemas.DocumentReturn => {
 				const { ok, document } = await ipcRenderer.invoke("document-open", id);
 				if (!ok) {
 					return { ok: false, document: undefined };
@@ -41,8 +41,9 @@ contextBridge.exposeInMainWorld("electron", {
 			 * @param id
 			 * @param title
 			 * @param content
+			 * @returns
 			 */
-			save: async (id: number, title?: string, content?: string) => {
+			save: async (id: number, title?: string, content?: string): schemas.DocumentReturn => {
 				const { ok, document } = await ipcRenderer.invoke("document-save", id, title, content);
 				if (!ok) {
 					return { ok: false, document: undefined };
@@ -53,8 +54,9 @@ contextBridge.exposeInMainWorld("electron", {
 			/**
 			 *
 			 * @param id
+			 * @returns
 			 */
-			remove: async (id: number) => {
+			remove: async (id: number): schemas.DocumentReturn => {
 				const { ok, document } = await ipcRenderer.invoke("document-remove", id);
 				if (!ok) {
 					return { ok: false, document: undefined };
@@ -66,19 +68,19 @@ contextBridge.exposeInMainWorld("electron", {
 	},
 	os: {
 		/**
-   *
-   * @returns
-   */
-		check: () => {
-			return ipcRenderer.invoke("os-check");
+         *
+         * @returns
+         */
+		check: async () => {
+			return await ipcRenderer.invoke("os-check");
 		},
-		notification: {
+		notify: {
 			/**
 			 *
 			 * @param message
 			 */
-			send: (message: string) => {
-				ipcRenderer.send("notify", message);
+			send: (msg: string) => {
+				ipcRenderer.send("notify", msg);
 			}
 		},
 	}

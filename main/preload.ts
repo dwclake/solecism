@@ -5,61 +5,81 @@
 
 import { contextBridge, ipcRenderer } from "electron";
 
-import schemas from "./database/schemas";
+import schemas from "@schemas";
 
 contextBridge.exposeInMainWorld("electron", {
-    document: {
-        /**
-         *
-         * @param title
-         * @returns
-         */
-        create: (title: string) => {
-            return new Promise(async (resolve, reject) => {
-                try {
-                    const { ok, document } = await ipcRenderer.invoke("document-create", title);
-                    if (!ok) {
-                        return resolve({ ok: false, document: undefined });
-                    }
+	db: {
+		document: {
+			/**
+			 *
+			 * @param title
+			 * @returns
+			 */
+			create: async (title: string) => {
+				const { ok, document } = await ipcRenderer.invoke("document-create", title);
+				if (!ok) {
+					return { ok: false, document: undefined };
+				}
 
-                    resolve({ ok: true, document });
-                } catch (err) {
-                    reject(err);
-                }
-            });
-        },
-        /**
-         *
-         * @param id
-         * @returns
-         */
-        open: async (id: number) => {
-            const { ok, document } = await ipcRenderer.invoke("document-open", id);
-        },
-        /**
-         *
-         * @param id
-         * @param title
-         * @param content
-         */
-        save: async (id: number, title?: string, content?: string) => {
-            const { ok, document } = await ipcRenderer.invoke("document-save", id, title, content);
-        },
-        /**
-         *
-         * @param id
-         */
-        remove: async (id: number) => {
-            const { ok, document } = await ipcRenderer.invoke("document-remove", id);
-        }
-    },
-    notification: {
-        /**
-         *
-         * @param message
-         */
-        send: (message: string) => {
-            ipcRenderer.send("notify", message);
-        }
-    }
-})
+				return { ok: true, document };
+			},
+			/**
+			 *
+			 * @param id
+			 * @returns
+			 */
+			open: async (id: number) => {
+				const { ok, document } = await ipcRenderer.invoke("document-open", id);
+				if (!ok) {
+					return { ok: false, document: undefined };
+				}
+
+				return { ok: true, document };
+			},
+			/**
+			 *
+			 * @param id
+			 * @param title
+			 * @param content
+			 */
+			save: async (id: number, title?: string, content?: string) => {
+				const { ok, document } = await ipcRenderer.invoke("document-save", id, title, content);
+				if (!ok) {
+					return { ok: false, document: undefined };
+				}
+
+				return { ok: true, document };
+			},
+			/**
+			 *
+			 * @param id
+			 */
+			remove: async (id: number) => {
+				const { ok, document } = await ipcRenderer.invoke("document-remove", id);
+				if (!ok) {
+					return { ok: false, document: undefined };
+				}
+
+				return { ok: true, document };
+			}
+		},
+	},
+	os: {
+		/**
+   *
+   * @returns
+   */
+		check: () => {
+			return ipcRenderer.invoke("os-check");
+		},
+		notification: {
+			/**
+			 *
+			 * @param message
+			 */
+			send: (message: string) => {
+				ipcRenderer.send("notify", message);
+			}
+		},
+	}
+});

@@ -5,7 +5,7 @@
  * The view for the about page
  */
 
-import styles from "../styles/views/About.module.scss";
+import styles from "../../styles/views/About.module.scss";
 
 export const About = () => {
     return (

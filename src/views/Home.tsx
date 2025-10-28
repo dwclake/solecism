@@ -7,7 +7,7 @@
 
 import { useEffect, useRef } from "react";
 
-import styles from "../styles/views/Home.module.scss";
+import styles from "../../styles/views/Home.module.scss";
 
 export const Home = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);

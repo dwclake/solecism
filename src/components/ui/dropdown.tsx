@@ -12,16 +12,13 @@ import { Button } from "./button";
 
 // Make it so the style object is passed in so it's generic
 type Props = {
-     children: React.ReactNode[],
-     dropdown: {
-         [key: string]: string;
-     },
-     button: {
-         [key: string]: string;
-     }
+    children: React.ReactNode[],
+    styles: {
+        [key: string]: string;
+    }
 }
 
-export const Dropdown = ({ children, dropdown, button }: Props) => {
+export const Dropdown = ({ children, styles }: Props) => {
     const isOpen = useSelector(state => state.dropdown.isOpen);
     const dispatch = useDispatch();
 
@@ -30,19 +27,19 @@ export const Dropdown = ({ children, dropdown, button }: Props) => {
     }
 
     return (
-        <div className={dropdown.container}>
+        <div className={styles["dropdown-container"]}>
             {!isOpen ? (
-                <Button styles={button} onClick={handleClick}>
+                <Button styles={styles} onClick={handleClick}>
                     nav
                 </Button>
             ) : (
-                <Button styles={button} onClick={handleClick}>
+                <Button styles={styles} onClick={handleClick}>
                         x
                 </Button>
             )}
-            <ul className={`${dropdown.list} ${isOpen ? dropdown.open : undefined}`}>{
+            <ul className={`${styles["dropdown-list"]} ${isOpen ? styles.open : undefined}`}>{
                 children.map((child, i) => {
-                    return <li key={`${dropdown.list}-${i}`}>{child}</li>
+                    return <li key={`${styles["dropdown-list"]}-${i}`}>{child}</li>
                 })
             }</ul>
         </div>

@@ -11,8 +11,7 @@ import { Button, Dropdown } from "./components/ui";
 import { WebGLCanvas } from "./components/ui/webglcanvas";
 import { init, render } from "./animations/flower/RainbowFlower";
 
-import toolbar from "./styles/Toolbar.module.scss";
-import dropdown from "./styles/components/ui/dropdown.module.scss";
+import toolbar from "../styles/Toolbar.module.scss";
 
 export const Toolbar = () => {
     const dispatch = useDispatch();
@@ -29,7 +28,7 @@ export const Toolbar = () => {
         <header className={toolbar.container}>
             <WebGLCanvas className={toolbar.logo} width="600" height="600" onInit={init} onRender={render} />
             <h1 className={`${toolbar.title} abril-fatface-regular`}>solecism</h1>
-            <Dropdown dropdown={dropdown} button={toolbar}>
+            <Dropdown styles={toolbar}>
                 <NavLink
                     to="/"
                     end

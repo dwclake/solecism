@@ -31,5 +31,5 @@
             "@schemas": ["./main/database/schemas"]
         }
     },
-    "include": ["src/**/*", "assets/**/*", "main/**/*"]
+    "include": ["src/**/*", "styles/**/*", "assets/**/*", "main/**/*"]
 }

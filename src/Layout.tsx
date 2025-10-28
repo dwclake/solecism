@@ -10,7 +10,7 @@ import { Outlet } from "react-router-dom";
 
 import { Toolbar } from "./Toolbar";
 import { Infobar } from "./Infobar";
-import styles from "./styles/Layout.module.scss";
+import styles from "../styles/Layout.module.scss";
 
 export const Layout = () => {
     return (

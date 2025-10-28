@@ -6,9 +6,6 @@ import { plugins } from "./webpack.plugins";
 import webpack from "webpack";
 import path from "path";
 
-const srcPath = path.resolve(__dirname, "src");
-const mainPath = path.resolve(__dirname, "main");
-
 /*
   Make sure the CSS Modules rule appears BEFORE the global rule,
   and exclude module files from the global rule. This prevents
@@ -18,7 +15,6 @@ rules.push(
     // CSS Modules (SCSS) - processed first
     {
         test: /\.module\.(scss|css)$/,
-        include: srcPath,
         use: [
             { loader: "style-loader" },
             {
@@ -37,7 +33,6 @@ rules.push(
     // Global styles (non-modules) - exclude module files
     {
         test: /\.(scss|css)$/,
-        include: srcPath,
         exclude: /\.module\.(scss|css)$/,
         use: [
             { loader: "style-loader" },

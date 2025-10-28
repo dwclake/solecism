@@ -3,6 +3,9 @@
  * @created: 10-18-2025
  */
 
+@use "utils/colours.scss";
+@use "components/ui/button.module.scss" as *;
+
 /* Header */
 .container {
     grid-area: toolbar;
@@ -16,10 +19,10 @@
     align-content: center;
     align-items: center;
 
-    background-color: var(--colour-bg);
+    background-color: colours.$bg;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    box-shadow: 2px 2px 5px var(--colour-shade);
+    box-shadow: 2px 2px 5px colours.$shade;
 
     app-region: drag;
 }
@@ -44,7 +47,7 @@
 
 
     font-size: 2rem;
-    color: var(--colour-text);
+    color: colours.$text;
 }
 
 /* Header socials */

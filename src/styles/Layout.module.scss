@@ -6,7 +6,8 @@
  * which includes the header, main content area, and the footer
  */
 
- /* Layout */
+@use "utils/colours.scss";
+
 .container {
     display: grid;
     grid-template-rows: 30px 1fr 30px;
@@ -21,7 +22,6 @@
     font-size: 1.2rem;
 }
 
-/* Main */
 .main {
     grid-area: main;
     display: flex;
@@ -34,5 +34,5 @@
     justify-self: stretch;
 
     font-size: 1.5rem;
-    background-color: var(--colour-bg);
+    background-color: colours.$bg;
 }

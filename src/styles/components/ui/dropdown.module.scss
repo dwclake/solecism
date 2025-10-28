@@ -3,6 +3,8 @@
  * @created: 10-26-2025
  */
 
+@use "../../utils/colours.scss";
+
 .container {
     grid-area: nav;
     display: flex;
@@ -28,8 +30,8 @@
     justify-items: center;
 
     list-style: none;
-    background-color: var(--colour-bg);
-    border: 2px solid var(--colour-accent);
+    background-color: colours.$bg;
+    border: 2px solid colours.$accent;
     border-radius: 10px;
 
     opacity: 0;
@@ -37,36 +39,36 @@
     transition: opacity 100ms ease, transform 100ms ease;
     pointer-events: none;
     visibility: hidden;
-}
 
-.list.open {
-    z-index: 10;
+    &.open {
+        z-index: 10;
 
-    opacity: 1;
-    transform: translateY(10px) translateX(20px);
-    transition: opacity 100ms ease, transform 100ms ease;
-    pointer-events: auto;
-    visibility: visible;
+        opacity: 1;
+        transform: translateY(10px) translateX(20px);
+        transition: opacity 100ms ease, transform 100ms ease;
+        pointer-events: auto;
+        visibility: visible;
 
-    list-style: none;
-    background-color: var(--colour-bg);
-    border: 2px solid var(--colour-accent);
-    border-radius: 10px;
-}
+        list-style: none;
+        background-color: colours.$bg;
+        border: 2px solid colours.$accent;
+        border-radius: 10px;
+    }
 
-.list li {
-    justify-content: center;
+    li {
+        justify-content: center;
 
-    padding: 5px 0;
-}
+        padding: 5px 0;
+    }
 
-.list a {
-    padding: 0px 5px;
+    a {
+        padding: 0px 5px;
 
-    text-decoration: none;
-    color: var(--colour-text);
-}
+        text-decoration: none;
+        color: colours.$text;
+    }
 
-.list .active {
-    color: var(--colour-fade);
+    .active {
+        color: colours.$fade;
+    }
 }

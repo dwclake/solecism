@@ -3,51 +3,53 @@
  * @created: 10-26-2025
  */
 
+@use "../../utils/colours.scss";
+
 .button {
     display: flex;
     box-sizing: border-box;
 
     font-size: 1.2rem;
-    background-color: var(--colour-bg);
-    color: var(--colour-text);
-    border: 2px solid var(--colour-accent);
+    background-color: colours.$bg;
+    color: colours.$text;
+    border: 2px solid colours.$accent;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px var(--colour-shade2);
+    box-shadow: 2px 2px 5px colours.$shade2;
 
     transition: transform 0.1s ease;
 
     app-region: no-drag;
-}
 
-.button:hover {
-    transform: translateY(0.5px) translateX(0.5px);
-    background-color: var(--colour-good);
-    color: var(--colour-text);
-    border: 2px solid var(--colour-accent);
-    box-shadow: 1px 1px 2px var(--colour-shade2);
-}
+    &:hover {
+        transform: translateY(0.5px) translateX(0.5px);
+        background-color: colours.$good;
+        color: colours.$text;
+        border: 2px solid colours.$accent;
+        box-shadow: 1px 1px 2px colours.$shade2;
+    }
 
-.button:hover.active {
-    transform: translateY(0.5px) translateX(0.5px);
-    background-color: var(--colour-bad);
-    color: var(--colour-fade);
-    border: 2px solid var(--colour-accent);
-    box-shadow: 1px 1px 2px var(--colour-shade2);
-}
+    &:hover.active {
+        transform: translateY(0.5px) translateX(0.5px);
+        background-color: colours.$bad;
+        color: colours.$fade;
+        border: 2px solid colours.$accent;
+        box-shadow: 1px 1px 2px colours.$shade2;
+    }
 
-.button.active {
-    color: var(--colour-fade);
-}
+    &.active {
+        color: colours.$fade;
+    }
 
-.button:disabled {
-    transform: translateY(0.5px) translateX(0.5px);
-    background-color: var(--colour-bad);
-    color: var(--colour-text);
-    border: 2px solid var(--colour-accent);
-    box-shadow: 1px 1px 2px var(--colour-shade2);
-}
+    &:disabled {
+        transform: translateY(0.5px) translateX(0.5px);
+        background-color: colours.$bad;
+        color: colours.$text;
+        border: 2px solid colours.$accent;
+        box-shadow: 1px 1px 2px colours.$shade2;
+    }
 
-.button:active {
-    transform: translateY(2px) translateX(2px);
-    box-shadow: 1px 1px 2px var(--colour-shade);
+    &:active {
+        transform: translateY(2px) translateX(2px);
+        box-shadow: 1px 1px 2px colours.$shade;
+    }
 }

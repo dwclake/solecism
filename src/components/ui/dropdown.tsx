@@ -22,6 +22,9 @@ export const Dropdown = ({ children, styles }: Props) => {
     const isOpen = useSelector(state => state.dropdown.isOpen);
     const dispatch = useDispatch();
 
+	const buttonClosed = children.at(0);
+	const buttonOpen = children.at(1);
+
     const handleClick = () => {
         dispatch(setIsOpen(!isOpen))
     }
@@ -30,15 +33,15 @@ export const Dropdown = ({ children, styles }: Props) => {
         <div className={styles["dropdown-container"]}>
             {!isOpen ? (
                 <Button styles={styles} onClick={handleClick}>
-                    nav
+                	<>{buttonClosed}</>
                 </Button>
             ) : (
                 <Button styles={styles} onClick={handleClick}>
-                        x
+					<>{buttonOpen}</>
                 </Button>
             )}
             <ul className={`${styles["dropdown-list"]} ${isOpen ? styles.open : undefined}`}>{
-                children.map((child, i) => {
+                children.slice(2).map((child, i) => {
                     return <li key={`${styles["dropdown-list"]}-${i}`}>{child}</li>
                 })
             }</ul>

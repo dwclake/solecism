@@ -5,6 +5,10 @@
 
 @use "../../utils/colours.scss";
 
+.lucide {
+	color: colours.$text;
+}
+
 .button {
     display: flex;
     box-sizing: border-box;

@@ -30,8 +30,8 @@ export const Toolbar = () => {
             <WebGLCanvas className={toolbar.logo} width="600" height="600" onInit={init} onRender={render} />
             <h1 className={`${toolbar.title} abril-fatface-regular`}>solecism</h1>
             <Dropdown styles={toolbar}>
-            	<Menu color="black" size={12} />
-             	<X color="black" size={12} />
+            	<Menu size={12} />
+             	<X size={12} />
                 <NavLink
                     to="/"
                     end

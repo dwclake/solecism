@@ -6,13 +6,7 @@ import { plugins } from "./webpack.plugins";
 import webpack from "webpack";
 import path from "path";
 
-/*
-  Make sure the CSS Modules rule appears BEFORE the global rule,
-  and exclude module files from the global rule. This prevents
-  files like `Foo.module.scss` from being processed twice.
-*/
 rules.push(
-    // CSS Modules (SCSS) - processed first
     {
         test: /\.module\.(scss|css)$/,
         use: [
@@ -30,7 +24,6 @@ rules.push(
             { loader: "sass-loader" }
         ]
     },
-    // Global styles (non-modules) - exclude module files
     {
         test: /\.(scss|css)$/,
         exclude: /\.module\.(scss|css)$/,
@@ -59,14 +52,13 @@ export const rendererConfig: Configuration = {
     },
     plugins: [
         ...plugins,
-        new webpack.DefinePlugin({
-            __dirname: JSON.stringify(path.resolve(__dirname)),
-            __filename: JSON.stringify(path.resolve(__dirname, "index.js")),
-        }),
         new webpack.BannerPlugin({
-            banner: `var __dirname = ${JSON.stringify(path.resolve(process.cwd()))}; var __filename = ${JSON.stringify(path.resolve(process.cwd(), "index.js"))};`,
+            banner: `
+                var __dirname = ${JSON.stringify(path.resolve(process.cwd()))};
+                var __filename = ${JSON.stringify(path.resolve(process.cwd(), "index.js"))};
+            `,
             raw: true,
-            entryOnly: false,
+            entryOnly: true
         })
     ],
     resolve: {

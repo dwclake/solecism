@@ -5,12 +5,16 @@
  * The view for the home page
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import { Button } from "../components/ui/button";
 
 import styles from "../../styles/views/Home.module.scss";
+import button from "../../styles/components/ui/button.module.scss";
 
 export const Home = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
+    const [text, setText] = useState("");
 
     function handleKeydown(this: HTMLTextAreaElement, event: KeyboardEvent) {
         if (event.key == "Tab") {
@@ -26,6 +30,10 @@ export const Home = () => {
         }
     }
 
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setText(e.target.value);
+    }
+
     useEffect(() => {
         const textarea = textareaRef.current!;
 
@@ -38,8 +46,48 @@ export const Home = () => {
 
     return (
         <div className={styles.view}>
+            <div className={styles.toolbar}>
+                <ul className={styles.list}>
+                    <li>
+                        <Button
+                            onClick={() => {}}
+                            styles={button}
+                        >
+                            Open
+                        </Button>
+                    </li>
+                    <li>
+                        <Button
+                            onClick={() => {}}
+                            styles={button}
+                        >
+                            Save
+                        </Button>
+                    </li>
+                    <li>
+                        <Button
+                            onClick={() => {}}
+                            styles={button}
+                        >
+                            Undo
+                        </Button>
+                    </li>
+                    <li>
+                        <Button
+                            onClick={() => {}}
+                            styles={button}
+                        >
+                            Redo
+                        </Button>
+                    </li>
+                </ul>
+            </div>
             <div className={styles.container}>
-                <textarea className={styles.editor} ref={textareaRef} />
+                <textarea
+                    className={styles.editor}
+                    onChange={handleChange}
+                    ref={textareaRef}
+                />
             </div>
         </div>
     );

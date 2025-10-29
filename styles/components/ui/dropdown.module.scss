@@ -56,13 +56,21 @@
     }
 
     li {
+        display: flex;
         justify-content: center;
 
         padding: 5px 0;
     }
 
     a {
+        display: flex;
         padding: 0px 5px;
+        text-decoration: none;
+        color: colours.$text;
+    }
+
+    button {
+        display: flex;
 
         text-decoration: none;
         color: colours.$text;

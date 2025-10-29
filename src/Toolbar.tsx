@@ -3,12 +3,12 @@
  * @created: 10-18-2025
  */
 
-import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 import { useDispatch } from "./features/store";
 import { setIsOpen } from "./features/dropdown/Dropdown";
 import { Button, Dropdown } from "./components/ui";
+import { NavButton } from "./components/ui/navbutton";
 import { WebGLCanvas } from "./components/ui/webglcanvas";
 import { init, render } from "./animations/flower/RainbowFlower";
 
@@ -32,21 +32,25 @@ export const Toolbar = () => {
             <Dropdown styles={toolbar}>
             	<Menu size={12} strokeWidth={3} />
              	<X size={12} strokeWidth={3} />
-                <NavLink
+                <NavButton
                     to="/"
                     end
-                    onClick={onClick}
-                    className={({ isActive }) => `${toolbar.button} ${isActive ? toolbar.active : undefined}`}
+                    className={toolbar.button}
+                    activeClassName={toolbar.active}
+                    onActivate={onClick}
+                    preventActive={true}
                 >
                     Home
-                </NavLink>
-                <NavLink
+                </NavButton>
+                <NavButton
                     to="/about"
-                    onClick={onClick}
-                    className={({ isActive }) => `${toolbar.button} ${isActive ? toolbar.active : undefined}`}
+                    className={toolbar.button}
+                    activeClassName={toolbar.active}
+                    onActivate={onClick}
+                    preventActive={true}
                 >
                     About
-                </NavLink>
+                </NavButton>
             </Dropdown>
             <nav className={toolbar.socials}>
                 <Button styles={toolbar} onClick={sendNotification}>click me</Button>

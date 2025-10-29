@@ -18,7 +18,7 @@ type Props = {
     }
 }
 
-export const Dropdown = ({ children, styles }: Props) => {
+export const Dropdown: React.FC<Props> = ({ children, styles }) => {
     const isOpen = useSelector(state => state.dropdown.isOpen);
     const dispatch = useDispatch();
 

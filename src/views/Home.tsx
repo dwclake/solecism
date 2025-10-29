@@ -53,7 +53,7 @@ export const Home = () => {
                             onClick={() => {}}
                             styles={button}
                         >
-                            Open
+                            undo
                         </Button>
                     </li>
                     <li>
@@ -61,23 +61,7 @@ export const Home = () => {
                             onClick={() => {}}
                             styles={button}
                         >
-                            Save
-                        </Button>
-                    </li>
-                    <li>
-                        <Button
-                            onClick={() => {}}
-                            styles={button}
-                        >
-                            Undo
-                        </Button>
-                    </li>
-                    <li>
-                        <Button
-                            onClick={() => {}}
-                            styles={button}
-                        >
-                            Redo
+                            redo
                         </Button>
                     </li>
                 </ul>

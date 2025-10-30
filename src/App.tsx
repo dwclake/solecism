@@ -12,11 +12,8 @@ import {
     RouterProvider
 } from "react-router-dom";
 
-import { Layout } from "./components/Layout";
-import {
-    About,
-    Home
-} from "./views";
+import { Layout } from "./Layout";
+import { About, Home } from "./views";
 
 const router = createHashRouter(createRoutesFromElements(
     <Route path="/"         element={ <Layout /> }>

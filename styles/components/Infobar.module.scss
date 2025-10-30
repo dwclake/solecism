@@ -1,0 +1,46 @@
+/**
+ * @author: dwclake
+ * @created: 10-18-2025
+ */
+
+@use "../utils/colours.scss";
+
+/* Footer */
+.container {
+    grid-area: infobar;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "project filename wordcount saved";
+    height: 30px;
+    width: 100%;
+
+    align-content: center;
+
+    background-color: colours.$bg;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 2px 5px colours.$shade;
+
+    span {
+        text-align: center;
+
+        &.project {
+            grid-area: project;
+        }
+
+        &.filename {
+            grid-area: filename;
+            justify-self: left;
+        }
+
+        &.wordcount {
+            grid-area: wordcount;
+            justify-self: right;
+        }
+
+        &.saved {
+            grid-area: saved;
+        }
+    }
+}

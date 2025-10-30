@@ -1,0 +1,65 @@
+/**
+ * @author: dwclake
+ * @created: 10-17-2025
+ *
+ * Stylesheet responsible for styling the Home view
+ */
+
+@use "../utils/colours.scss";
+
+.view {
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    grid-template-areas:
+        "toolbar"
+        "editor";
+    width: 100%;
+    height: 100%;
+}
+
+.toolbar {
+    display: flex;
+    margins: 0rem 2rem;
+    height: 100%;
+    width: 100%;
+
+    align-self: center;
+
+    .list {
+        display: flex;
+        list-style: none;
+
+        align-items: center;
+
+        gap: 1rem;
+    }
+}
+
+.container {
+    display: flex;
+    grid-area: editor;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0rem 2rem 2rem 2rem;
+
+    align-self: stretch;
+    justify-self: stretch;
+}
+
+.editor {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    flex: 1 1 auto;
+
+    padding: 2rem;
+
+    border: 2px solid colours.$text;
+    border-radius: 10px;
+    color: colours.$tint;
+    background-color: colours.$accent;
+
+    resize: none;
+}

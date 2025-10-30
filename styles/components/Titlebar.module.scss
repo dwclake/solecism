@@ -3,23 +3,27 @@
  * @created: 10-18-2025
  */
 
+@use "../utils/colours.scss";
+@use "ui/button.module.scss" as *;
+@use "ui/dropdown.module.scss" as *;
+
 /* Header */
 .container {
     grid-area: toolbar;
 
     display: grid;
-    grid-template-columns: 70px 80px 100px 50px 1fr 70px;
-    grid-template-areas: "traffic-lights logo title nav social spacer";
+    grid-template-columns: 70px 70px 90px 40px 100px 1fr 70px;
+    grid-template-areas: "traffic-lights logo title nav actions social spacer";
     height: 30px;
     width: 100%;
 
     align-content: center;
     align-items: center;
 
-    background-color: rgb(173, 161, 155);
+    background-color: colours.$bg;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 5px colours.$shade;
 
     app-region: drag;
 }
@@ -42,16 +46,15 @@
     grid-area: title;
     display: flex;
 
-
     font-size: 2rem;
-    color: rgb(55, 44, 47);
+    color: colours.$text;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Header socials */
 .socials {
     grid-area: social;
-
-    display: flex !important;
+    display: flex;
 
     position: relative;
 
@@ -61,7 +64,7 @@
 
 .socialsList {
     display: flex;
-    padding: 0 20px;
+    padding: 0 1rem;
 
     list-style: none;
 }

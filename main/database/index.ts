@@ -8,9 +8,8 @@ import { open as sqliteOpen } from "sqlite";
 
 import tables from "./tables";
 import actions from "./actions";
-import schemas from "./schemas"
 
-export default { open, actions, schemas };
+export { open, actions };
 
 async function open() {
     const db = await sqliteOpen({

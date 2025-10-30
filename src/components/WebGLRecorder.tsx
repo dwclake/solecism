@@ -1,6 +1,7 @@
 /**
  * @author: dwclake
  * @created: 10-17-2025
+ *
  */
 
 import { useRef, useState } from "react";
@@ -8,7 +9,7 @@ import { useRef, useState } from "react";
 import { WebGLCanvas } from "./ui/webglcanvas";
 import { init, render } from "../animations/flower/RainbowFlower";
 
-export default function WebGLRecorder() {
+export const WebGLRecorder = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const recorderRef = useRef<MediaRecorder | null>(null);
     const chunksRef = useRef<Blob[]>([]);

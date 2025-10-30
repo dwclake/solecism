@@ -1,19 +1,22 @@
 import type { Configuration } from "webpack";
+import path from "path";
 
-import { rules } from "./webpack.rules";
+import { rules } from "./webpack.renderer.rules";
 import { plugins } from "./webpack.plugins";
 
-rules.push({
-    test: /\.css$/,
-    use: [{ loader: "style-loader" }, { loader: "css-loader" }]
-});
-
 export const rendererConfig: Configuration = {
+    target: "electron-renderer",
+    externalsPresets: {
+        node: false
+    },
     module: {
         rules
     },
     plugins,
     resolve: {
-        extensions: [".js", ".ts", ".jsx", ".tsx", ".css"]
+        extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".scss", ".sass"],
+        alias: {
+            "styles": path.resolve(__dirname, "styles/")
+        }
     }
-}
+};

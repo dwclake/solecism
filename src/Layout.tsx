@@ -8,9 +8,9 @@
 
 import { Outlet } from "react-router-dom";
 
-import { Toolbar } from "./Toolbar";
-import { Infobar } from "./Infobar";
-import styles from "../styles/Layout.module.css";
+import { Toolbar } from "./components/Titlebar";
+import { Infobar } from "./components/Infobar";
+import styles from "styles/Layout.module.scss";
 
 export const Layout = () => {
     return (

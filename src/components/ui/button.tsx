@@ -12,7 +12,7 @@ type Props = {
     };
 }
 
-export const Button = ({ children, onClick, styles }: Props) => {
+export const Button: React.FC<Props> = ({ children, onClick, styles }) => {
     return (
         <>
             <button

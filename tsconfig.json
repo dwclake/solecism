@@ -27,8 +27,9 @@
 
         "baseUrl": ".",
         "paths": {
-            "*": ["./node_modules/*"]
+            "styles/*": ["styles/*"],
+            "@schemas": ["./main/database/schemas"]
         }
     },
-    "include": ["src/**/*", "assets/**/*", "main/**/*"]
+    "include": ["src/**/*", "styles/**/*", "assets/**/*", "main/**/*"]
 }

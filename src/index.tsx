@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 
 import { store } from "./features/store";
 import { App } from "./App";
-import "./styles/index.css";
+import "../styles/index.scss";
 
 const container = document.getElementById("root")!;
 

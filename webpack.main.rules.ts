@@ -1,4 +1,5 @@
 import type { ModuleOptions } from "webpack";
+import { defineReactCompilerLoaderOption, reactCompilerLoader } from "react-compiler-webpack";
 
 export const rules: Required<ModuleOptions>["rules"] = [
     {
@@ -18,15 +19,24 @@ export const rules: Required<ModuleOptions>["rules"] = [
     {
         test: /\.tsx?$/,
         exclude: /(node_modules|\.webpack)/,
-        use: {
-            loader: "ts-loader",
-            options: {
-                transpileOnly: true
+        use: [
+            {
+                loader: reactCompilerLoader,
+                options: defineReactCompilerLoaderOption({
+                    compilationMode: "infer",
+                    target: "19"
+                })
+            },
+            {
+                loader: "ts-loader",
+                options: {
+                    transpileOnly: true
+                }
             }
-        }
+        ]
     },
     {
-        test: [/\.svg$/, /\.png$/, /\.ico$/],
+        test: [/\.svg$/, /\.png$/, /\.ico$/, /\.icns$/],
         type: "asset/resource",
         generator: {
             filename: "assets/[name][ext][query]"

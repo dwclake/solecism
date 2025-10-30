@@ -13,8 +13,9 @@ namespace schemas {
         created_at: Date,
         updated_at: Date
     };
+
     export type DocumentReturn = Promise<{
         ok: boolean,
-        document: schemas.Document | undefined
+        document: Document | undefined
     }>;
 };

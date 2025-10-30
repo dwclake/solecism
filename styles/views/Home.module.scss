@@ -10,7 +10,9 @@
 .view {
     display: grid;
     grid-template-rows: 30px 1fr;
-    grid-template-areas: "toolbar" "editor";
+    grid-template-areas:
+        "toolbar"
+        "editor";
     width: 100%;
     height: 100%;
 }

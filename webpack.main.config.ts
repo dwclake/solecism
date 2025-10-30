@@ -11,6 +11,6 @@ export const mainConfig: Configuration = {
     },
     plugins,
     resolve: {
-        extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".json"]
+        extensions: [".js", ".ts", ".jsx", ".tsx", ".json"]
     }
 }

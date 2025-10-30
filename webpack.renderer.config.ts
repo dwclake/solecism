@@ -1,14 +1,36 @@
 import type { Configuration } from "webpack";
-
-import { rules } from "./webpack.rules";
-import { plugins } from "./webpack.plugins";
-
-import webpack from "webpack";
 import path from "path";
 
-rules.push(
+import { rules as sharedRules } from "./webpack.rules";
+import { plugins } from "./webpack.plugins";
+
+const stylesPath = path.resolve(__dirname, "styles");
+
+function usesAssetRelocator(rule: any): boolean {
+    if (!rule) return false;
+
+    const checkLoader = (u: any) => {
+        if (!u) return false;
+        if (typeof u === "string") return u.includes("webpack-asset-relocator-loader");
+        if (typeof u.loader === "string") return u.loader.includes("webpack-asset-relocator-loader");
+        return false;
+    };
+
+    if (Array.isArray(rule.use)) {
+        return rule.use.some(checkLoader);
+    }
+    if (typeof rule.use === "object" || typeof rule.use === "string") {
+        return checkLoader(rule.use);
+    }
+    return false;
+}
+
+const rendererRules = (sharedRules || []).filter((r) => !usesAssetRelocator(r));
+
+rendererRules.push(
     {
         test: /\.module\.(scss|css)$/,
+        include: stylesPath,
         use: [
             { loader: "style-loader" },
             {
@@ -26,6 +48,7 @@ rules.push(
     },
     {
         test: /\.(scss|css)$/,
+        include: stylesPath,
         exclude: /\.module\.(scss|css)$/,
         use: [
             { loader: "style-loader" },
@@ -48,23 +71,13 @@ export const rendererConfig: Configuration = {
         node: false
     },
     module: {
-        rules
+        rules: rendererRules
     },
-    plugins: [
-        ...plugins,
-        new webpack.BannerPlugin({
-            banner: `
-                var __dirname = ${JSON.stringify(path.resolve(process.cwd()))};
-                var __filename = ${JSON.stringify(path.resolve(process.cwd(), "index.js"))};
-            `,
-            raw: true,
-            entryOnly: true
-        })
-    ],
+    plugins,
     resolve: {
         extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".scss", ".sass"],
         alias: {
             "styles": path.resolve(__dirname, "styles/")
         }
-    },
+    }
 };

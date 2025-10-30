@@ -5,7 +5,7 @@
 
 import { type Database } from "sqlite";
 
-import schemas from "@schemas";
+import { Return, Document } from "@schemas";
 
 export default { create, open, save, remove };
 
@@ -15,19 +15,17 @@ export default { create, open, save, remove };
  * @param title
  * @returns
  */
-async function create(db: Database, title: string) {
+async function create(db: Database, title: string): Return<Document> {
     const result = await db.run(`
         INSERT INTO documents (title, content)
-        VALUES (?, ?)`,
-        [title, ""]
-    );
+        VALUES (${title}, ${""})
+    `);
 
-    const document = await db.get<schemas.Document>(`
+    const document = await db.get<Document>(`
         SELECT *
         FROM documents
-        WHERE id = ?`,
-        [result.lastID]
-    );
+        WHERE id = ${result.lastID}
+    `);
     if (!document) {
         return { ok: false, document: undefined };
     }
@@ -41,13 +39,12 @@ async function create(db: Database, title: string) {
  * @param id
  * @returns
  */
-async function open(db: Database, id: number) {
-    const document = await db.get<schemas.Document>(`
+async function open(db: Database, id: number): Return<Document> {
+    const document = await db.get<Document>(`
         SELECT *
         FROM documents
-        WHERE id = ?`,
-        [id]
-    );
+        WHERE id = ${id}
+    `);
     if (document) {
         return { ok: true, document };
     }
@@ -55,40 +52,34 @@ async function open(db: Database, id: number) {
     return { ok: false, document: undefined };
 }
 
-async function save(db: Database, id: number, title?: string, content?: string) {
+async function save(db: Database, id: number, title?: string, content?: string): Return<Document> {
     const fields = [];
-    const values = [];
 
     if (title) {
-        fields.push("title = ?");
-        values.push(title!);
+        fields.push(`title = ${title!}`);
     }
 
     if (content) {
-        fields.push("content = ?");
-        values.push(content!);
+        fields.push(`content = ${content!}`);
     }
 
     fields.push("updated_at = CURRENT_TIMESTAMP");
-    values.push(id);
 
     const result = await db.run(`
         UPDATE documents
         SET ${fields.join(", ")}
-        WHERE id = ?`,
-        values
-    );
+        WHERE id = ${id}
+    `);
 
     if (!result.changes) {
         return { ok: false, document: undefined };
     }
 
-    const updatedDocument = await db.get<schemas.Document>(`
+    const updatedDocument = await db.get<Document>(`
         SELECT *
         FROM documents
-        WHERE id = ?`,
-        [id]
-    );
+        WHERE id = ${id}
+    `);
     if (!updatedDocument) {
         return { ok: false, document: undefined };
     }
@@ -96,14 +87,13 @@ async function save(db: Database, id: number, title?: string, content?: string) 
     return { ok: true, document: updatedDocument };
 }
 
-async function remove(db: Database, id: number) {
+async function remove(db: Database, id: number): Return<Document> {
     const { ok, document } = await open(db, id);
 
     const result = await db.run(`
         DELETE FROM documents
-        WHERE id = ?`,
-        [id]
-    );
+        WHERE id = ${id}
+    `);
 
     if (!result.changes || !ok) {
         return { ok: false, document: undefined };

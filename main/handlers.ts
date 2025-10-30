@@ -6,14 +6,14 @@
 import { ipcMain, Notification } from "electron";
 
 import { open, actions } from "./database";
-import schemas from "@schemas";
+import { type Return, type Document } from "@schemas";
 
 const db = await open();
 
 /**
  *
  */
-ipcMain.handle("document-create", (_, title: string) => {
+ipcMain.handle("document-create", (_, title: string): Return<Document> => {
 	return new Promise(async (resolve) => {
 		try {
 	        const { ok, document } = await actions.documents.create(db, title);
@@ -32,7 +32,7 @@ ipcMain.handle("document-create", (_, title: string) => {
 /**
  *
  */
-ipcMain.handle("document-open", async (_, id: number) => {
+ipcMain.handle("document-open", async (_, id: number): Return<Document> => {
 	return new Promise(async (resolve) => {
 		try {
 	        const { ok, document } = await actions.documents.open(db, id);
@@ -51,7 +51,7 @@ ipcMain.handle("document-open", async (_, id: number) => {
 /**
  *
  */
-ipcMain.handle("document-save", async (_, id: number, title?: string, content?: string) => {
+ipcMain.handle("document-save", async (_, id: number, title?: string, content?: string): Return<Document> => {
 	return new Promise(async (resolve) => {
 		try {
 	        const { ok, document } = await actions.documents.save(db, id, title, content);
@@ -70,7 +70,7 @@ ipcMain.handle("document-save", async (_, id: number, title?: string, content?: 
 /**
  *
  */
-ipcMain.handle("document-remove", async (_, id: number) => {
+ipcMain.handle("document-remove", async (_, id: number): Return<Document> => {
 	return new Promise(async (resolve) => {
 		try {
 	        const { ok, document } = await actions.documents.remove(db, id);

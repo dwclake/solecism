@@ -3,7 +3,7 @@
  * @created: 10-18-2025
  */
 
-import schemas from "@schemas";
+import { Return, Document } from "@schemas";
 
 export interface Electron {
     document: {
@@ -12,19 +12,19 @@ export interface Electron {
 		 * @param title
 		 * @returns
 		 */
-        create: (title: string) => schemas.DocumentReturn;
+        create: (title: string) => Return<Document>;
          /**
 		 *
 		 * @param id
 		 * @returns
 		 */
-        open: (id: number) => schemas.DocumentReturn;
+        open: (id: number) => Return<Document>;
         /**
 		 *
 		 * @param id
 		 * @returns
 		 */
-        save: (id: number, title?: string, content?: string) => schemas.DocumentReturn;
+        save: (id: number, title?: string, content?: string) => Return<Document>;
         /**
 		 *
 		 * @param id
@@ -32,7 +32,7 @@ export interface Electron {
 		 * @param content
 		 * @returns
 		 */
-        remove: (id: number) => schemas.DocumentReturn;
+        remove: (id: number) => Return<Document>;
     },
     os: {
         /**

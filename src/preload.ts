@@ -5,7 +5,7 @@
 
 import { contextBridge, ipcRenderer } from "electron";
 
-import schemas from "@schemas";
+import { Return, Document } from "@schemas";
 
 contextBridge.exposeInMainWorld("electron", {
 	db: {
@@ -15,7 +15,7 @@ contextBridge.exposeInMainWorld("electron", {
 			 * @param title
 			 * @returns
 			 */
-			create: async (title: string): schemas.DocumentReturn => {
+			create: async (title: string): Return<Document> => {
 				const { ok, document } = await ipcRenderer.invoke("document-create", title);
 				if (!ok) {
 					return { ok: false, document: undefined };
@@ -28,7 +28,7 @@ contextBridge.exposeInMainWorld("electron", {
 			 * @param id
 			 * @returns
 			 */
-			open: async (id: number): schemas.DocumentReturn => {
+			open: async (id: number): Return<Document> => {
 				const { ok, document } = await ipcRenderer.invoke("document-open", id);
 				if (!ok) {
 					return { ok: false, document: undefined };
@@ -43,7 +43,7 @@ contextBridge.exposeInMainWorld("electron", {
 			 * @param content
 			 * @returns
 			 */
-			save: async (id: number, title?: string, content?: string): schemas.DocumentReturn => {
+			save: async (id: number, title?: string, content?: string): Return<Document> => {
 				const { ok, document } = await ipcRenderer.invoke("document-save", id, title, content);
 				if (!ok) {
 					return { ok: false, document: undefined };
@@ -56,7 +56,7 @@ contextBridge.exposeInMainWorld("electron", {
 			 * @param id
 			 * @returns
 			 */
-			remove: async (id: number): schemas.DocumentReturn => {
+			remove: async (id: number): Return<Document> => {
 				const { ok, document } = await ipcRenderer.invoke("document-remove", id);
 				if (!ok) {
 					return { ok: false, document: undefined };

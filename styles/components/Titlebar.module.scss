@@ -3,9 +3,9 @@
  * @created: 10-18-2025
  */
 
-@use "utils/colours.scss";
-@use "components/ui/button.module.scss" as *;
-@use "components/ui/dropdown.module.scss" as *;
+@use "../utils/colours.scss";
+@use "ui/button.module.scss" as *;
+@use "ui/dropdown.module.scss" as *;
 
 /* Header */
 .container {

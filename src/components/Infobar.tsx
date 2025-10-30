@@ -3,7 +3,7 @@
  * @created: 10-18-2025
  */
 
-import styles from "../styles/Infobar.module.scss";
+import styles from "styles/components/Infobar.module.scss";
 
 // Should display word count, current file name, etc; which will be
 // accessed from the redux store

@@ -5,14 +5,12 @@
 
 import { Menu, X } from "lucide-react";
 
-import { useDispatch } from "./features/store";
-import { setIsOpen } from "./features/dropdown/Dropdown";
-import { Button, Dropdown } from "./components/ui";
-import { NavButton } from "./components/ui/navbutton";
-import { WebGLCanvas } from "./components/ui/webglcanvas";
-import { init, render } from "./animations/flower/RainbowFlower";
+import { useDispatch } from "../features/store";
+import { setIsOpen } from "../features/dropdown/Dropdown";
+import { Button, Dropdown, NavButton, WebGLCanvas } from "./ui";
+import { init, render } from "../animations/flower/RainbowFlower";
 
-import toolbar from "../styles/Toolbar.module.scss";
+import toolbar from "styles/components/Titlebar.module.scss";
 
 export const Toolbar = () => {
     const dispatch = useDispatch();
@@ -27,7 +25,13 @@ export const Toolbar = () => {
 
     return (
         <header className={toolbar.container}>
-            <WebGLCanvas className={toolbar.logo} width="600" height="600" onInit={init} onRender={render} />
+            <WebGLCanvas
+                className={toolbar.logo}
+                width="600"
+                height="600"
+                onInit={init}
+                onRender={render}
+            />
             <h1 className={`${toolbar.title} abril-fatface-regular`}>solecism</h1>
             <Dropdown styles={toolbar}>
             	<Menu size={12} strokeWidth={3} />

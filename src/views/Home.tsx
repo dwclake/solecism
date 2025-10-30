@@ -9,8 +9,8 @@ import { useEffect, useRef, useState } from "react";
 
 import { Button } from "../components/ui/button";
 
-import styles from "../../styles/views/Home.module.scss";
-import button from "../../styles/components/ui/button.module.scss";
+import styles from "styles/views/Home.module.scss";
+import button from "styles/components/ui/button.module.scss";
 
 export const Home = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);

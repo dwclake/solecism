@@ -1,4 +1,5 @@
 import type { ModuleOptions } from "webpack";
+import { defineReactCompilerLoaderOption, reactCompilerLoader } from "react-compiler-webpack";
 
 export const rules: Required<ModuleOptions>["rules"] = [
     {
@@ -18,12 +19,20 @@ export const rules: Required<ModuleOptions>["rules"] = [
     {
         test: /\.tsx?$/,
         exclude: /(node_modules|\.webpack)/,
-        use: {
-            loader: "ts-loader",
-            options: {
-                transpileOnly: true
+        use: [
+            {
+                loader: "ts-loader",
+                options: {
+                    transpileOnly: true
+                }
+            },
+            {
+                loader: reactCompilerLoader,
+                options: defineReactCompilerLoaderOption({
+                    // React Compiler options goes here
+                })
             }
-        }
+        ]
     },
     {
         test: [/\.svg$/, /\.png$/, /\.ico$/],

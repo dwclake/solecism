@@ -15,7 +15,8 @@
 }
 
 .dropdown-list {
-    display: block;
+    display: flex;
+    flex-flow: wrap;
     max-width: 150px;
     height: auto;
     padding: 5px 5px;
@@ -29,6 +30,7 @@
     justify-items: center;
 
     list-style: none;
+    gap: 1rem;
     background-color: colours.$bg;
     border: 2px solid colours.$accent;
     border-radius: 10px;
@@ -47,23 +49,15 @@
         transition: opacity 100ms ease, transform 100ms ease;
         pointer-events: auto;
         visibility: visible;
-
-        list-style: none;
-        background-color: colours.$bg;
-        border: 2px solid colours.$accent;
-        border-radius: 10px;
     }
 
     li {
         display: flex;
         justify-content: center;
-
-        padding: 5px 0;
     }
 
     a {
         display: flex;
-        padding: 0px 5px;
         text-decoration: none;
         color: colours.$text;
     }

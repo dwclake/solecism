@@ -5,6 +5,8 @@
  * The component responsible for rendering a dropdown menu
  */
 
+import { useEffect, useRef } from "react";
+
 import { useDispatch, useSelector } from "../../features/store";
 import { setIsOpen } from "../../features/dropdown/Dropdown";
 
@@ -29,8 +31,40 @@ export const Dropdown: React.FC<Props> = ({ children, styles }) => {
         dispatch(setIsOpen(!isOpen))
     }
 
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleDocumentPointer = (event: MouseEvent | TouchEvent) => {
+            const container = containerRef.current!;
+            const target = event.target as Node | null;
+            if (!target) return;
+            if (!container.contains(target) && isOpen) {
+                dispatch(setIsOpen(false));
+            }
+        };
+
+        document.addEventListener("mousedown", handleDocumentPointer);
+        document.addEventListener("touchstart", handleDocumentPointer);
+
+        return () => {
+            document.removeEventListener("mousedown", handleDocumentPointer);
+            document.removeEventListener("touchstart", handleDocumentPointer);
+        };
+    }, [isOpen, dispatch]);
+
+    useEffect(() => {
+        const handleKey = (event: KeyboardEvent) => {
+            if (event.key === "Escape" && isOpen) {
+                dispatch(setIsOpen(false));
+            }
+        };
+
+        document.addEventListener("keydown", handleKey);
+        return () => document.removeEventListener("keydown", handleKey);
+    }, [isOpen, dispatch]);
+
     return (
-        <div className={styles["dropdown-container"]}>
+        <div className={styles["dropdown-container"]} ref={containerRef}>
             {!isOpen ? (
                 <Button styles={styles} onClick={handleClick}>
                 	<>{buttonClosed}</>

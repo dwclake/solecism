@@ -52,27 +52,6 @@ export const Toolbar = () => {
                     About
                 </NavButton>
             </Dropdown>
-            <div className={toolbar.actions}>
-               <ul>
-                   <li>
-                       <Button
-                           onClick={() => {}}
-                           styles={toolbar}
-                       >
-                           open
-                       </Button>
-                   </li>
-                   <li>
-                       <Button
-                           onClick={() => {}}
-                           styles={toolbar}
-                       >
-                           save
-                       </Button>
-                   </li>
-
-               </ul>
-            </div>
             <nav className={toolbar.socials}>
                 <Button styles={toolbar} onClick={sendNotification}>click me</Button>
             </nav>

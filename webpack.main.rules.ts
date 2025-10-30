@@ -36,7 +36,7 @@ export const rules: Required<ModuleOptions>["rules"] = [
         ]
     },
     {
-        test: [/\.svg$/, /\.png$/, /\.ico$/],
+        test: [/\.svg$/, /\.png$/, /\.ico$/, /\.icns$/],
         type: "asset/resource",
         generator: {
             filename: "assets/[name][ext][query]"

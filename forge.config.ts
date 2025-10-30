@@ -35,7 +35,7 @@ const config: ForgeConfig = {
                         js: "./src/index.tsx",
                         name: "webview",
                         preload: {
-                            js: "./main/preload.ts"
+                            js: "./src/preload.ts"
                         }
                     }
                 ]

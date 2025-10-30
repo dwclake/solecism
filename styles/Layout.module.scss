@@ -12,8 +12,10 @@
     display: grid;
     grid-template-rows: 30px 1fr 30px;
     grid-template-areas: "toolbar" "main" "infobar";
-    gap: 2px;
     box-sizing: border-box;
+    gap: 2px;
+
+    overflow: hidden;
 
     height: 100%;
     width: 100%;

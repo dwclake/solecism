@@ -21,16 +21,17 @@ export const rules: Required<ModuleOptions>["rules"] = [
         exclude: /(node_modules|\.webpack)/,
         use: [
             {
+                loader: reactCompilerLoader,
+                options: defineReactCompilerLoaderOption({
+                    compilationMode: "infer",
+                    target: "19"
+                })
+            },
+            {
                 loader: "ts-loader",
                 options: {
                     transpileOnly: true
                 }
-            },
-            {
-                loader: reactCompilerLoader,
-                options: defineReactCompilerLoaderOption({
-                    // React Compiler options goes here
-                })
             }
         ]
     },

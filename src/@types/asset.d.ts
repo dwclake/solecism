@@ -1,6 +1,6 @@
 /**
- * @author: dwclake
- * @created: 10-18-2025
+ *
+ * @author dwclake
  */
 
 declare module "*.jpg" {

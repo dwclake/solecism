@@ -1,8 +1,7 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
- *
  * The entrypoint for the frontend, sourced from index.html
+ *
+ * @author dwclake
  */
 
 import { createRoot } from "react-dom/client";

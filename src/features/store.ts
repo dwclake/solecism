@@ -1,8 +1,7 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
- *
  * The redux store for the website
+ *
+ * @author dwclake
  */
 
 import { combineReducers, configureStore } from "@reduxjs/toolkit";

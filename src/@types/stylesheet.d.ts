@@ -1,6 +1,6 @@
 /**
- * @author: dwclake
- * @created: 10-30-2025
+ *
+ * @author dwclake
  */
 
 declare module "*.module.css" {

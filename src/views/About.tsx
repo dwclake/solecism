@@ -1,8 +1,7 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
- *
  * The view for the about page
+ *
+ * @author dwclake
  */
 
 import styles from "styles/views/About.module.scss";

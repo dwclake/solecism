@@ -1,8 +1,7 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
- *
  * The redux slice responsible for managing the state of the dropdown
+ *
+ * @author dwclake
  */
 
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";

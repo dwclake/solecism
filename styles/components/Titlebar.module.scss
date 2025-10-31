@@ -1,13 +1,12 @@
 /**
- * @author: dwclake
- * @created: 10-18-2025
+ *
+ * @author dwclake
  */
 
 @use "../utils/colours.scss";
 @use "ui/button.module.scss" as *;
 @use "ui/dropdown.module.scss" as *;
 
-/* Header */
 .container {
     grid-area: toolbar;
 
@@ -28,7 +27,6 @@
     app-region: drag;
 }
 
-/* Header logo */
 .logo {
     grid-area: logo;
 
@@ -41,7 +39,6 @@
     justify-self: center;
 }
 
-/* Header title */
 .title {
     grid-area: title;
     display: flex;
@@ -51,7 +48,6 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Header socials */
 .socials {
     grid-area: social;
     display: flex;

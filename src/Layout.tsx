@@ -1,9 +1,8 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
- *
  * The root layout for the website containing the header,
  * the footer, and outlet for the main content
+ *
+ * @author dwclake
  */
 
 import { Outlet } from "react-router-dom";

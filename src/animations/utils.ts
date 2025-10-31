@@ -1,6 +1,6 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
+ *
+ * @author dwclake
  */
 
 const createShader = (gl: WebGL2RenderingContext, type: number, source: string) => {

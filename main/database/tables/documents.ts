@@ -1,6 +1,6 @@
 /**
- * @author: dwclake
- * @created: 10-25-2025
+ *
+ * @author dwclake
  */
 
 import sqlite3 from "sqlite3";

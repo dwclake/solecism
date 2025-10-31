@@ -1,8 +1,7 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
- *
  * The view for the home page
+ *
+ * @author dwclake
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -13,6 +12,7 @@ import styles from "styles/views/Home.module.scss";
 import button from "styles/components/ui/button.module.scss";
 
 export const Home = () => {
+    // Move this stuff to textarea / text editor component, hook up with redux
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const [text, setText] = useState("");
 
@@ -89,6 +89,7 @@ export const Home = () => {
                     ref={textareaRef}
                 />
             </div>
+            <p>{text}</p>
         </div>
     );
 }

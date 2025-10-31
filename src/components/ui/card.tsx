@@ -1,7 +1,6 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
  *
+ * @author dwclake
  */
 
 // Card will be placed directly into css grid, border visibility will highlight focus

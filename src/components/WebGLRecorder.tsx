@@ -1,7 +1,6 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
  *
+ * @author dwclake
  */
 
 import { useRef, useState } from "react";

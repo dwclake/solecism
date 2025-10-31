@@ -1,6 +1,6 @@
 /**
- * @author: dwclake
- * @created: 10-30-2025
+ *
+ * @author dwclake
  */
 
 export default Document;

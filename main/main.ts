@@ -1,6 +1,6 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
+ *
+ * @author dwclake
  */
 
 import { app, BrowserWindow } from "electron";

@@ -1,8 +1,7 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
- *
  * The main component for the website, providing client-side routing
+ *
+ * @author dwclake
  */
 
 import {

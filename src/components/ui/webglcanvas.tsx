@@ -1,8 +1,7 @@
 /**
- * @author: dwclake
- * @created: 10-17-2025
- *
  * The component responsible for rendering a WebGL2 canvas
+ *
+ * @author dwclake
  */
 
 import { useEffect, useRef, forwardRef, useImperativeHandle } from "react";

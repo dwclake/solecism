@@ -1,5 +1,9 @@
+/**
+ *
+ * @author dwclake
+ */
+
 import type { ModuleOptions } from "webpack";
-import { defineReactCompilerLoaderOption, reactCompilerLoader } from "react-compiler-webpack";
 
 export const rules: Required<ModuleOptions>["rules"] = [
     {
@@ -17,16 +21,9 @@ export const rules: Required<ModuleOptions>["rules"] = [
         }
     },
     {
-        test: /\.tsx?$/,
+        test: /\.ts?$/,
         exclude: /(node_modules|\.webpack)/,
         use: [
-            {
-                loader: reactCompilerLoader,
-                options: defineReactCompilerLoaderOption({
-                    compilationMode: "infer",
-                    target: "19"
-                })
-            },
             {
                 loader: "ts-loader",
                 options: {

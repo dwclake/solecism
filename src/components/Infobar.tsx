@@ -1,12 +1,14 @@
 /**
- * @author: dwclake
- * @created: 10-18-2025
+ *
+ * @author dwclake
  */
 
 import styles from "styles/components/Infobar.module.scss";
 
-// Should display word count, current file name, etc; which will be
-// accessed from the redux store
+/**
+ * @TODO: Should display word count, current file name, etc; which will be
+ * accessed from the redux store
+ */
 export const Infobar = () => {
     return (
         <footer className={styles.container}>

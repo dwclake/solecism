@@ -1,3 +1,8 @@
+/**
+ *
+ * @author dwclake
+ */
+
 import type { ModuleOptions } from "webpack";
 import { defineReactCompilerLoaderOption, reactCompilerLoader } from "react-compiler-webpack";
 import path from "path";
@@ -6,7 +11,7 @@ const stylesPath = path.resolve(__dirname, "styles");
 
 export const rules: Required<ModuleOptions>["rules"] = [
     {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         exclude: /(node_modules|\.webpack)/,
         use: [
             {

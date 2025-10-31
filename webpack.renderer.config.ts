@@ -1,3 +1,8 @@
+/**
+ *
+ * @author dwclake
+ */
+
 import type { Configuration } from "webpack";
 import path from "path";
 

@@ -37,7 +37,7 @@ export interface Electron {
     os: {
         /**
          *
-         * @returns
+         * @returns the current OS
          */
         check: () => string;
         notify: {

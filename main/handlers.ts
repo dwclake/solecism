@@ -90,7 +90,7 @@ ipcMain.handle("document-remove", async (_, id: number): Return<Document> => {
  *
  */
 ipcMain.on("notify", (_, message) => {
-    new Notification({ title: "Solecism", body: message }).show();
+    new Notification({ title: "solecism", body: message }).show();
 });
 
 /**

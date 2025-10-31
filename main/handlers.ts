@@ -4,11 +4,12 @@
  */
 
 import { ipcMain, Notification } from "electron";
+import path from "path";
 
 import { open, actions } from "./database";
 import { type Return, type Document } from "@schemas";
 
-const db = await open();
+const db = await open(path.join(__dirname, "./test.db"));
 
 /**
  *

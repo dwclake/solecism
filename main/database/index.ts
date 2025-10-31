@@ -11,9 +11,10 @@ import actions from "./actions";
 
 export { open, actions };
 
-async function open() {
+async function open(path: string) {
+    console.log(`Opening database at path: ${path}`);
     const db = await sqliteOpen({
-        filename: "./data/solecism.db",
+        filename: path,
         driver: sqlite3.Database
     });
 

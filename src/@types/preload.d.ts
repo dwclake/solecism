@@ -1,10 +1,9 @@
+import { Return, Document } from "@schemas";
+
 /**
  *
  * @author dwclake
  */
-
-import { Return, Document } from "@schemas";
-
 export interface Electron {
     document: {
         /**

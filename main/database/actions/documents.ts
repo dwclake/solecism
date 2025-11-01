@@ -1,8 +1,3 @@
-/**
- *
- * @author dwclake
- */
-
 import { type Database } from "sqlite";
 
 import { Return, Document } from "@schemas";
@@ -14,6 +9,7 @@ export default { create, open, save, remove };
  * @param db
  * @param title
  * @returns
+ * @author dwclake
  */
 async function create(db: Database, title: string): Return<Document> {
     const result = await db.run(`
@@ -38,6 +34,7 @@ async function create(db: Database, title: string): Return<Document> {
  * @param db
  * @param id
  * @returns
+ * @author dwclake
  */
 async function open(db: Database, id: number): Return<Document> {
     const document = await db.get<Document>(`
@@ -52,6 +49,15 @@ async function open(db: Database, id: number): Return<Document> {
     return { ok: false, document: undefined };
 }
 
+/**
+ *
+ * @param db
+ * @param id
+ * @param title
+ * @param content
+ * @returns
+ * @author dwclake
+ */
 async function save(db: Database, id: number, title?: string, content?: string): Return<Document> {
     const fields = [];
 
@@ -87,6 +93,13 @@ async function save(db: Database, id: number, title?: string, content?: string):
     return { ok: true, document: updatedDocument };
 }
 
+/**
+ *
+ * @param db
+ * @param id
+ * @returns
+ * @author dwclake
+ */
 async function remove(db: Database, id: number): Return<Document> {
     const { ok, document } = await open(db, id);
 

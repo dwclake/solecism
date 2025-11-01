@@ -1,9 +1,3 @@
-/**
- * The component responsible for rendering a dropdown menu
- *
- * @author dwclake
- */
-
 import { useEffect, useRef } from "react";
 
 import { useDispatch, useSelector } from "../../features/store";
@@ -19,6 +13,11 @@ type Props = {
     }
 }
 
+/**
+ * The component responsible for rendering a dropdown menu
+ *
+ * @author dwclake
+ */
 export const Dropdown: React.FC<Props> = ({ children, styles }) => {
     const isOpen = useSelector(state => state.dropdown.isOpen);
     const dispatch = useDispatch();

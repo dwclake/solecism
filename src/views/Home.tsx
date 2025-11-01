@@ -1,9 +1,3 @@
-/**
- * The view for the home page
- *
- * @author dwclake
- */
-
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "../components/ui/button";
@@ -11,8 +5,13 @@ import { Button } from "../components/ui/button";
 import styles from "styles/views/Home.module.scss";
 import button from "styles/components/ui/button.module.scss";
 
+/**
+ * The view for the home page
+ *
+ * @author dwclake
+ */
 export const Home = () => {
-    // Move this stuff to textarea / text editor component, hook up with redux
+    // @TODO move this stuff to textarea / text editor component, hook up with redux
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const [text, setText] = useState("");
 

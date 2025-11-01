@@ -1,8 +1,3 @@
-/**
- *
- * @author dwclake
- */
-
 import { Menu, X } from "lucide-react";
 
 import { useDispatch } from "../features/store";
@@ -10,8 +5,12 @@ import { setIsOpen } from "../features/dropdown/Dropdown";
 import { Button, Dropdown, NavButton, WebGLCanvas } from "./ui";
 import { init, render } from "../animations/flower/RainbowFlower";
 
-import toolbar from "styles/components/Titlebar.module.scss";
+import styles from "styles/components/Titlebar.module.scss";
 
+/**
+ *
+ * @author dwclake
+ */
 export const Toolbar = () => {
     const dispatch = useDispatch();
 
@@ -24,23 +23,23 @@ export const Toolbar = () => {
     }
 
     return (
-        <header className={toolbar.container}>
+        <header className={styles.container}>
             <WebGLCanvas
-                className={toolbar.logo}
+                className={styles.logo}
                 width="600"
                 height="600"
                 onInit={init}
                 onRender={render}
             />
-            <h1 className={`${toolbar.title} abril-fatface-regular`}>solecism</h1>
-            <Dropdown styles={toolbar}>
+            <h1 className={`${styles.title} abril-fatface-regular`}>solecism</h1>
+            <Dropdown styles={styles}>
             	<Menu size={12} strokeWidth={3} />
              	<X size={12} strokeWidth={3} />
                 <NavButton
                     to="/"
                     end
-                    className={toolbar.button}
-                    activeClassName={toolbar.active}
+                    className={styles.button}
+                    activeClassName={styles.active}
                     onActivate={onClick}
                     preventActive={true}
                 >
@@ -48,16 +47,16 @@ export const Toolbar = () => {
                 </NavButton>
                 <NavButton
                     to="/about"
-                    className={toolbar.button}
-                    activeClassName={toolbar.active}
+                    className={styles.button}
+                    activeClassName={styles.active}
                     onActivate={onClick}
                     preventActive={true}
                 >
                     About
                 </NavButton>
             </Dropdown>
-            <nav className={toolbar.socials}>
-                <Button styles={toolbar} onClick={sendNotification}>click me</Button>
+            <nav className={styles.socials}>
+                <Button styles={styles} onClick={sendNotification}>click me</Button>
             </nav>
         </header>
     );

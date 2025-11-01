@@ -1,8 +1,3 @@
-/**
- *
- * @author dwclake
- */
-
 import { ipcMain, Notification } from "electron";
 import path from "path";
 
@@ -13,6 +8,7 @@ const db = await open(path.join(__dirname, "./test.db"));
 
 /**
  *
+ * @author dwclake
  */
 ipcMain.handle("document-create", (_, title: string): Return<Document> => {
 	return new Promise(async (resolve) => {
@@ -32,6 +28,7 @@ ipcMain.handle("document-create", (_, title: string): Return<Document> => {
 
 /**
  *
+ * @author dwclake
  */
 ipcMain.handle("document-open", async (_, id: number): Return<Document> => {
 	return new Promise(async (resolve) => {
@@ -51,6 +48,7 @@ ipcMain.handle("document-open", async (_, id: number): Return<Document> => {
 
 /**
  *
+ * @author dwclake
  */
 ipcMain.handle("document-save", async (_, id: number, title?: string, content?: string): Return<Document> => {
 	return new Promise(async (resolve) => {
@@ -70,6 +68,7 @@ ipcMain.handle("document-save", async (_, id: number, title?: string, content?: 
 
 /**
  *
+ * @author dwclake
  */
 ipcMain.handle("document-remove", async (_, id: number): Return<Document> => {
 	return new Promise(async (resolve) => {
@@ -89,6 +88,7 @@ ipcMain.handle("document-remove", async (_, id: number): Return<Document> => {
 
 /**
  *
+ * @author dwclake
  */
 ipcMain.on("notify", (_, message) => {
     new Notification({ title: "solecism", body: message }).show();
@@ -96,6 +96,7 @@ ipcMain.on("notify", (_, message) => {
 
 /**
  *
+ * @author dwclake
  */
 ipcMain.handle("os-check", (_) => {
 	return process.platform;

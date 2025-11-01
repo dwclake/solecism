@@ -1,8 +1,3 @@
-/**
- *
- * @author dwclake
- */
-
 import { Button } from "./button";
 import { Card } from "./card";
 import { Dropdown } from "./dropdown";

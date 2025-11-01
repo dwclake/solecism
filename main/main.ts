@@ -1,8 +1,3 @@
-/**
- *
- * @author dwclake
- */
-
 import { app, BrowserWindow } from "electron";
 
 import "./handlers";

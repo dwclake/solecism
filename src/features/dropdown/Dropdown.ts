@@ -1,11 +1,10 @@
-/**
- * The redux slice responsible for managing the state of the dropdown
- *
- * @author dwclake
- */
-
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
+/**
+ * The redux slice responsible for managing the state of the navigation dropdown
+ *
+ * @TODO rename this so it is specific to the navigation dropdown, maybe
+ */
 const dropdown = createSlice({
     name: 'dropdown',
     initialState: {

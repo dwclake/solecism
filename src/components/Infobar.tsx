@@ -1,13 +1,10 @@
-/**
- *
- * @author dwclake
- */
-
 import styles from "styles/components/Infobar.module.scss";
 
 /**
- * @TODO: Should display word count, current file name, etc; which will be
+ *
+ * @TODO Should display word count, current file name, etc; which will be
  * accessed from the redux store
+ * @author dwclake
  */
 export const Infobar = () => {
     return (

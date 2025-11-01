@@ -1,13 +1,12 @@
-/**
- *
- * @author dwclake
- */
-
 import { useRef, useState } from "react";
 
 import { WebGLCanvas } from "./ui/webglcanvas";
 import { init, render } from "../animations/flower/RainbowFlower";
 
+/**
+ *
+ * @author dwclake
+ */
 export const WebGLRecorder = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const recorderRef = useRef<MediaRecorder | null>(null);

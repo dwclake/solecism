@@ -1,15 +1,18 @@
+import { createProgram } from "../utils";
+import { FlowerShader } from "./FlowerShader";
+
 /**
  *
  * @author dwclake
  */
-
-import { createProgram } from "../utils";
-import { FlowerShader } from "./FlowerShader";
-
 export function init(gl: WebGL2RenderingContext) {
     gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 }
 
+/**
+ *
+ * @author dwclake
+ */
 export function render(gl: WebGL2RenderingContext, t: number) {
     gl.clearColor(0.0, 0.0, 0.0, 0.0);
     gl.clear(gl.COLOR_BUFFER_BIT);

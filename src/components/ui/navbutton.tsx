@@ -1,8 +1,3 @@
-/**
- *
- * @author dwclake
- */
-
 import { NavLink, type NavLinkProps } from "react-router-dom";
 
 type NavButtonProps = {
@@ -15,6 +10,10 @@ type NavButtonProps = {
     children: React.ReactNode;
 };
 
+/**
+ *
+ * @author dwclake
+ */
 export const NavButton: React.FC<NavButtonProps> = ({
     to,
     end = false,

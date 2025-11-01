@@ -1,9 +1,3 @@
-/**
- * The main component for the website, providing client-side routing
- *
- * @author dwclake
- */
-
 import {
     createHashRouter,
     createRoutesFromElements,
@@ -21,6 +15,11 @@ const router = createHashRouter(createRoutesFromElements(
     </Route>
 ));
 
+/**
+ * The main component for the website, providing client-side routing
+ *
+ * @author dwclake
+ */
 export const App = () => {
     return (
         <>

@@ -2,7 +2,6 @@
  *
  * @author dwclake
  */
-
 export const FlowerShader = {
     vertex: `#version 300 es
     precision highp float;

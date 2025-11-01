@@ -2,7 +2,6 @@
  *
  * @author dwclake
  */
-
 const createShader = (gl: WebGL2RenderingContext, type: number, source: string) => {
     const shader = gl.createShader(type)!;
 
@@ -17,6 +16,10 @@ const createShader = (gl: WebGL2RenderingContext, type: number, source: string) 
     return shader;
 }
 
+/**
+ *
+ * @author dwclake
+ */
 export const createProgram = (gl: WebGL2RenderingContext, vertexSrc: string, fragmentSrc: string) => {
     const vShader = createShader(gl, gl.VERTEX_SHADER, vertexSrc)!;
     const fShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentSrc)!;

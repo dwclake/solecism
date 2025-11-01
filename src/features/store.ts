@@ -1,9 +1,3 @@
-/**
- * The redux store for the website
- *
- * @author dwclake
- */
-
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
     useDispatch as reduxUseDispatch,
@@ -17,6 +11,11 @@ const root = combineReducers({
     dropdown: Dropdown
 });
 
+/**
+ * The redux store for the website
+ *
+ * @author dwclake
+ */
 export const store = configureStore({
     reducer: root
 });

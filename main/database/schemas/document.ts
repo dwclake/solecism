@@ -1,9 +1,9 @@
+export default Document;
+
 /**
  *
  * @author dwclake
  */
-
-export default Document;
 type Document = {
     id: number,
     title: string,

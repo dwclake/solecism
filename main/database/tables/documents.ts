@@ -1,8 +1,3 @@
-/**
- *
- * @author dwclake
- */
-
 import sqlite3 from "sqlite3";
 import { Database } from "sqlite";
 
@@ -11,6 +6,7 @@ export default documents;
 /**
  *
  * @returns
+ * @author dwclake
  */
 async function documents(db: Database<sqlite3.Database, sqlite3.Statement>) {
     await db.exec(`

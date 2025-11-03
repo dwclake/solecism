@@ -1,10 +1,11 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-
-/**
+/*
  * The redux slice responsible for managing the state of the navigation dropdown
  *
  * @TODO rename this so it is specific to the navigation dropdown, maybe
  */
+
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+
 const dropdown = createSlice({
     name: 'dropdown',
     initialState: {

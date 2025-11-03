@@ -1,11 +1,11 @@
+/*
+ *
+ */
+
 import { contextBridge, ipcRenderer } from "electron";
 
 import { Return, Document } from "@schemas";
 
-/**
- *
- * @author dwclake
- */
 const document = {
 	/**
 	 *

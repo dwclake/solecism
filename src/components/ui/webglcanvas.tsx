@@ -1,3 +1,7 @@
+/*
+ * The component responsible for rendering a WebGL2 canvas
+ */
+
 import { useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 
 type Props = {
@@ -8,11 +12,6 @@ type Props = {
     onInit?: (gl: WebGL2RenderingContext) => void
 }
 
-/**
- * The component responsible for rendering a WebGL2 canvas
- *
- * @author dwclake
- */
 export const WebGLCanvas = forwardRef<HTMLCanvasElement, Props>(
     ({ width, height, className = "canvas", onRender, onInit }, ref) => {
         const canvasRef = useRef<HTMLCanvasElement>(null);

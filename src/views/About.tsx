@@ -1,10 +1,9 @@
+/*
+ * The view for the about page
+ */
+
 import styles from "styles/views/About.module.scss";
 
-/**
- * The view for the about page
- *
- * @author dwclake
- */
 export const About = () => {
     return (
         <>

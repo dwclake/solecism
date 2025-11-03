@@ -1,3 +1,7 @@
+/*
+ *
+ */
+
 import sqlite3 from "sqlite3";
 import { open as sqliteOpen } from "sqlite";
 

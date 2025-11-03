@@ -1,3 +1,7 @@
+/*
+ *
+ */
+
 import { Menu, X } from "lucide-react";
 
 import { useDispatch } from "../features/store";
@@ -7,10 +11,6 @@ import { init, render } from "../animations/flower/RainbowFlower";
 
 import styles from "styles/components/Titlebar.module.scss";
 
-/**
- *
- * @author dwclake
- */
 export const Toolbar = () => {
     const dispatch = useDispatch();
 

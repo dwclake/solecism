@@ -1,3 +1,7 @@
+/*
+ * The entrypoint for the frontend, sourced from index.html
+ */
+
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 
@@ -7,11 +11,6 @@ import "../styles/index.scss";
 
 const container = document.getElementById("root")!;
 
-/**
- * The entrypoint for the frontend, sourced from index.html
- *
- * @author dwclake
- */
 const app = (
     <Provider store={store}>
         <App />

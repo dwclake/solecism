@@ -1,3 +1,7 @@
+/*
+ *
+ */
+
 import { ipcMain, Notification } from "electron";
 import path from "path";
 

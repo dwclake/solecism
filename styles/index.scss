@@ -4,6 +4,9 @@
  * @author dwclake
  */
 
+// @TODO switch away from css modules. use placeholder classes, utility classes
+// for things like font, colours, text-align etc. Consider switching project to svelte
+
 @use "utils/colours.scss";
 @use "utils/fonts.scss" as *;
 

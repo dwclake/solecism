@@ -17,19 +17,5 @@ export default defineConfig({
                 format: 'cjs',
             },
         },
-    },
-    test: {
-        expect: { requireAssertions: true },
-        projects: [
-            {
-                extends: './vite.main.config.ts',
-                test: {
-                    name: 'server',
-                    environment: 'node',
-                    include: ['src/**/*.{test,spec}.{js,ts}'],
-                    exclude: ['src/**/*.svelte.{test,spec}.{js,ts}']
-                }
-            }
-        ]
     }
 });

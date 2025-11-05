@@ -15,7 +15,13 @@
 
 <style lang="scss">
     main {
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        font-family:
+            system-ui,
+            -apple-system,
+            'Segoe UI',
+            Roboto,
+            'Helvetica Neue',
+            Arial;
         padding: 2rem;
         display: flex;
         flex-direction: column;

@@ -9,7 +9,8 @@
         "make": "electron-forge make",
         "publish": "electron-forge publish",
         "test:unit": "vitest",
-        "test": "npm run test:unit -- --run"
+        "test": "npm run test:unit -- --run",
+        "prettier": "bunx prettier --write \"src/**/*.{ts,js,svelte,css,scss,html,md}\""
     },
     "devDependencies": {
         "@electron-forge/cli": "^7.10.2",
@@ -21,22 +22,23 @@
         "@electron-forge/plugin-fuses": "^7.10.2",
         "@electron-forge/plugin-vite": "^7.10.2",
         "@electron/fuses": "^1.8.0",
-        "@sveltejs/adapter-static": "^3.0.10",
-        "@types/electron-squirrel-startup": "^1.0.2",
-        "electron": "39.0.0",
+        "@lexical/tailwind": "^0.38.2",
         "@sveltejs/adapter-auto": "^7.0.0",
+        "@sveltejs/adapter-static": "^3.0.10",
         "@sveltejs/kit": "^2.47.1",
         "@sveltejs/vite-plugin-svelte": "^6.2.1",
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.19",
         "@tailwindcss/vite": "^4.1.14",
+        "@types/electron-squirrel-startup": "^1.0.2",
         "@vitest/browser": "^3.2.4",
+        "electron": "39.0.0",
         "playwright": "^1.56.1",
-        "@lexical/tailwind": "^0.38.2",
+        "prettier-plugin-svelte": "^3.4.0",
         "sass-embedded": "^1.93.3",
         "svelte": "^5.41.0",
         "svelte-check": "^4.3.3",
-        "tailwindcss": "^4.1.14",
+        "tailwindcss": "^4.1.16",
         "typescript": "^5.9.3",
         "vite": "^7.1.10",
         "vitest": "^3.2.4",
@@ -44,8 +46,9 @@
     },
     "dependencies": {
         "@lucide/svelte": "^0.552.0",
-        "better-sqlite3": "^12.4.1",
         "electron-squirrel-startup": "^1.0.1",
-        "lexical": "^0.38.2"
+        "lexical": "^0.38.2",
+        "sqlite": "^5.1.1",
+        "sqlite3": "^5.1.7"
     }
 }

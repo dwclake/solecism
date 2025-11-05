@@ -16,6 +16,6 @@ export default defineConfig({
                 entryFileNames: 'main.js',
                 format: 'cjs',
             },
-        },
+        }
     }
 });

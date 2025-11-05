@@ -1,5 +1,4 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
-import fs from 'node:fs';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 
@@ -8,17 +7,14 @@ if (started) {
 }
 
 const createWindow = (): void => {
-    // Preload bundle is written to `.vite/build/preload/preload.js`.
-    // `__dirname` is the `main` build directory (e.g. `.vite/build/main`), so
-    // reference the sibling `preload` folder instead of looking for
-    // `preload.js` inside the `main` directory.
-    const preloadPath = path.join(__dirname, '..', 'preload', 'preload.js');
-
     const mainWindow = new BrowserWindow({
         width: 1024,
         height: 768,
+        title: 'solecsim',
+        titleBarStyle: 'hidden',
+        ...(process.platform != 'darwin' ? { titleBarOverlay: true } : {}),
         webPreferences: {
-            preload: preloadPath,
+            preload: path.join(__dirname, '..', 'preload', 'preload.js'),
             contextIsolation: true,
             nodeIntegration: false
         }

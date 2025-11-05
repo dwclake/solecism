@@ -2,7 +2,8 @@
     "name": "template",
     "productName": "template",
     "version": "0.0.0",
-    "main": ".vite/build/main/main.js",
+    "main": ".vite/build/main/main.cjs",
+    "type": "module",
     "scripts": {
         "start": "electron-forge start",
         "package": "electron-forge package",

@@ -6,14 +6,14 @@ export default defineConfig({
         sourcemap: true,
         outDir: '.vite/build/main',
         emptyOutDir: false,
-        minify: false,
-        target: 'node19',
+        minify: 'esbuild',
+        target: 'node25',
 
         rollupOptions: {
             input: path.resolve(__dirname, 'src/main.ts'),
             external: ['electron'],
             output: {
-                entryFileNames: 'main.js',
+                entryFileNames: 'main.cjs',
                 format: 'cjs',
             },
         }

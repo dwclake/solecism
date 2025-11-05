@@ -6,8 +6,8 @@ export default defineConfig({
         sourcemap: true,
         outDir: '.vite/build/preload',
         emptyOutDir: false,
-        minify: false,
-        target: 'node19',
+        minify: 'esbuild',
+        target: 'node25',
 
         lib: {
             entry: path.resolve(__dirname, 'src/preload.ts'),

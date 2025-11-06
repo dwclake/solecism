@@ -3,21 +3,35 @@
     import { NavMenu } from "$components";
 
     const links = [
-        { page: "home", href: "/" },
-        { page: "about", href: "/about" }
+        { page: "Home", href: "/" },
+        { page: "About", href: "/about" }
     ];
+
+    let open = $state(false);
+    const onclick = () => {
+        open = false;
+    }
 </script>
 
 <section class="container">
     <div class="logo">
         <WebGLCanvas />
     </div>
-    <h1 class="title">solecism</h1>
-    <NavMenu>
+    <h1 class="title abril-fatface-regular">solecism</h1>
+    <NavMenu bind:open={open} >
         {#each links as link, index}
-            <NavButton href={link.href} key={index}>{link.page}</NavButton>
+            <NavButton
+                href={link.href}
+                key={index}
+                onclick={onclick}
+            >
+                {link.page}
+            </NavButton>
         {/each}
     </NavMenu>
+    <nav class="socials">
+        <Button>click me</Button>
+    </nav>
 </section>
 
 <style lang="scss">
@@ -72,12 +86,5 @@
 
         align-items: center;
         justify-self: right;
-    }
-
-    .socialsList {
-        display: flex;
-        padding: 0 1rem;
-
-        list-style: none;
     }
 </style>

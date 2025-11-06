@@ -2,8 +2,7 @@
     import { Menu, X } from "@lucide/svelte";
     import { Button, NavButton } from "$components/ui";
 
-    const { children } = $props();
-    let open = $state(false);
+    let { children, open = $bindable() } = $props();
 </script>
 
 <section class="container">

@@ -3,7 +3,10 @@
 -->
 
 <script lang="ts">
-    const { children, active, key, ...props } = $props();
+    import { page } from "$app/state";
+
+    const { children, key, ...props } = $props();
+    const active = $derived(props.href === page.url.pathname);
 </script>
 
 <li {key}>
@@ -28,6 +31,7 @@
     a {
         @extend %button;
 
+        font-size: 1.2rem;
         color: colours.$text;
         text-decoration: none;
 

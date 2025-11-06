@@ -9,7 +9,7 @@
     let { children } = $props();
 </script>
 
-<div class="container">
+<div class="container roboto">
     <NavBar />
     <main>
         {@render children()}

@@ -7,7 +7,7 @@ export default defineConfig({
         outDir: '.vite/build/preload',
         emptyOutDir: false,
         minify: 'esbuild',
-        target: 'node25',
+        target: 'esnext',
 
         lib: {
             entry: path.resolve(__dirname, 'src/preload.ts'),

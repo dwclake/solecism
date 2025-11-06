@@ -2,12 +2,11 @@ import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 const config = {
-  preprocess: vitePreprocess({ script: true }),
-
+  preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
-      pages: '.vite/build/renderer/main_window',
-      fallback: 'src/app.html',
+      pages: '.vite/build/renderer/webview',
+      fallback: 'index.html',
     }),
     alias: {
       '$components': 'src/lib/components',

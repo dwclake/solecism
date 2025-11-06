@@ -1,8 +1,10 @@
+<!-- @component
+  --
+  -->
+
 <script lang="ts">
     import { Navbar, Infobar } from '$components';
-
     import '../app.scss';
-    import favicon from '$lib/assets/favicon.ico';
 
     let { children } = $props();
 </script>

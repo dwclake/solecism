@@ -10,9 +10,6 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config: ForgeConfig = {
     packagerConfig: {
         asar: true,
-        // Ensure the preload build folder is included in the packaged app so
-        // the runtime preload path ('.vite/build/preload/preload.js') is present.
-        // Type expects an array of string paths
         extraResource: ['.vite/build/preload'],
     },
     rebuildConfig: {},
@@ -26,7 +23,7 @@ const config: ForgeConfig = {
         new VitePlugin({
             build: [
                 {
-                    entry: 'src/main.ts',
+                    entry: 'main/index.ts',
                     config: 'vite.main.config.ts',
                     target: 'main',
                 },
@@ -38,7 +35,7 @@ const config: ForgeConfig = {
             ],
             renderer: [
                 {
-                    name: 'main_window',
+                    name: 'webview',
                     config: 'vite.renderer.config.ts',
                 },
             ],

@@ -18,13 +18,8 @@
 </script>
 
 <section>
-    <p>
-        Current time: <span class="clock">{now}</span>
-    </p>
-
-    <div>
-        <button on:click={pingMain}>Ping main process</button>
-    </div>
+    <p>Current time: <span class="clock">{now}</span></p>
+    <button onclick={pingMain}>Ping main process</button>
 </section>
 
 <style lang="scss">

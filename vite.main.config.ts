@@ -7,13 +7,13 @@ export default defineConfig({
         outDir: '.vite/build/main',
         emptyOutDir: false,
         minify: 'esbuild',
-        target: 'node25',
+        target: 'esnext',
 
         rollupOptions: {
-            input: path.resolve(__dirname, 'src/main.ts'),
+            input: path.resolve(__dirname, 'main/index.ts'),
             external: ['electron'],
             output: {
-                entryFileNames: 'main.cjs',
+                entryFileNames: 'index.cjs',
                 format: 'cjs',
             },
         }

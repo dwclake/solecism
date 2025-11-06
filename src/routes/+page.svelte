@@ -1,12 +1,9 @@
 <script lang="ts">
-    import { HeroSection } from '$components';
 </script>
 
 <main>
     <h1>👋 SvelteKit renderer</h1>
     <p class="meta">This page is served by SvelteKit (adapter-static) and loaded by Electron.</p>
-
-    <HeroSection />
 
     <p class="meta">
         Edit <code>src/routes/+page.svelte</code> to get started.
@@ -18,9 +15,9 @@
         font-family:
             system-ui,
             -apple-system,
-            'Segoe UI',
+            "Segoe UI",
             Roboto,
-            'Helvetica Neue',
+            "Helvetica Neue",
             Arial;
         padding: 2rem;
         display: flex;

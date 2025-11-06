@@ -7,15 +7,17 @@
 // @TODO switch away from css modules. use placeholder classes, utility classes
 // for things like font, colours, text-align etc. Consider switching project to svelte
 
-@use "styles/colours.scss";
-@use "styles/fonts.scss" as *;
+@use "$styles/colours.scss";
+@use "$styles/fonts.scss" as *;
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Default styling */
-html, body, #root {
+html,
+body,
+#root {
     height: 100%;
     width: 100%;
 

@@ -1,3 +1,3 @@
-export { default as HeroSection } from './HeroSection.svelte';
-export { default as Navbar } from './Navbar.svelte';
-export { default as Infobar } from './Infobar.svelte';
+export { default as NavBar } from "./NavBar.svelte";
+export { default as NavMenu } from "./NavMenu.svelte";
+export { default as InfoBar } from "./InfoBar.svelte";

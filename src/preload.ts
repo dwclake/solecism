@@ -1,12 +1,12 @@
-import { contextBridge, ipcRenderer } from 'electron';
+import { contextBridge, ipcRenderer } from "electron";
 
-contextBridge.exposeInMainWorld('electron', {
+contextBridge.exposeInMainWorld("electron", {
     ping: async (): Promise<string> => {
-        return ipcRenderer.invoke('ping');
+        return ipcRenderer.invoke("ping");
     },
 
     invoke: (channel: string, ...args: unknown[]) => {
-        const allowedChannels = ['ping'];
+        const allowedChannels = ["ping"];
         if (!allowedChannels.includes(channel)) {
             throw new Error(`ipc channel "${channel}" is not permitted`);
         }

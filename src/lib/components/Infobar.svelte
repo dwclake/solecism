@@ -1,9 +1,9 @@
 <script lang="ts">
-
 </script>
 
-<p>I'm an infobar</p>
+<section>
+    <p>I'm an infobar</p>
+</section>
 
 <style lang="scss">
-
 </style>

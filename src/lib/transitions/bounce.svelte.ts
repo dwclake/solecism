@@ -1,5 +1,5 @@
-import { elasticOut } from 'svelte/easing';
-import type { TransitionConfig } from 'svelte/transition';
+import { elasticOut } from "svelte/easing";
+import type { TransitionConfig } from "svelte/transition";
 
 type Options = {
     duration?: number;

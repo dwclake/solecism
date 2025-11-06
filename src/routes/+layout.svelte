@@ -3,22 +3,22 @@
   -->
 
 <script lang="ts">
-    import { Navbar, Infobar } from '$components';
-    import '../app.scss';
+    import { NavBar, InfoBar } from "$components";
+    import "../app.scss";
 
     let { children } = $props();
 </script>
 
-<div class='container'>
-    <Navbar />
+<div class="container">
+    <NavBar />
     <main>
         {@render children()}
     </main>
-    <Infobar />
+    <InfoBar />
 </div>
 
 <style lang="scss">
-    @use "../styles/colours.scss";
+    @use "$styles/colours.scss";
 
     .container {
         display: grid;

@@ -2,6 +2,8 @@
     "$schema": "https://json.schemastore.org/package.json",
     "name": "solecism",
     "productName": "solecism",
+    "description": "solecism",
+    "authors": ["dwclake"],
     "version": "0.0.0",
     "main": ".vite/build/main/index.cjs",
     "type": "module",
@@ -12,7 +14,7 @@
         "publish": "electron-forge publish",
         "test:unit": "vitest",
         "test": "npm run test:unit -- --run",
-        "prettier": "bunx prettier --write \"src/**/*.{ts,js,svelte,css,scss,html,md}\""
+        "prettier": "bunx prettier --write \"{src,main}/**/*.{ts,js,svelte,css,scss,html,md}\""
     },
     "devDependencies": {
         "@electron-forge/cli": "^7.10.2",

@@ -1,11 +1,6 @@
 /**
- * Provides default stying
- *
- * @author dwclake
+ * Provides global stying
  */
-
-// @TODO switch away from css modules. use placeholder classes, utility classes
-// for things like font, colours, text-align etc. Consider switching project to svelte
 
 @use "$styles/colours.scss";
 @use "$styles/fonts.scss" as *;
@@ -14,7 +9,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Default styling */
 html,
 body,
 #svelte {

@@ -1,3 +1,8 @@
+<!-- @component
+  -- Responsible for rendering the navigation menu
+  -- and relevant navigation information
+  -->
+
 <script lang="ts">
     import { Button, NavButton, WebGLCanvas } from "$components/ui";
     import { NavMenu } from "$components";
@@ -18,13 +23,9 @@
         <WebGLCanvas />
     </div>
     <h1 class="title abril-fatface-regular">solecism</h1>
-    <NavMenu bind:open={open} >
+    <NavMenu bind:open>
         {#each links as link, index}
-            <NavButton
-                href={link.href}
-                key={index}
-                onclick={onclick}
-            >
+            <NavButton href={link.href} {onclick}>
                 {link.page}
             </NavButton>
         {/each}
@@ -54,7 +55,7 @@
         border-top-right-radius: 10px;
         box-shadow: 2px 2px 5px colours.$shade;
 
-        app-region: drag;
+        -webkit-app-region: drag;
     }
 
     .logo {

@@ -1,20 +1,16 @@
-<!--
-
--->
+<!-- @component
+  -- Responsible for rendering a navigation button
+  -->
 
 <script lang="ts">
     import { page } from "$app/state";
 
-    const { children, key, ...props } = $props();
+    const { children, ...props } = $props();
     const active = $derived(props.href === page.url.pathname);
 </script>
 
-<li {key}>
-    <a
-        class:active={active}
-        aria-label="Navigation Button"
-        {...props}
-    >
+<li>
+    <a class:active aria-label="Navigation Button" {...props}>
         {@render children()}
     </a>
 </li>

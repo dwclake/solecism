@@ -1,3 +1,8 @@
+<!-- @component
+  -- Responsible for rendering a navigation list allowing the user to navigate
+  -- the application
+  -->
+
 <script lang="ts">
     import { Menu, X } from "@lucide/svelte";
     import { Button, NavButton } from "$components/ui";
@@ -6,20 +11,14 @@
 </script>
 
 <section class="container">
-    <Button
-        aria-expanded={open}
-        onclick={() => open = !open}
-    >
+    <Button aria-expanded={open} onclick={() => (open = !open)}>
         {#if open}
             <X class="lucide" size={12} strokeWidth={3} />
         {:else}
             <Menu class="lucide" size={12} strokeWidth={3} />
         {/if}
     </Button>
-    <ul
-        class="dropdown"
-        class:open={open}
-    >
+    <ul class="dropdown" class:open>
         {@render children()}
     </ul>
 </section>
@@ -59,7 +58,9 @@
 
         opacity: 0;
         transform: translateY(0px) translateX(0px);
-        transition: opacity 100ms ease, transform 100ms ease;
+        transition:
+            opacity 100ms ease,
+            transform 100ms ease;
         pointer-events: none;
         visibility: hidden;
 
@@ -68,10 +69,11 @@
 
             opacity: 1;
             transform: translateY(10px) translateX(20px);
-            transition: opacity 100ms ease, transform 100ms ease;
+            transition:
+                opacity 100ms ease,
+                transform 100ms ease;
             pointer-events: auto;
             visibility: visible;
         }
-
     }
 </style>

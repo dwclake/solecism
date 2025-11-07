@@ -1,3 +1,7 @@
+/**
+ *
+ */
+
 import { elasticOut } from "svelte/easing";
 import type { TransitionConfig } from "svelte/transition";
 

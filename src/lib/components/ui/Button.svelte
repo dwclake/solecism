@@ -1,3 +1,7 @@
+<!-- @component
+  -- Responsible for rendering a styled button element
+  -->
+
 <script lang="ts">
     const { children, ...props } = $props();
 </script>

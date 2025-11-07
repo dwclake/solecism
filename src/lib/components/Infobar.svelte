@@ -1,3 +1,7 @@
+<!-- @component
+  -- Responsible for rendering relevant information to the user
+  -->
+
 <script lang="ts">
 </script>
 

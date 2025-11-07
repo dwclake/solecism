@@ -1,5 +1,5 @@
-<!-- @component
-  --
+<!-- The layout of the application, providing the navbar and
+  -- infobar around the main content
   -->
 
 <script lang="ts">
@@ -12,7 +12,7 @@
 <div class="container roboto">
     <NavBar />
     <main>
-        {@render children()}
+	    {@render children()}
     </main>
     <InfoBar />
 </div>

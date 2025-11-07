@@ -1,3 +1,7 @@
+/**
+ *
+ */
+
 interface Electron {
     ping: () => Promise<string>;
 }

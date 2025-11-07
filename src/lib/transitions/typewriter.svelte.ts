@@ -1,3 +1,7 @@
+/**
+ *
+ */
+
 import type { TransitionConfig } from "svelte/transition";
 
 type Options = {

@@ -22,6 +22,28 @@ const Container = styled.div`
   display: flex;
   position: relative;
   justify-self: right;
+  align-items: center;
+
+  /* Ensure the dropdown sits inside a no-drag region so clicks are received
+     when the window uses a draggable titlebar (macOS-style). */
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+
+  /* Prevent SVG icons inside the internal Button from intercepting pointer events
+     so the entire button area is clickable. */
+  button > svg,
+  svg {
+    pointer-events: none;
+    display: block;
+  }
+
+  /* Expand the hit target slightly for small titlebar controls without affecting layout. */
+  button::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    pointer-events: none;
+  }
 `;
 
 const DropdownList = styled.ul<{ open?: boolean }>`
@@ -32,8 +54,8 @@ const DropdownList = styled.ul<{ open?: boolean }>`
   padding: 5px 5px;
 
   position: absolute;
-  top: 36px;
-  right: 0;
+  top: 0;
+  left: 0;
   z-index: ${p => (p.open ? 10 : 0)};
 
   align-items: center;

@@ -48,18 +48,6 @@ const StyledButton = styled.button`
     box-shadow: 1px 1px 2px ${colors.shade};
   }
 
-  &:hover.active {
-    transform: translateY(0.25px) translateX(0.25px);
-    background-color: ${colors.bad};
-    color: ${colors.fade};
-    border: 2px solid ${colors.accent};
-    box-shadow: 1px 1px 2px ${colors.shade};
-  }
-
-  &.active {
-    color: ${colors.fade};
-  }
-
   &:disabled {
     transform: translateY(0.25px) translateX(0.25px);
     background-color: ${colors.bad};

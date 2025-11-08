@@ -68,37 +68,7 @@ const Title = styled.h1`
   margin: 0;
 `;
 
-/*
- * Wrapper around the Dropdown to ensure:
- * - It sits inside a no-drag region so clicks are received.
- * - Icons inside the dropdown toggle do not intercept pointer events.
- * - We also make the toggle area a comfortable hit-target via a pseudo element.
- */
-const DropdownWrapper = styled.div`
-  grid-area: nav;
-  display: flex;
-  position: relative;
-  justify-self: right;
-  align-items: center;
 
-  /* Ensure clicks are delivered to controls inside the titlebar */
-  -webkit-app-region: no-drag;
-
-  /* Make any SVG inside the toggle non-interactive so the parent Button receives clicks */
-  button > svg,
-  svg {
-    pointer-events: none;
-    display: block;
-  }
-
-  /* Expand hit-target slightly for small titlebar controls without affecting layout */
-  button::before {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    pointer-events: none;
-  }
-`;
 
 const Socials = styled.nav`
   grid-area: social;
@@ -128,22 +98,20 @@ export const Toolbar = () => {
       />
       <Title className="abril-fatface-regular">solecism</Title>
 
-      <DropdownWrapper>
-        <Dropdown>
-          {/* Toggle content: closed (Menu) and open (X) */}
-          <Menu size={12} strokeWidth={3} />
-          <X size={12} strokeWidth={3} />
+      <Dropdown>
+        {/* Toggle content: closed (Menu) and open (X) */}
+        <Menu size={12} strokeWidth={3} />
+        <X size={12} strokeWidth={3} />
 
-          {/* Menu entries: use shared NavButton which prevents re-activation when already active */}
-          <NavButton to="/" end>
-            Home
-          </NavButton>
+        {/* Menu entries: use shared NavButton which prevents re-activation when already active */}
+        <NavButton to="/" end>
+          Home
+        </NavButton>
 
-          <NavButton to="/about">
-            About
-          </NavButton>
-        </Dropdown>
-      </DropdownWrapper>
+        <NavButton to="/about">
+          About
+        </NavButton>
+      </Dropdown>
 
       <Socials>
         <SocialButton onClick={sendNotification}>click me</SocialButton>

@@ -5,16 +5,16 @@
 import styled from "styled-components";
 
 const View = styled.div`
-  display: grid;
+    display: grid;
 
-  grid-template-columns: 100%;
-  grid-template-areas: "idk";
-  width: 100%;
-  height: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas: "idk";
+    width: 100%;
+    height: 100%;
 `;
 
 const P = styled.p`
-  justify-self: center;
+    justify-self: center;
 `;
 
 export const About = () => {

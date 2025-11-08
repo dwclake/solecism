@@ -63,12 +63,12 @@ export const WebGLRecorder = () => {
                 <label>
                     Duration (seconds):{" "}
                     <input
-                    type="number"
-                    value={duration}
-                    min={1}
-                    max={60}
-                    onChange={(e) => setDuration(Number(e.target.value))}
-                    style={{ width: "4em" }}
+                        type="number"
+                        value={duration}
+                        min={1}
+                        max={60}
+                        onChange={(e) => setDuration(Number(e.target.value))}
+                        style={{ width: "4em" }}
                     />
                 </label>
             </div>

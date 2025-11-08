@@ -1,7 +1,7 @@
 /*
- * The root layout for the website containing the header,
- * the footer, and outlet for the main content
- */
+* The root layout for the website containing the header,
+* the footer, and outlet for the main content
+*/
 
 import { Outlet } from "react-router-dom";
 
@@ -11,36 +11,36 @@ import { Toolbar } from "./components/Titlebar";
 import { Infobar } from "./components/Infobar";
 
 const Container = styled.div`
-  display: grid;
-  grid-template-rows: 30px 1fr 30px;
-  grid-template-areas:
-    "toolbar"
-    "main"
-    "infobar";
-  box-sizing: border-box;
-  gap: 2px;
+    display: grid;
+    grid-template-rows: 30px 1fr 30px;
+    grid-template-areas:
+        "toolbar"
+        "main"
+        "infobar";
+    box-sizing: border-box;
+    gap: 2px;
 
-  overflow: hidden;
+    overflow: hidden;
 
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
 
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 `;
 
 const Main = styled.main`
-  grid-area: main;
-  display: flex;
-  overflow: auto;
+    grid-area: main;
+    display: flex;
+    overflow: auto;
 
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  align-self: stretch;
-  justify-self: stretch;
+    align-self: stretch;
+    justify-self: stretch;
 
-  background-color: rgb(173, 161, 155);
+    background-color: rgb(173, 161, 155);
 `;
 
 export const Layout = () => {

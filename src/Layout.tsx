@@ -6,6 +6,7 @@
 import { Outlet } from "react-router-dom";
 
 import styled from "styled-components";
+import colors from "styles/colors";
 
 import { Toolbar } from "./components/Titlebar";
 import { Infobar } from "./components/Infobar";
@@ -40,7 +41,7 @@ const Main = styled.main`
     align-self: stretch;
     justify-self: stretch;
 
-    background-color: rgb(173, 161, 155);
+    background-color: ${colors.bg};
 `;
 
 export const Layout = () => {

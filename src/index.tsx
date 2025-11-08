@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { store } from "./features/store";
 import { App } from "./App";
 import { createGlobalStyle } from "styled-components";
+import colors from "styles/colors";
 
 const GlobalStyle = createGlobalStyle`
     .abril-fatface-regular {
@@ -64,8 +65,8 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
 
-        color: rgb(55, 44, 47);
-        background-color: rgb(99, 88, 91);
+        color: ${colors.text};
+        background-color: ${colors.accent};
     }
 `;
 

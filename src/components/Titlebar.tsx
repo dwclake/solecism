@@ -80,9 +80,11 @@ export const Toolbar = () => {
             <Title className="abril-fatface-regular">solecism</Title>
 
             <Dropdown>
+                {/**/}
                 <Menu size={12} strokeWidth={3} />
                 <X size={12} strokeWidth={3} />
 
+                {/**/}
                 <NavButton to="/" end>
                     Home
                 </NavButton>

@@ -1,23 +1,18 @@
-/**
- * Centralized color tokens converted from the original SCSS variables.
- * Placing color tokens here ensures a single source of truth for all components.
- *
- * Usage:
- * import colors from "styles/colors";
- * colors.bg, colors.text, ...
+/*
+ * 
  */
 
 const colors = {
-  bg: "rgb(173, 161, 155)",
-  text: "rgb(55, 44, 47)",
-  accent: "rgb(99, 88, 91)",
-  shade: "rgba(50, 50, 50, 0.1)",
-  shade2: "rgba(25, 25, 25, 0.2)",
-  tint: "rgba(255, 255, 255, 0.1)",
-  tint2: "rgba(255, 255, 255, 0.2)",
-  fade: "rgb(123, 111, 105)",
-  good: "rgba(153, 171, 135, 0.7)",
-  bad: "rgba(193, 141, 135, 0.7)",
+    bg: "rgb(173, 161, 155)",
+    text: "rgb(55, 44, 47)",
+    accent: "rgb(99, 88, 91)",
+    shade: "rgba(50, 50, 50, 0.1)",
+    shade2: "rgba(25, 25, 25, 0.2)",
+    tint: "rgba(255, 255, 255, 0.1)",
+    tint2: "rgba(255, 255, 255, 0.2)",
+    fade: "rgb(123, 111, 105)",
+    good: "rgba(153, 171, 135, 0.7)",
+    bad: "rgba(193, 141, 135, 0.7)",
 } as const;
 
 export type Colors = typeof colors;

@@ -1,63 +1,153 @@
 /*
+ * Titlebar: uses shared `Dropdown` and `NavButton` components.
  *
+ * Notes:
+ * - The shared `Dropdown` expects:
+ *    children[0] -> content shown when closed (toggle)
+ *    children[1] -> content shown when open (toggle)
+ *    children[2+] -> menu items rendered into the list
+ *
+ * - We pass plain icons as the first two children so the Dropdown's internal
+ *   Button renders them directly (avoids nesting buttons).
+ *
+ * - The titlebar is a draggable region for the window; interactive controls
+ *   must live in a no-drag region. `DropdownWrapper` is set to
+ *   `-webkit-app-region: no-drag`.
+ *
+ * - To ensure the icons don't intercept pointer events (the whole toggle area
+ *   should be clickable), we set `pointer-events: none` for SVGs inside the
+ *   dropdown toggle via the wrapper's styles.
  */
 
 import { Menu, X } from "lucide-react";
+import styled from "styled-components";
 
-import { useDispatch } from "../features/store";
-import { setIsOpen } from "../features/dropdown/Dropdown";
-import { Button, Dropdown, NavButton, WebGLCanvas } from "./ui";
+import { Dropdown, NavButton, WebGLCanvas, Button } from "./ui";
 import { init, render } from "../animations/flower/RainbowFlower";
 
-import styles from "styles/components/Titlebar.module.scss";
+import colors from "styles/colors";
+
+const Container = styled.header`
+  grid-area: toolbar;
+
+  display: grid;
+  grid-template-columns: 70px 70px 90px 40px 100px 1fr 70px;
+  grid-template-areas: "traffic-lights logo title nav actions social spacer";
+  height: 30px;
+  width: 100%;
+
+  align-content: center;
+  align-items: center;
+
+  background-color: ${colors.bg};
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 2px 2px 5px ${colors.shade};
+
+  -webkit-app-region: drag;
+`;
+
+const Logo = styled(WebGLCanvas)`
+  grid-area: logo;
+  display: flex;
+  object-fit: contain;
+  height: 30px;
+  width: 30px;
+
+  align-items: center;
+  justify-self: center;
+`;
+
+const Title = styled.h1`
+  grid-area: title;
+  display: flex;
+
+  font-size: 2rem;
+  color: ${colors.text};
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin: 0;
+`;
+
+/*
+ * Wrapper around the Dropdown to ensure:
+ * - It sits inside a no-drag region so clicks are received.
+ * - Icons inside the dropdown toggle do not intercept pointer events.
+ * - We also make the toggle area a comfortable hit-target via a pseudo element.
+ */
+const DropdownWrapper = styled.div`
+  grid-area: nav;
+  display: flex;
+  position: relative;
+  justify-self: right;
+  align-items: center;
+
+  /* Ensure clicks are delivered to controls inside the titlebar */
+  -webkit-app-region: no-drag;
+
+  /* Make any SVG inside the toggle non-interactive so the parent Button receives clicks */
+  button > svg,
+  svg {
+    pointer-events: none;
+    display: block;
+  }
+
+  /* Expand hit-target slightly for small titlebar controls without affecting layout */
+  button::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    pointer-events: none;
+  }
+`;
+
+const Socials = styled.nav`
+  grid-area: social;
+  display: flex;
+
+  position: relative;
+
+  align-items: center;
+  justify-self: right;
+`;
+
+const SocialButton = styled(Button)``;
 
 export const Toolbar = () => {
-    const dispatch = useDispatch();
+  const sendNotification = () => {
+    window.electron.os.notify.send("Hello from React!");
+  };
 
-    const onClick = () => {
-        dispatch(setIsOpen(false));
-    }
+  return (
+    <Container>
+      <Logo
+        className="logo"
+        width="600"
+        height="600"
+        onInit={init}
+        onRender={render}
+      />
+      <Title className="abril-fatface-regular">solecism</Title>
 
-    const sendNotification = () => {
-        window.electron.os.notify.send("Hello from React!");
-    }
+      <DropdownWrapper>
+        <Dropdown>
+          {/* Toggle content: closed (Menu) and open (X) */}
+          <Menu size={12} strokeWidth={3} />
+          <X size={12} strokeWidth={3} />
 
-    return (
-        <header className={styles.container}>
-            <WebGLCanvas
-                className={styles.logo}
-                width="600"
-                height="600"
-                onInit={init}
-                onRender={render}
-            />
-            <h1 className={`${styles.title} abril-fatface-regular`}>solecism</h1>
-            <Dropdown styles={styles}>
-            	<Menu size={12} strokeWidth={3} />
-             	<X size={12} strokeWidth={3} />
-                <NavButton
-                    to="/"
-                    end
-                    className={styles.button}
-                    activeClassName={styles.active}
-                    onActivate={onClick}
-                    preventActive={true}
-                >
-                    Home
-                </NavButton>
-                <NavButton
-                    to="/about"
-                    className={styles.button}
-                    activeClassName={styles.active}
-                    onActivate={onClick}
-                    preventActive={true}
-                >
-                    About
-                </NavButton>
-            </Dropdown>
-            <nav className={styles.socials}>
-                <Button styles={styles} onClick={sendNotification}>click me</Button>
-            </nav>
-        </header>
-    );
-}
+          {/* Menu entries: use shared NavButton which prevents re-activation when already active */}
+          <NavButton to="/" end>
+            Home
+          </NavButton>
+
+          <NavButton to="/about">
+            About
+          </NavButton>
+        </Dropdown>
+      </DropdownWrapper>
+
+      <Socials>
+        <SocialButton onClick={sendNotification}>click me</SocialButton>
+      </Socials>
+    </Container>
+  );
+};

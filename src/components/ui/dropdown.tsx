@@ -1,42 +1,99 @@
 /*
  * The component responsible for rendering a dropdown menu
+ * Updated to use styled-components for its styles while remaining compatible
+ * with an optional `styles` classname mapping.
  */
 
-import { useEffect, useRef } from "react";
-
-import { useDispatch, useSelector } from "../../features/store";
-import { setIsOpen } from "../../features/dropdown/Dropdown";
-
+import React, { useEffect, useRef, useState } from "react";
+import styled from "styled-components";
 import { Button } from "./button";
+import colors from "styles/colors";
 
 // Make it so the style object is passed in so it's generic
 type Props = {
     children: React.ReactNode[],
-    styles: {
+    styles?: {
         [key: string]: string;
     }
 }
 
-export const Dropdown: React.FC<Props> = ({ children, styles }) => {
-    const isOpen = useSelector(state => state.dropdown.isOpen);
-    const dispatch = useDispatch();
+const Container = styled.div`
+  grid-area: nav;
+  display: flex;
+  position: relative;
+  justify-self: right;
+`;
 
-	const buttonClosed = children.at(0);
-	const buttonOpen = children.at(1);
+const DropdownList = styled.ul<{ open?: boolean }>`
+  display: flex;
+  flex-flow: wrap;
+  max-width: 150px;
+  height: auto;
+  padding: 5px 5px;
+
+  position: absolute;
+  top: 36px;
+  right: 0;
+  z-index: ${p => (p.open ? 10 : 0)};
+
+  align-items: center;
+  justify-items: center;
+
+  list-style: none;
+  gap: 1rem;
+  background-color: ${colors.bg};
+  border: 2px solid ${colors.accent};
+  border-radius: 10px;
+
+  opacity: ${p => (p.open ? 1 : 0)};
+  transform: translateY(${p => (p.open ? "10px" : "0px")}) translateX(${p => (p.open ? "20px" : "0px")});
+  transition: opacity 100ms ease, transform 100ms ease;
+  pointer-events: ${p => (p.open ? "auto" : "none")};
+  visibility: ${p => (p.open ? "visible" : "hidden")};
+
+  padding: 8px;
+
+  li {
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    display: flex;
+    text-decoration: none;
+    color: ${colors.text};
+  }
+
+  button {
+    display: flex;
+    text-decoration: none;
+    color: ${colors.text};
+  }
+
+  .active {
+    color: ${colors.fade};
+  }
+`;
+
+export const Dropdown: React.FC<Props> = ({ children, styles = {} }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const buttonClosed = children.at(0);
+    const buttonOpen = children.at(1);
 
     const handleClick = () => {
-        dispatch(setIsOpen(!isOpen))
+        setIsOpen(v => !v);
     }
 
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleDocumentPointer = (event: MouseEvent | TouchEvent) => {
-            const container = containerRef.current!;
+            const container = containerRef.current;
             const target = event.target as Node | null;
-            if (!target) return;
+            if (!target || !container) return;
             if (!container.contains(target) && isOpen) {
-                dispatch(setIsOpen(false));
+                setIsOpen(false);
             }
         };
 
@@ -47,35 +104,31 @@ export const Dropdown: React.FC<Props> = ({ children, styles }) => {
             document.removeEventListener("mousedown", handleDocumentPointer);
             document.removeEventListener("touchstart", handleDocumentPointer);
         };
-    }, [isOpen, dispatch]);
+    }, [isOpen]);
 
     useEffect(() => {
         const handleKey = (event: KeyboardEvent) => {
             if (event.key === "Escape" && isOpen) {
-                dispatch(setIsOpen(false));
+                setIsOpen(false);
             }
         };
 
         document.addEventListener("keydown", handleKey);
         return () => document.removeEventListener("keydown", handleKey);
-    }, [isOpen, dispatch]);
+    }, [isOpen]);
+
+    const listClass = `${styles["dropdown-list"] ?? ""} ${isOpen ? (styles.open ?? "open") : ""}`.trim();
 
     return (
-        <div className={styles["dropdown-container"]} ref={containerRef}>
-            {!isOpen ? (
-                <Button styles={styles} onClick={handleClick}>
-                	<>{buttonClosed}</>
-                </Button>
-            ) : (
-                <Button styles={styles} onClick={handleClick}>
-					<>{buttonOpen}</>
-                </Button>
-            )}
-            <ul className={`${styles["dropdown-list"]} ${isOpen ? styles.open : undefined}`}>{
-                children.slice(2).map((child, i) => {
-                    return <li key={`${styles["dropdown-list"]}-${i}`}>{child}</li>
-                })
-            }</ul>
-        </div>
+        <Container className={styles["dropdown-container"]} ref={containerRef}>
+            <Button styles={styles} onClick={handleClick}>
+                {!isOpen ? <>{buttonClosed}</> : <>{buttonOpen}</>}
+            </Button>
+            <DropdownList className={listClass} open={isOpen}>
+                {children.slice(2).map((child, i) => {
+                    return <li key={`dropdown-item-${i}`}>{child}</li>
+                })}
+            </DropdownList>
+        </Container>
     );
 }

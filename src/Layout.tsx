@@ -5,18 +5,52 @@
 
 import { Outlet } from "react-router-dom";
 
+import styled from "styled-components";
+
 import { Toolbar } from "./components/Titlebar";
 import { Infobar } from "./components/Infobar";
-import styles from "styles/Layout.module.scss";
+
+const Container = styled.div`
+  display: grid;
+  grid-template-rows: 30px 1fr 30px;
+  grid-template-areas:
+    "toolbar"
+    "main"
+    "infobar";
+  box-sizing: border-box;
+  gap: 2px;
+
+  overflow: hidden;
+
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+
+  font-size: 1.2rem;
+`;
+
+const Main = styled.main`
+  grid-area: main;
+  display: flex;
+  overflow: auto;
+
+  width: 100%;
+  height: 100%;
+
+  align-self: stretch;
+  justify-self: stretch;
+
+  background-color: rgb(173, 161, 155);
+`;
 
 export const Layout = () => {
     return (
-        <div className={`${styles.container} roboto`}>
+        <Container className="roboto">
             <Toolbar />
-            <main className={styles.main}>
+            <Main>
                 <Outlet />
-            </main>
+            </Main>
             <Infobar />
-        </div>
+        </Container>
     );
 }

@@ -5,6 +5,7 @@
 import { useRef, useState } from "react";
 
 import { WebGLCanvas } from "./ui/webglcanvas";
+import { Button } from "./ui";
 import { init, render } from "../animations/flower/RainbowFlower";
 
 export const WebGLRecorder = () => {
@@ -74,9 +75,9 @@ export const WebGLRecorder = () => {
 
             <div style={{ marginTop: "10px" }}>
                 {!recording ? (
-                    <button onClick={startRecording}>Start Recording</button>
+                    <Button onClick={startRecording}>Start Recording</Button>
                 ) : (
-                    <button onClick={stopRecording}>Stop Early</button>
+                    <Button onClick={stopRecording}>Stop Early</Button>
                 )}
             </div>
         </div>

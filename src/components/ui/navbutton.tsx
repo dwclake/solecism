@@ -3,6 +3,7 @@
  */
 
 import { NavLink, type NavLinkProps } from "react-router-dom";
+import { Button } from "./button";
 
 type NavButtonProps = {
     to: NavLinkProps["to"];
@@ -35,12 +36,12 @@ export const NavButton: React.FC<NavButtonProps> = ({
     return (
         <NavLink to={to} end={end}>
             {({ isActive }) => (
-                <button
+                <Button
                     className={`${className} ${isActive ? activeClassName : ""}`}
                     onClick={createHandler(isActive)}
                 >
                     {children}
-                </button>
+                </Button>
             )}
         </NavLink>
     );

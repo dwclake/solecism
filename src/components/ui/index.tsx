@@ -1,8 +1,8 @@
 import { Button } from "./button";
 import { Card } from "./card";
-import { Dropdown } from "./dropdown";
 import { NavButton } from "./navbutton";
 import { TextArea } from "./textarea";
 import { WebGLCanvas } from "./webglcanvas";
+import { Dropdown } from "./dropdown";
 
-export { Button, Card, Dropdown, NavButton, TextArea, WebGLCanvas };
+export { Button, Card, NavButton, Dropdown, TextArea, WebGLCanvas };

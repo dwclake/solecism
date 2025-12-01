@@ -1,35 +1,37 @@
 {
-    "compilerOptions": {
-        "lib": ["ESNext", "dom"],
-        "target": "ESNext",
-        "module": "ESNext",
-        "jsx": "react-jsx",
-        "allowJs": true,
+	"extends": "./node_modules/@tsconfig/bun/tsconfig.json",
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
 
-        "noEmit": true,
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"types": ["bun", "solid-js"],
 
-        "strict": true,
-        "skipLibCheck": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUncheckedIndexedAccess": true,
-        "noImplicitOverride": true,
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
 
-        "noUnusedLocals": false,
-        "noUnusedParameters": false,
-        "noPropertyAccessFromIndexSignature": false,
+		"strict": true,
+		"noEmit": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"useDefineForClassFields": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"allowJs": true,
+		"allowImportingTsExtensions": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
 
-        "esModuleInterop": true,
-        "noImplicitAny": true,
-        "sourceMap": true,
-        "outDir": "dist",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-
-        "baseUrl": ".",
-        "paths": {
-            "styles/*": ["styles/*"],
-            "@schemas": ["./main/database/schemas"]
-        }
-    },
-    "include": ["src/**/*", "styles/**/*", "assets/**/*", "main/**/*"]
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["src/*"]
+		}
+	},
+	"include": [
+		"src",
+		"electrobun.config.ts",
+		"tailwind.config.ts"
+	],
+	"exclude": ["node_modules", "dist", "build", "views"]
 }

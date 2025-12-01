@@ -1,69 +1,24 @@
 {
-    "name": "solecism",
-    "productName": "Solecism",
-    "version": "0.0.0",
-    "description": "",
-    "main": ".webpack/main",
-    "scripts": {
-        "start": "electron-forge start",
-        "package": "electron-forge package",
-        "make": "electron-forge make",
-        "publish": "electron-forge publish"
-    },
-    "keywords": [],
-    "author": {
-        "name": "dwclake",
-        "email": "clake.dw@gmail.com"
-    },
-    "license": "Apache-2.0, MIT",
-    "devDependencies": {
-        "@electron-forge/cli": "^7.10.2",
-        "@electron-forge/maker-deb": "^7.10.2",
-        "@electron-forge/maker-rpm": "^7.10.2",
-        "@electron-forge/maker-squirrel": "^7.10.2",
-        "@electron-forge/maker-zip": "^7.10.2",
-        "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
-        "@electron-forge/plugin-fuses": "^7.10.2",
-        "@electron-forge/plugin-webpack": "^7.10.2",
-        "@electron/fuses": "^1.8.0",
-        "@tailwindcss/postcss": "^4.1.16",
-        "@types/bun": "^1.3.0",
-        "@types/react": "^19.2.2",
-        "@types/react-dom": "^19.2.2",
-        "@types/react-redux": "^7.1.34",
-        "@types/react-router": "^5.1.20",
-        "@types/react-router-dom": "^5.3.3",
-        "@types/redux": "^3.6.31",
-        "@vercel/webpack-asset-relocator-loader": "^1.7.3",
-        "autoprefixer": "^10.4.21",
-        "css-loader": "^6.11.0",
-        "electron": "38.3.0",
-        "fork-ts-checker-webpack-plugin": "^7.3.0",
-        "node-loader": "^2.1.0",
-        "postcss": "^8.5.6",
-        "postcss-loader": "^8.2.0",
-        "react-compiler-webpack": "^0.2.1",
-        "sass": "^1.93.2",
-        "sass-loader": "^16.0.6",
-        "style-loader": "^3.3.4",
-        "tailwindcss": "^4.1.16",
-        "ts-loader": "^9.5.4",
-        "typescript": "~4.5.4"
-    },
-    "dependencies": {
-        "@lexical/react": "^0.37.0",
-        "@reduxjs/toolkit": "^2.9.1",
-        "electron-squirrel-startup": "^1.0.1",
-        "lexical": "^0.37.0",
-        "lucide-react": "^0.548.0",
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0",
-        "styled-components": "^6.0.0",
-        "react-redux": "^9.2.0",
-        "react-router": "^7.9.4",
-        "react-router-dom": "^7.9.4",
-        "redux": "^5.0.1",
-        "sqlite": "^5.1.1",
-        "sqlite3": "^5.1.7"
-    }
+	"name": "solecism",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"dev": "electrobun dev",
+		"build": "electrobun build",
+		"start": "bun run dev"
+	},
+	"dependencies": {
+		"electrobun": "latest",
+		"solid-js": "latest"
+	},
+	"devDependencies": {
+		"@tailwindcss/forms": "^0.5.10",
+		"@tailwindcss/typography": "^0.5.19",
+		"@tsconfig/bun": "latest",
+		"@types/bun": "latest",
+		"prettier": "^3.7.3",
+		"prettier-plugin-tailwindcss": "^0.7.2",
+		"tailwindcss": "^4.1.14",
+		"typescript": "latest"
+	}
 }

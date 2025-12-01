@@ -13,9 +13,6 @@
     ];
 
     let open = $state(false);
-    const onclick = () => {
-        open = false;
-    }
 </script>
 
 <section class="container">
@@ -24,8 +21,8 @@
     </div>
     <h1 class="title abril-fatface-regular">solecism</h1>
     <NavMenu bind:open>
-        {#each links as link, index}
-            <NavButton href={link.href} {onclick}>
+        {#each links as link}
+            <NavButton href={link.href} onclick={() => open = false}>
                 {link.page}
             </NavButton>
         {/each}

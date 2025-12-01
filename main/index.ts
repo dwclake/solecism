@@ -25,6 +25,7 @@ const createWindow = (): void => {
     });
 
     if (WEBVIEW_VITE_DEV_SERVER_URL) {
+   		console.log("loading")
         mainWindow.loadURL(WEBVIEW_VITE_DEV_SERVER_URL);
     } else {
         mainWindow.loadFile(path.join(__dirname, `../renderer/${WEBVIEW_VITE_NAME}/index.html`));

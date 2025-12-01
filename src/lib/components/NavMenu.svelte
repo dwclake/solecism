@@ -5,7 +5,7 @@
 
 <script lang="ts">
     import { Menu, X } from "@lucide/svelte";
-    import { Button, NavButton } from "$components/ui";
+    import { Button } from "$components/ui";
 
     let { children, open = $bindable() } = $props();
 </script>
@@ -59,8 +59,8 @@
         opacity: 0;
         transform: translateY(0px) translateX(0px);
         transition:
-            opacity 100ms ease,
-            transform 100ms ease;
+            opacity 200ms ease,
+            transform 200ms ease;
         pointer-events: none;
         visibility: hidden;
 
@@ -68,10 +68,10 @@
             z-index: 10;
 
             opacity: 1;
-            transform: translateY(10px) translateX(20px);
+            transform: translateY(20px) translateX(30px);
             transition:
-                opacity 100ms ease,
-                transform 100ms ease;
+                opacity 200ms ease,
+                transform 200ms ease;
             pointer-events: auto;
             visibility: visible;
         }

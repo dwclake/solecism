@@ -1,6 +1,6 @@
-@import 'tailwindcss';
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
 
 @layer base {
 	*,
@@ -12,8 +12,8 @@
 	html,
 	body,
 	#svelte {
-		@apply bg-mirage-50 size-full text-base;
-		font-family: 'Roboto', sans-serif;
+		@apply size-full bg-mirage-50 text-base;
+		font-family: "Roboto", sans-serif;
 		font-style: normal;
 	}
 }
@@ -56,28 +56,18 @@
 	}
 
 	.link {
-		@apply text-mirage-900 hover:text-mirage-950 cursor-pointer hover:underline;
-	}
-
-	.abril-fatface-regular {
-		font-family: 'Abril Fatface', serif;
-		font-style: normal;
+		@apply cursor-pointer text-mirage-900 hover:text-mirage-950 hover:underline;
 	}
 
 	.roboto {
-		font-family: 'Roboto', sans-serif;
+		font-family: "Roboto", sans-serif;
 		font-optical-sizing: auto;
 		font-style: normal;
-		font-variation-settings: 'wdth' 100;
-	}
-
-	.courier-prime {
-		font-family: 'Courier Prime', monospace;
-		font-style: normal;
+		font-variation-settings: "wdth" 100;
 	}
 
 	.intel-one-mono {
-		font-family: 'Intel One Mono', monospace;
+		font-family: "Intel One Mono", monospace;
 		font-optical-sizing: auto;
 		font-style: normal;
 	}
@@ -97,7 +87,6 @@
 	--color-mirage-900: #47456a;
 	--color-mirage-950: #191825;
 
-	/*petite orchid*/
 	--color-orchid: #c37770;
 	--color-orchid-50: #fbf6f5;
 	--color-orchid-100: #f7eae9;
@@ -111,7 +100,6 @@
 	--color-orchid-900: #663a36;
 	--color-orchid-950: #361c19;
 
-	/*antique brass*/
 	--color-oxide: #b76449;
 	--color-oxide-50: #faf4f0;
 	--color-oxide-100: #f0e0d5;
@@ -125,7 +113,6 @@
 	--color-oxide-900: #5c2b2c;
 	--color-oxide-950: #341415;
 
-	/*reno sand*/
 	--color-dune: #ac8346;
 	--color-dune-50: #f8f5ee;
 	--color-dune-100: #eee8d3;
@@ -139,7 +126,6 @@
 	--color-dune-900: #57392c;
 	--color-dune-950: #321e16;
 
-	/*chelsea cucumber*/
 	--color-treefrog: #639354;
 	--color-treefrog-50: #f5f9f4;
 	--color-treefrog-100: #e9f2e6;

@@ -2,27 +2,27 @@ export default {
 	app: {
 		name: "solecism",
 		identifier: "solecism.dwclake.me",
-		version: "0.0.1",
+		version: "0.0.1"
 	},
 	build: {
 		views: {
 			mainview: {
-				entrypoint: "src/mainview/index.tsx",
-				external: [],
-			},
+				entrypoint: "src/mainview/index.ts",
+				external: []
+			}
 		},
 		// Copy only the HTML; CSS is handled by the bundler from source (do not copy generated index.css)
 		copy: {
-			"src/mainview/index.html": "views/mainview/index.html",
+			"src/mainview/index.html": "views/mainview/index.html"
 		},
 		mac: {
-			bundleCEF: false,
+			bundleCEF: false
 		},
 		linux: {
-			bundleCEF: false,
+			bundleCEF: false
 		},
 		win: {
-			bundleCEF: false,
-		},
-	},
+			bundleCEF: false
+		}
+	}
 };

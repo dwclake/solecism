@@ -4,19 +4,21 @@
 	"description": "",
 	"scripts": {
 		"dev": "electrobun dev",
-		"build": "electrobun build",
-		"start": "bun run dev"
+		"build:svelte": "bun run build.ts",
+		"build:electrobun": "electrobun build",
+		"build": "bun run build:electrobun && bun run build:svelte",
+		"start": "bun run build && bun run dev"
 	},
 	"dependencies": {
-		"@solidjs/router": "^0.15.4",
-		"electrobun": "latest",
-		"solid-js": "latest"
+		"svelte": "^5.45.3",
+		"electrobun": "latest"
 	},
 	"devDependencies": {
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tsconfig/bun": "latest",
 		"@types/bun": "latest",
+		"bun-plugin-svelte": "^0.0.6",
 		"prettier": "^3.7.3",
 		"prettier-plugin-tailwindcss": "^0.7.2",
 		"tailwindcss": "^4.1.14",

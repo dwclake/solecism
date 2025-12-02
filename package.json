@@ -3,7 +3,7 @@
 	"type": "module",
 	"private": true,
 	"version": "1.0.0",
-	"description": "",
+	"description": "wysisyg editor",
 	"scripts": {
 		"dev": "bun run build:electrobun && concurrently 'bun --bun run svelte:dev' 'ELECTROBUN_SVELTE_DEV=1 electrobun dev'",
 		"build:svelte": "bun --bun run svelte:build",
@@ -13,9 +13,7 @@
 		"start": "bun run build && electrobun dev",
 		"svelte:dev": "vite dev",
 		"svelte:build": "vite build",
-		"svelte:prepare": "svelte-kit sync || echo ''",
 		"svelte:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"svelte:check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write ."
 	},
 	"dependencies": {

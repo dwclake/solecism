@@ -5,12 +5,10 @@
 	"version": "1.0.0",
 	"description": "wysisyg editor",
 	"scripts": {
-		"dev": "ELECTROBUN_SVELTE_DEV=1 bun run build && concurrently 'bun --bun run svelte:dev' 'electrobun dev'",
+		"dev": "ELECTROBUN_SVELTE_DEV=1 bun run build && ELECTROBUN_SVELTE_DEV=1 concurrently 'bunx --bun vite dev' 'electrobun dev'",
 		"build": "electrobun build",
 		"start": "bun run build && electrobun dev",
-		"svelte:dev": "vite dev",
-		"svelte:build": "vite build",
-		"svelte:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"format": "prettier --write ."
 	},
 	"dependencies": {

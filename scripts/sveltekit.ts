@@ -29,7 +29,7 @@ if (!isDev) {
 	}
 
 	clean();
-	await $`bun --bun run svelte:build`;
+	await $`bunx --bun vite build`;
 }
 
 async function copyDirRecursive(src: string, dest: string) {

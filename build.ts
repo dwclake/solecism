@@ -50,7 +50,7 @@ function runCommandSync(command: string, args: string[], cwd?: string): ExecResu
 				stderr: "pipe"
 			});
 			return {
-				code: res.status ?? null,
+				code: res.exitCode ?? null,
 				stdout: String(res.stdout ?? ""),
 				stderr: String(res.stderr ?? "")
 			};
@@ -153,13 +153,7 @@ function runSvelteKitBuild(sveltekitDir: string): ExecResult {
 	// Try common build commands in order
 	const commands: Array<[string, string[]]> = [
 		// Bun: use bun run build (if the sveltekit package.json defines a build script)
-		["bun", ["run", "build"]],
-		// npm/pnpm/pnpm exec or direct svelte-kit
-		["npm", ["run", "build"]],
-		["pnpm", ["run", "build"]],
-		["npx", ["svelte-kit", "build"]],
-		["node", ["node_modules/.bin/svelte-kit", "build"]], // direct binary (may not run on windows)
-		["node", ["./node_modules/.bin/svelte-kit", "build"]]
+		["bun", ["run", "build"]]
 	];
 
 	let lastErr: string | null = null;

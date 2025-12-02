@@ -1,3 +1,178 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		@apply m-0 box-border list-none border-0 p-0 no-underline outline-0;
+	}
+
+	html,
+	body,
+	#svelte {
+		@apply bg-mirage-50 size-full text-base;
+		font-family: 'Roboto', sans-serif;
+		font-style: normal;
+	}
+}
+
+@layer utilities {
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+
+	.default-margin {
+		@apply mr-[5vh] ml-[5vh] md:mr-[15vh] md:ml-[15vh] md:max-w-[950px];
+	}
+
+	.page-margin {
+		@apply mt-20 mr-[5vh] mb-12 ml-[5vh] md:mt-12 md:mr-[15vh] md:ml-[15vh] md:max-w-[950px];
+	}
+
+	.heading-1 {
+		@apply text-4xl font-bold md:text-6xl xl:text-8xl;
+	}
+
+	.heading-2 {
+		@apply text-2xl font-semibold md:text-4xl xl:text-6xl;
+	}
+
+	.heading-3 {
+		@apply text-lg font-semibold md:text-2xl xl:text-4xl;
+	}
+
+	.heading-4 {
+		@apply text-base font-semibold md:text-lg xl:text-2xl;
+	}
+
+	.paragraph {
+		@apply text-sm font-normal md:text-base xl:text-lg;
+	}
+
+	.paragraph-3 {
+		@apply text-lg font-normal md:text-2xl xl:text-4xl;
+	}
+
+	.link {
+		@apply text-mirage-900 hover:text-mirage-950 cursor-pointer hover:underline;
+	}
+
+	.abril-fatface-regular {
+		font-family: 'Abril Fatface', serif;
+		font-style: normal;
+	}
+
+	.roboto {
+		font-family: 'Roboto', sans-serif;
+		font-optical-sizing: auto;
+		font-style: normal;
+		font-variation-settings: 'wdth' 100;
+	}
+
+	.courier-prime {
+		font-family: 'Courier Prime', monospace;
+		font-style: normal;
+	}
+
+	.intel-one-mono {
+		font-family: 'Intel One Mono', monospace;
+		font-optical-sizing: auto;
+		font-style: normal;
+	}
+}
+
+@theme {
+	--color-mirage: #8a8aca;
+	--color-mirage-50: #f4f0ff;
+	--color-mirage-100: #e8ecf7;
+	--color-mirage-200: #d6dbef;
+	--color-mirage-300: #bdc3e4;
+	--color-mirage-400: #a2a6d7;
+	--color-mirage-500: #8a8aca;
+	--color-mirage-600: #7771ba;
+	--color-mirage-700: #6660a2;
+	--color-mirage-800: #544f84;
+	--color-mirage-900: #47456a;
+	--color-mirage-950: #191825;
+
+	/*petite orchid*/
+	--color-orchid: #c37770;
+	--color-orchid-50: #fbf6f5;
+	--color-orchid-100: #f7eae9;
+	--color-orchid-200: #f1d9d7;
+	--color-orchid-300: #e6bfbb;
+	--color-orchid-400: #d49791;
+	--color-orchid-500: #c37770;
+	--color-orchid-600: #ad5d55;
+	--color-orchid-700: #904c45;
+	--color-orchid-800: #78413c;
+	--color-orchid-900: #663a36;
+	--color-orchid-950: #361c19;
+
+	/*antique brass*/
+	--color-oxide: #b76449;
+	--color-oxide-50: #faf4f0;
+	--color-oxide-100: #f0e0d5;
+	--color-oxide-200: #dfbfa8;
+	--color-oxide-300: #ce9b7b;
+	--color-oxide-400: #c07a56;
+	--color-oxide-500: #b76449;
+	--color-oxide-600: #a14d3e;
+	--color-oxide-700: #873a36;
+	--color-oxide-800: #6f3132;
+	--color-oxide-900: #5c2b2c;
+	--color-oxide-950: #341415;
+
+	/*reno sand*/
+	--color-dune: #ac8346;
+	--color-dune-50: #f8f5ee;
+	--color-dune-100: #eee8d3;
+	--color-dune-200: #ded0aa;
+	--color-dune-300: #cbb179;
+	--color-dune-400: #bb9754;
+	--color-dune-500: #ac8346;
+	--color-dune-600: #9e703e;
+	--color-dune-700: #774f31;
+	--color-dune-800: #65422e;
+	--color-dune-900: #57392c;
+	--color-dune-950: #321e16;
+
+	/*chelsea cucumber*/
+	--color-treefrog: #639354;
+	--color-treefrog-50: #f5f9f4;
+	--color-treefrog-100: #e9f2e6;
+	--color-treefrog-200: #d3e5cd;
+	--color-treefrog-300: #b0cfa6;
+	--color-treefrog-400: #7dab6e;
+	--color-treefrog-500: #639354;
+	--color-treefrog-600: #4f7841;
+	--color-treefrog-700: #405f36;
+	--color-treefrog-800: #354d2e;
+	--color-treefrog-900: #2c4027;
+	--color-treefrog-950: #152112;
+
+	--animate-float: float 4s ease-in-out infinite;
+	@keyframes float {
+		0%,
+		100% {
+			transform: translate(-3px, 0px);
+		}
+
+		50% {
+			transform: translate(3px, -10px);
+		}
+	}
+
+	--animate-fade-in: fade-in 1s ease-in-out;
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+}

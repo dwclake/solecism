@@ -1,27 +1,43 @@
 {
 	"name": "solecism",
+	"type": "module",
+	"private": true,
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"dev": "sh -c \"cd src/mainview && bun run dev & sleep 0.5 && ELECTROBUN_SVELTE_DEV=1 electrobun dev\"",
-		"build:svelte": "bun run build.ts",
+		"dev": "bun run svelte:dev & sleep 0.5 && ELECTROBUN_SVELTE_DEV=1 electrobun dev",
+		"build:svelte": "bun run svelte:build",
+		"build:copy": "bun run build.ts",
 		"build:electrobun": "electrobun build",
-		"build": "bun run build:electrobun && bun run build:svelte",
-		"start": "bun run build && electrobun dev"
+		"build": "bun run build:electrobun && bun run build:svelte && bun run build:copy",
+		"start": "bun run build && electrobun dev",
+		"svelte:dev": "vite dev",
+		"svelte:build": "vite build",
+		"svelte:preview": "vite preview",
+		"svelte:prepare": "svelte-kit sync || echo ''",
+		"svelte:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"svelte:check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"svlete:format": "prettier --write .",
+		"svlete:lint": "prettier --check ."
 	},
 	"dependencies": {
-		"svelte": "^5.45.3",
 		"electrobun": "latest"
 	},
 	"devDependencies": {
+		"@types/bun": "latest",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.48.5",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/typography": "^0.5.19",
-		"@tsconfig/bun": "latest",
-		"@types/bun": "latest",
-		"bun-plugin-svelte": "^0.0.6",
-		"prettier": "^3.7.3",
-		"prettier-plugin-tailwindcss": "^0.7.2",
+		"@tailwindcss/vite": "^4.1.17",
+		"prettier": "^3.6.2",
+		"prettier-plugin-svelte": "^3.4.0",
+		"prettier-plugin-tailwindcss": "^0.7.1",
+		"svelte": "^5.43.8",
+		"svelte-check": "^4.3.4",
 		"tailwindcss": "^4.1.17",
-		"typescript": "latest"
+		"typescript": "^5.9.3",
+		"vite": "^7.2.2"
 	}
 }

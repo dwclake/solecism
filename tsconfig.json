@@ -1,37 +1,20 @@
 {
-	"extends": "./node_modules/@tsconfig/bun/tsconfig.json",
+	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "bundler",
-
-		"lib": ["ESNext", "DOM", "DOM.Iterable"],
-		"types": ["bun", "solid-js"],
-
-		"jsx": "preserve",
-		"jsxImportSource": "solid-js",
-
-		"strict": true,
-		"noEmit": true,
-		"isolatedModules": true,
-		"verbatimModuleSyntax": true,
-		"useDefineForClassFields": true,
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
+		"rewriteRelativeImportExtensions": true,
 		"allowJs": true,
-		"allowImportingTsExtensions": true,
+		"checkJs": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-
-		"baseUrl": ".",
-		"paths": {
-			"~/*": ["src/*"]
-		}
-	},
-	"include": [
-		"src",
-		"electrobun.config.ts",
-		"tailwind.config.ts"
-	],
-	"exclude": ["node_modules", "dist", "build", "views"]
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"moduleResolution": "bundler"
+	}
+	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
+	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
+	//
+	// To make changes to top-level options such as include and exclude, we recommend extending
+	// the generated config; see https://svelte.dev/docs/kit/configuration#typescript
 }

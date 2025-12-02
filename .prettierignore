@@ -10,5 +10,6 @@ static/
 drizzle/
 build
 node_modules
+dist
 
 /src/mainview/src/lib/assets/

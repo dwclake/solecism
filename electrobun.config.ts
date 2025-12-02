@@ -7,13 +7,13 @@ export default {
 	build: {
 		views: {
 			mainview: {
-				entrypoint: "src/mainview/index.ts",
+				entrypoint: "src/app.d.ts",
 				external: []
 			}
 		},
 		// Copy only the HTML; CSS is handled by the bundler from source (do not copy generated index.css)
 		copy: {
-			"src/mainview/index.html": "views/mainview/index.html"
+			"src/app.html": "views/mainview/index.html"
 		},
 		mac: {
 			bundleCEF: false

@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"dev": "concurrently 'bun run svelte:dev' 'sleep 0.5 && ELECTROBUN_SVELTE_DEV=1 electrobun dev'",
+		"dev": "bun run build:electrobun && concurrently 'bun run svelte:dev' 'ELECTROBUN_SVELTE_DEV=1 electrobun dev'",
 		"build:svelte": "bun run svelte:build",
 		"build:copy": "bun run build.ts",
 		"build:electrobun": "electrobun build",

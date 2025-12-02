@@ -13,12 +13,10 @@
 		"start": "bun run build && electrobun dev",
 		"svelte:dev": "vite dev",
 		"svelte:build": "vite build",
-		"svelte:preview": "vite preview",
 		"svelte:prepare": "svelte-kit sync || echo ''",
 		"svelte:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"svelte:check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"svlete:format": "prettier --write .",
-		"svlete:lint": "prettier --check ."
+		"format": "prettier --write ."
 	},
 	"dependencies": {
 		"electrobun": "latest"

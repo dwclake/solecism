@@ -5,13 +5,10 @@ const devUrl = process.env.ELECTROBUN_SVELTE_URL || "http://localhost:5173";
 const url = isDev ? devUrl : "views://mainview/index.html";
 
 // If isDev, wait for server to be ready
-console.log("hello?")
 if (isDev) {
-	console.log("is dev")
 	const waitPort = async (port: number, host = "localhost", timeout = 10000) => {
 		const start = Date.now();
 		while (Date.now() - start < timeout) {
-			console.log("waiting")
 			try {
 				const response = await fetch(`http://${host}:${port}`);
 				if (response.ok) {

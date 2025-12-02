@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"dev": "bun run svelte:dev & sleep 0.5 && ELECTROBUN_SVELTE_DEV=1 electrobun dev",
+		"dev": "concurrently 'bun run svelte:dev' 'sleep 0.5 && ELECTROBUN_SVELTE_DEV=1 electrobun dev'",
 		"build:svelte": "bun run svelte:build",
 		"build:copy": "bun run build.ts",
 		"build:electrobun": "electrobun build",
@@ -24,13 +24,14 @@
 		"electrobun": "latest"
 	},
 	"devDependencies": {
-		"@types/bun": "latest",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.48.5",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.17",
+		"@types/bun": "latest",
+		"concurrently": "^9.2.1",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.7.1",

@@ -1,9 +1,7 @@
 import { SveltePlugin } from "bun-plugin-svelte"; // NOTE: not published to npm yet
 
 await Bun.build({
-	entrypoints: [
-		"build/dev-macos-arm64/solecism-dev.app/Contents/Resources/app/views/mainview/index.js"
-	],
+	entrypoints: ["src/mainview/index.ts"],
 	outdir: "build/dev-macos-arm64/solecism-dev.app/Contents/Resources/app/views/temp",
 	target: "browser",
 	sourcemap: true, // sourcemaps not yet supported
@@ -19,6 +17,9 @@ import fs from "fs/promises";
 
 await fs.unlink(
 	"build/dev-macos-arm64/solecism-dev.app/Contents/Resources/app/views/mainview/index.js"
+);
+await fs.unlink(
+	"build/dev-macos-arm64/solecism-dev.app/Contents/Resources/app/views/temp/index.css"
 );
 await fs.rename(
 	"build/dev-macos-arm64/solecism-dev.app/Contents/Resources/app/views/temp/index.js",

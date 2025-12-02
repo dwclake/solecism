@@ -11,14 +11,10 @@ export default {
 		},
 		views: {
 			mainview: {
-				entrypoint: "src/index.ts",
+				entrypoint: "src/dummy.ts",
 				external: []
 			}
 		},
-		// Copy only the HTML; CSS is handled by the bundler from source (do not copy generated index.css)
-		// copy: {
-		// 	"src/app.html": "views/mainview/index.html"
-		// },
 		mac: {
 			bundleCEF: false
 		},
@@ -30,8 +26,6 @@ export default {
 		}
 	},
 	scripts: {
-		clean: "./scripts/clean.ts",
-		preBuild: "./scripts/build.ts",
 		postBuild: "./scripts/sveltekit.ts"
 	}
 };

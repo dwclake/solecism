@@ -8,6 +8,7 @@
 		"start": "bun run dev"
 	},
 	"dependencies": {
+		"@solidjs/router": "^0.15.4",
 		"electrobun": "latest",
 		"solid-js": "latest"
 	},

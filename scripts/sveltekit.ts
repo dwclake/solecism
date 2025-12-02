@@ -1,6 +1,36 @@
 import fs from "fs/promises";
 import { existsSync } from "fs";
 import path from "path";
+import { $ } from "bun";
+
+const isDev = !!process.env.ELECTROBUN_SVELTE_DEV;
+
+if (!isDev) {
+	async function clean() {
+		const distPath = "./dist";
+
+		async function removeDirContents(dir: string) {
+			try {
+				const entries = await fs.readdir(dir, { withFileTypes: true });
+				for (const entry of entries) {
+					const p = `${dir}/${entry.name}`;
+					if (entry.isDirectory()) {
+						await fs.rm(p, { recursive: true, force: true });
+					} else {
+						await fs.unlink(p).catch(() => {});
+					}
+				}
+			} catch {
+				// ignore errors
+			}
+		}
+
+		await removeDirContents(distPath);
+	}
+
+	clean();
+	await $`bun --bun run svelte:build`;
+}
 
 async function copyDirRecursive(src: string, dest: string) {
 	const entries = await fs.readdir(src, { withFileTypes: true });

@@ -32,7 +32,9 @@
 	});
 
 	const onclick = async () => {
-		num = await electrobun.rpc?.request.someBunFunction({ a: 5, b: 10 });
+		const a = Math.random();
+		const b = Math.random();
+		num = await electrobun.rpc?.request.someBunFunction({ a, b });
 	};
 
 	let { children } = $props();

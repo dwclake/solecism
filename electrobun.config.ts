@@ -16,13 +16,9 @@ export default {
 			}
 		},
 		// Copy only the HTML; CSS is handled by the bundler from source (do not copy generated index.css)
-		copy: {
-			"src/app.html": "views/mainview/index.html"
-		},
-		scripts: {
-			//preBuild: "skbuild.ts",
-			//postBuild: "skcopy.ts"
-		},
+		// copy: {
+		// 	"src/app.html": "views/mainview/index.html"
+		// },
 		mac: {
 			bundleCEF: false
 		},
@@ -32,5 +28,10 @@ export default {
 		win: {
 			bundleCEF: false
 		}
+	},
+	scripts: {
+		clean: "./scripts/clean.ts",
+		preBuild: "./scripts/build.ts",
+		postBuild: "./scripts/sveltekit.ts"
 	}
 };

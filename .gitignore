@@ -7,6 +7,7 @@ yarn-error.log*
 lerna-debug.log*
 build
 dist
+artifacts
 
 
 node_modules

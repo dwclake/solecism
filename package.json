@@ -5,8 +5,9 @@
 	"version": "1.0.0",
 	"description": "wysisyg editor",
 	"scripts": {
-		"dev": "ELECTROBUN_SVELTE_DEV=1 bun run build && ELECTROBUN_SVELTE_DEV=1 concurrently 'bunx --bun vite dev' 'electrobun dev'",
-		"build": "electrobun build",
+		"dev": "ELECTROBUN_SVELTE_DEV=1 electrobun build && ELECTROBUN_SVELTE_DEV=1 concurrently 'bunx --bun vite dev' 'electrobun dev'",
+		"build": "electrobun build --env=canary",
+		"build:stable": "electrobun build --env=stable",
 		"start": "bun run build && electrobun dev",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"format": "prettier --write ."

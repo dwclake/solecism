@@ -3,11 +3,11 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"dev": "electrobun dev",
+		"dev": "sh -c \"cd src/mainview && bun run dev & sleep 0.5 && ELECTROBUN_SVELTE_DEV=1 electrobun dev\"",
 		"build:svelte": "bun run build.ts",
 		"build:electrobun": "electrobun build",
 		"build": "bun run build:electrobun && bun run build:svelte",
-		"start": "bun run build && bun run dev"
+		"start": "bun run build && electrobun dev"
 	},
 	"dependencies": {
 		"svelte": "^5.45.3",

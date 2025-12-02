@@ -6,7 +6,9 @@ bun.lock
 bun.lockb
 
 # Miscellaneous
-/static/
-/drizzle/
+static/
+drizzle/
+build
+node_modules
 
-/src/lib/assets/
+/src/mainview/src/lib/assets/

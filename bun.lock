@@ -16,7 +16,7 @@
         "bun-plugin-svelte": "^0.0.6",
         "prettier": "^3.7.3",
         "prettier-plugin-tailwindcss": "^0.7.2",
-        "tailwindcss": "^4.1.14",
+        "tailwindcss": "^4.1.17",
         "typescript": "latest",
       },
     },

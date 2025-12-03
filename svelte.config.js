@@ -11,7 +11,21 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: true
-		})
+		}),
+		alias: {
+			$components: "src/components",
+			$assets: "src/lib/assets",
+			$state: "src/lib/state.svelte.ts"
+		},
+		csp: {
+			directives: {
+				"script-src": ["self"]
+			},
+			reportOnly: {
+				"script-src": ["self"],
+				"report-uri": ["/"]
+			}
+		}
 	},
 
 	compilerOptions: {

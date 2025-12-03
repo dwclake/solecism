@@ -5,31 +5,26 @@ import { $ } from "bun";
 
 const isDev = !!process.env.ELECTROBUN_SVELTE_DEV;
 
-if (!isDev) {
-	async function clean() {
-		const distPath = "./dist";
+async function clean() {
+	const distPath = "./dist";
 
-		async function removeDirContents(dir: string) {
-			try {
-				const entries = await fs.readdir(dir, { withFileTypes: true });
-				for (const entry of entries) {
-					const p = `${dir}/${entry.name}`;
-					if (entry.isDirectory()) {
-						await fs.rm(p, { recursive: true, force: true });
-					} else {
-						await fs.unlink(p).catch(() => {});
-					}
+	async function removeDirContents(dir: string) {
+		try {
+			const entries = await fs.readdir(dir, { withFileTypes: true });
+			for (const entry of entries) {
+				const p = `${dir}/${entry.name}`;
+				if (entry.isDirectory()) {
+					await fs.rm(p, { recursive: true, force: true });
+				} else {
+					await fs.unlink(p).catch(() => {});
 				}
-			} catch {
-				// ignore errors
 			}
+		} catch {
+			// ignore errors
 		}
-
-		await removeDirContents(distPath);
 	}
 
-	clean();
-	await $`bunx --bun vite build`;
+	await removeDirContents(distPath);
 }
 
 async function copyDirRecursive(src: string, dest: string) {
@@ -167,7 +162,14 @@ async function main() {
 	console.log("Static site copied to Electrobun views/mainview successfully.");
 }
 
-main().catch((err) => {
-	console.error("Error:", err && (err.stack ?? err.message ?? String(err)));
-	process.exitCode = 1;
-});
+if (!isDev) {
+	clean();
+	await $`bunx --bun vite build`;
+
+	main().catch((err) => {
+		console.error("Error:", err && (err.stack ?? err.message ?? String(err)));
+		process.exitCode = 1;
+	});
+} else {
+	clean();
+}

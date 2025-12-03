@@ -1,40 +1,19 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import type { RPC } from "../../shared/types";
 
 	import "./layout.css";
 	import favicon from "$lib/assets/favicon.svg";
 
+	import { init, store } from "$state";
+
 	let num: number = $state(0);
-	let electrobun: any = $state(null);
 
-	onMount(async () => {
-		// Dynamic import — only runs in the browser
-		const { Electroview } = await import("electrobun/view");
-
-		const rpc = Electroview.defineRPC<RPC>({
-			handlers: {
-				requests: {
-					someWebviewFunction: ({ a, b }) => {
-						document.body.innerHTML += `bun asked me to do math with ${a} and ${b}\n`;
-						return a + b;
-					}
-				},
-				messages: {
-					logToWebview: ({ msg }) => {
-						console.log(`bun asked me to logToWebview: ${msg}`);
-					}
-				}
-			}
-		});
-
-		electrobun = new Electroview({ rpc });
-	});
+	onMount(init);
 
 	const onclick = async () => {
 		const a = Math.random();
 		const b = Math.random();
-		num = await electrobun.rpc?.request.someBunFunction({ a, b });
+		num = await store.electrobun.rpc?.request.someBunFunction({ a, b });
 	};
 
 	let { children } = $props();

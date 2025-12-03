@@ -64,8 +64,13 @@ const mainWindow = new BrowserWindow({
 });
 
 // Close app when window is closed
-mainWindow.on("closed", () => {
-	process.exit(0);
+mainWindow.on("close", () => {
+	console.log("electronbun closing...");
+
+	// set exit code to 0
+	process.exitCode = 0;
+	// Emit SIGINT to allow graceful shutdown
+	process.emit("SIGINT");
 });
 
 console.log("Hello Electrobun app started!", { isDev, url });

@@ -1,3 +1,3 @@
-<main>
+<section>
 	<h1>Sign up!</h1>
-</main>
+</section>

@@ -1,3 +1,3 @@
-<main>
+<section>
 	<h1>Library</h1>
-</main>
+</section>

@@ -53,6 +53,7 @@
 		"#lib/*": "./src/lib/*"
 	},
 	"dependencies": {
+		"@lucide/svelte": "^1.45.0",
 		"better-sqlite3": "^13.0.2",
 		"svelte-adapter-bun": "^1.0.1"
 	}

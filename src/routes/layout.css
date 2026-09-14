@@ -32,6 +32,10 @@
 	.hover {
 		@apply transform transition duration-200 ease-out hover:translate-px hover:scale-99 hover:bg-mirage-200 hover:text-mirage-800 hover:shadow-sm-mirage-950 dark:hover:bg-mirage-930 dark:hover:text-mirage-400 dark:hover:shadow-sm-mirage-200;
 	}
+
+	.card {
+		@apply h-32 border p-4;
+	}
 }
 
 @theme {

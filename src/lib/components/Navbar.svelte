@@ -19,16 +19,24 @@
 	<nav class="flex w-full flex-row gap-12">
 		<ul class="flex w-full flex-row justify-between gap-4">
 			<li>
-				<a href="/" class="bubble hover size-10"><Lighthouse stroke-width={1.5} /></a>
+				<a href="/" class="bubble hover size-10">
+					<Lighthouse stroke-width={1.5} />
+				</a>
 			</li>
 			<li>
-				<a href="/projects" class="bubble hover size-10"><NotebookPen stroke-width={1.5} /></a>
+				<a href="/projects" class="bubble hover size-10">
+					<NotebookPen stroke-width={1.5} />
+				</a>
 			</li>
 			<li>
-				<a href="/library" class="bubble hover size-10"><BookBookmark stroke-width={1.5} /></a>
+				<a href="/library" class="bubble hover size-10">
+					<BookBookmark stroke-width={1.5} />
+				</a>
 			</li>
 			<li>
-				<a href="/feed" class="bubble hover size-10"><Newspaper stroke-width={1.5} /></a>
+				<a href="/feed" class="bubble hover size-10">
+					<Newspaper stroke-width={1.5} />
+				</a>
 			</li>
 		</ul>
 		<div class="w-0.5 border"></div>

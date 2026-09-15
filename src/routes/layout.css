@@ -26,7 +26,7 @@
 
 @layer utilities {
 	.bubble {
-		@apply flex items-center justify-center rounded-full border-2 border-mirage-900 p-1 shadow-mirage-950 dark:border-mirage-200 dark:shadow-mirage-200;
+		@apply flex items-center justify-center rounded-md border-2 border-mirage-900 p-1 shadow-mirage-950 dark:border-mirage-200 dark:shadow-mirage-200;
 	}
 
 	.hover {
@@ -34,7 +34,7 @@
 	}
 
 	.card {
-		@apply h-32 border p-4;
+		@apply h-32 rounded-md border p-4;
 	}
 }
 

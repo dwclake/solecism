@@ -12,7 +12,7 @@
 </script>
 
 <section
-	class="mt-4 mr-auto mb-4 ml-auto flex w-min flex-row items-center rounded-4xl border-2 p-2 shadow-mirage-950 dark:shadow-mirage-200"
+	class="mt-4 mr-auto mb-4 ml-auto flex w-min flex-row items-center rounded-md border-2 p-2 shadow-mirage-950 dark:shadow-mirage-200"
 >
 	<!-- This will be a horizontal bar that floats centered at the top of the page on desktop and at the bottom on mobile -->
 	<!-- It will allow the user to switch to different sections of the app and will be the main navagational iterface -->

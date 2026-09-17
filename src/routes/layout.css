@@ -20,7 +20,7 @@
 	html,
 	body,
 	#svelte {
-		@apply size-full bg-mirage-300 text-mirage-900 antialiased dark:bg-mirage-100 dark:text-mirage-300;
+		@apply antialiased;
 	}
 }
 
@@ -35,6 +35,16 @@
 
 	.card {
 		@apply h-32 rounded-md border bg-mirage-100 p-4;
+	}
+
+	.grain-bg {
+		@apply relative bg-mirage-300;
+	}
+
+	.grain-bg::before {
+		@apply pointer-events-none absolute inset-0 opacity-40;
+		content: '';
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 	}
 }
 

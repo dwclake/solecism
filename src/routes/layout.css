@@ -20,13 +20,13 @@
 	html,
 	body,
 	#svelte {
-		@apply size-full bg-mirage-100 text-mirage-900 antialiased dark:bg-mirage-950 dark:text-mirage-300;
+		@apply size-full bg-mirage-300 text-mirage-900 antialiased dark:bg-mirage-100 dark:text-mirage-300;
 	}
 }
 
 @layer utilities {
 	.bubble {
-		@apply flex items-center justify-center rounded-md border-2 border-mirage-900 p-1 shadow-mirage-950 dark:border-mirage-200 dark:shadow-mirage-200;
+		@apply flex items-center justify-center rounded-md border-2 border-mirage-900 bg-mirage-100 p-1 shadow-mirage-950 dark:border-mirage-200 dark:shadow-mirage-200;
 	}
 
 	.hover {
@@ -34,7 +34,7 @@
 	}
 
 	.card {
-		@apply h-32 rounded-md border p-4;
+		@apply h-32 rounded-md border bg-mirage-100 p-4;
 	}
 }
 

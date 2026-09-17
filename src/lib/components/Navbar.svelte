@@ -11,9 +11,7 @@
 	} from '@lucide/svelte';
 </script>
 
-<section
-	class="mt-4 mr-4 mb-4 ml-4 flex h-min w-min flex-col items-center rounded-md border-2 p-2 shadow-mirage-950 dark:shadow-mirage-200"
->
+<section class="flex size-full flex-col items-center p-2">
 	<!-- This will be a horizontal bar that floats centered at the top of the page on desktop and at the bottom on mobile -->
 	<!-- It will allow the user to switch to different sections of the app and will be the main navagational iterface -->
 	<nav class="flex w-full flex-col gap-12">

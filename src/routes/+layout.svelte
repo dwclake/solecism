@@ -10,9 +10,11 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div>
-	<Navbar />
+<div class="flex h-screen">
+	<header class="w-min shrink-0 overflow-y-auto">
+		<Navbar />
+	</header>
+	<main class="flex-1 overflow-y-auto p-4">
+		{@render children()}
+	</main>
 </div>
-<main>
-	{@render children()}
-</main>

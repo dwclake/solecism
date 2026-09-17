@@ -12,12 +12,12 @@
 </script>
 
 <section
-	class="mt-4 mr-auto mb-4 ml-auto flex w-min flex-row items-center rounded-md border-2 p-2 shadow-mirage-950 dark:shadow-mirage-200"
+	class="mt-4 mr-4 mb-4 ml-4 flex h-min w-min flex-col items-center rounded-md border-2 p-2 shadow-mirage-950 dark:shadow-mirage-200"
 >
 	<!-- This will be a horizontal bar that floats centered at the top of the page on desktop and at the bottom on mobile -->
 	<!-- It will allow the user to switch to different sections of the app and will be the main navagational iterface -->
-	<nav class="flex w-full flex-row gap-12">
-		<ul class="flex w-full flex-row justify-between gap-4">
+	<nav class="flex w-full flex-col gap-12">
+		<ul class="flex w-full flex-col justify-between gap-4">
 			<li>
 				<a href="/" class="bubble hover size-10">
 					<Lighthouse stroke-width={1.5} />
@@ -39,8 +39,8 @@
 				</a>
 			</li>
 		</ul>
-		<div class="w-0.5 border"></div>
-		<ul class="flex w-full flex-row justify-between gap-4">
+		<div class="h-0.5 border"></div>
+		<ul class="flex w-full flex-col justify-between gap-4">
 			<li>
 				<div id="search-bubble" class="bubble hover size-10">
 					<!-- A bubble with a magnifying glass icon, if pressed it expands to the whole navbar with at the right side to close it, allowing the user to search for people, things, stuff.  -->

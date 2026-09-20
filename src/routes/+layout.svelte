@@ -9,15 +9,17 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="grain-bg z-0 flex h-svh w-svw text-mirage-900 dark:bg-mirage-100 dark:text-mirage-300">
+<div class="bg-pattern flex h-dvh w-dvw">
 	<header
-		class="z-1 m-4 mr-2 h-min w-min shrink-0 overflow-y-auto rounded-md border-2 bg-mirage-200 shadow-mirage-950 dark:shadow-mirage-200"
+		class="glass-bg m-4 mr-2 h-min w-min shrink-0 overflow-y-auto rounded-md border-2 shadow-mirage-950 dark:shadow-mirage-200"
 	>
 		<Navbar />
 	</header>
-	<main
-		class="z-1 m-4 ml-2 w-4/5 flex-1 overflow-y-auto rounded-md border-2 bg-mirage-200 shadow-mirage-950 dark:shadow-mirage-200"
-	>
+	<!-- Instead of wrapping the page content the glass bg and shadow should go around different floating page sections -->
+	<main class="m-4 ml-2 flex flex-1 overflow-y-auto">
 		{@render children()}
 	</main>
 </div>
+
+<style>
+</style>

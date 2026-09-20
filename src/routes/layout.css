@@ -2,6 +2,8 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+/* convert to vanilla css */
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
@@ -20,31 +22,46 @@
 	html,
 	body,
 	#svelte {
-		@apply antialiased;
+		@apply text-mirage-900 antialiased;
 	}
 }
 
 @layer utilities {
 	.bubble {
-		@apply flex items-center justify-center rounded-md border-2 border-mirage-900 bg-mirage-100 p-1 shadow-mirage-950 dark:border-mirage-200 dark:shadow-mirage-200;
-	}
-
-	.hover {
-		@apply transform transition duration-200 ease-out hover:translate-px hover:scale-99 hover:bg-mirage-200 hover:text-mirage-800 hover:shadow-sm-mirage-950 dark:hover:bg-mirage-930 dark:hover:text-mirage-400 dark:hover:shadow-sm-mirage-200;
+		@apply flex items-center justify-center rounded-md border-2 border-mirage-900 bg-mirage-300/75 p-1 shadow-mirage-950;
 	}
 
 	.card {
-		@apply h-32 rounded-md border bg-mirage-100 p-4;
+		@apply h-32 rounded-md border bg-mirage-200 p-4;
 	}
 
-	.grain-bg {
-		@apply relative bg-mirage-300;
+	.hover {
+		@apply transform transition duration-200 ease-out hover:translate-px hover:scale-99 hover:bg-mirage-200 hover:text-mirage-800 hover:shadow-sm-mirage-950;
 	}
 
-	.grain-bg::before {
-		@apply pointer-events-none absolute inset-0 opacity-40;
-		content: '';
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	.click {
+		@apply active:bg-treefrog-300/75;
+	}
+
+	.glass-bg {
+		@apply bg-mirage-900/35 backdrop-blur-sm;
+	}
+
+	.bg-pattern {
+		--s: 180px; /* control the size*/
+		--c1: #a2a6d7;
+		--c2: #bdc3e4;
+
+		--_g: #0000 52%, var(--c1) 54% 57%, #0000 59%;
+		background:
+			radial-gradient(farthest-side at -33.33% 50%, var(--_g)) 0 calc(var(--s) / 2),
+			radial-gradient(farthest-side at 50% 133.33%, var(--_g)) calc(var(--s) / 2) 0,
+			radial-gradient(farthest-side at 133.33% 50%, var(--_g)),
+			radial-gradient(farthest-side at 50% -33.33%, var(--_g)),
+			var(--c2);
+		background-size:
+			calc(var(--s) / 4.667) var(--s),
+			var(--s) calc(var(--s) / 4.667);
 	}
 }
 
@@ -69,7 +86,30 @@
 	--shadow-sm-mirage-200: 1px 1px var(--color-mirage-200);
 	--shadow-sm-mirage-950: 1px 1px var(--color-mirage-950);
 
-	/*petite orchid*/
+	--color-scarlet-50: #faf5f9;
+	--color-scarlet-100: #f6edf4;
+	--color-scarlet-200: #efdbea;
+	--color-scarlet-300: #e3bed8;
+	--color-scarlet-400: #d096be;
+	--color-scarlet-500: #bf75a6;
+	--color-scarlet-600: #a85688;
+	--color-scarlet-700: #914571;
+	--color-scarlet-800: #783c5e;
+	--color-scarlet-900: #663551;
+	--color-scarlet-950: #3c1b2e;
+
+	--color-royal-heath-50: #fbf4f8;
+	--color-royal-heath-100: #f9eaf4;
+	--color-royal-heath-200: #f4d6e9;
+	--color-royal-heath-300: #ecb5d7;
+	--color-royal-heath-400: #df87bc;
+	--color-royal-heath-500: #d163a2;
+	--color-royal-heath-600: #bd4584;
+	--color-royal-heath-700: #ae3772;
+	--color-royal-heath-800: #872d58;
+	--color-royal-heath-900: #712a4c;
+	--color-royal-heath-950: #44132a;
+
 	--color-orchid: #c37770;
 	--color-orchid-50: #fbf6f5;
 	--color-orchid-100: #f7eae9;
@@ -83,7 +123,6 @@
 	--color-orchid-900: #663a36;
 	--color-orchid-950: #361c19;
 
-	/*antique brass*/
 	--color-oxide: #b76449;
 	--color-oxide-50: #faf4f0;
 	--color-oxide-100: #f0e0d5;
@@ -97,7 +136,6 @@
 	--color-oxide-900: #5c2b2c;
 	--color-oxide-950: #341415;
 
-	/*reno sand*/
 	--color-dune: #ac8346;
 	--color-dune-50: #f8f5ee;
 	--color-dune-100: #eee8d3;
@@ -111,7 +149,6 @@
 	--color-dune-900: #57392c;
 	--color-dune-950: #321e16;
 
-	/*chelsea cucumber*/
 	--color-treefrog: #639354;
 	--color-treefrog-50: #f5f9f4;
 	--color-treefrog-100: #e9f2e6;

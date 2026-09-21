@@ -28,11 +28,11 @@
 
 @layer utilities {
 	.bubble {
-		@apply flex items-center justify-center rounded-md border-2 border-mirage-900 bg-mirage-300/75 p-1 shadow-mirage-950;
+		@apply flex items-center rounded-md border-2 border-mirage-900 bg-mirage-300/75 p-2 shadow-mirage-950;
 	}
 
 	.card {
-		@apply h-32 rounded-md border bg-mirage-200 p-4;
+		@apply h-64 rounded-md border bg-mirage-300 p-4;
 	}
 
 	.hover {
@@ -48,7 +48,7 @@
 	}
 
 	.bg-pattern {
-		--s: 180px; /* control the size*/
+		--s: 200px; /* control the size*/
 		--c1: #a2a6d7;
 		--c2: #bdc3e4;
 

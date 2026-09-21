@@ -9,17 +9,42 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="bg-pattern flex h-dvh w-dvw">
-	<header
-		class="glass-bg m-4 mr-2 w-min shrink-0 overflow-y-auto rounded-md border-2 shadow-mirage-950"
-	>
+<div class="bg-pattern">
+	<header class="glass-bg">
 		<Navbar />
 	</header>
-	<!-- Instead of wrapping the page content the glass bg and shadow should go around different floating page sections -->
-	<main class="m-4 ml-2 flex flex-1 scrollbar-none overflow-y-auto rounded-md">
+	<main>
 		{@render children()}
 	</main>
 </div>
 
 <style>
+	div {
+		display: flex;
+		width: 100dvw;
+		height: 100dvh;
+	}
+
+	header {
+		flex-shrink: 0;
+		width: min-content;
+		margin: 1rem 0.5rem 1rem 1rem;
+		overflow-y: auto;
+		border: 2px solid currentColor;
+		border-radius: 0.375rem;
+		box-shadow: var(--shadow-mirage-950);
+	}
+
+	main {
+		display: flex;
+		flex: 1;
+		margin: 1rem 1rem 1rem 0.5rem;
+		overflow-y: auto;
+		border-radius: 0.375rem;
+		scrollbar-width: none;
+	}
+
+	main::-webkit-scrollbar {
+		display: none;
+	}
 </style>

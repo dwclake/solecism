@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<button></button>
+<div></div>
 
 <style>
 </style>

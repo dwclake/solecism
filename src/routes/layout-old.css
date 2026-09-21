@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		text-decoration-line: none;
+		list-style-type: none;
+
+		@apply border-0 outline-0;
+	}
+
+	html,
+	body,
+	#svelte {
+		@apply text-mirage-900 antialiased;
+	}
+}
+
+@layer utilities {
+	.bubble {
+		@apply flex items-center rounded-md border-2 border-mirage-900 bg-mirage-300/75 p-2 shadow-mirage-950;
+	}
+
+	.card {
+		@apply h-64 rounded-md border bg-mirage-300 p-4;
+	}
+
+	.hover {
+		@apply transform transition duration-200 ease-out hover:translate-px hover:scale-99 hover:bg-mirage-200 hover:text-mirage-800 hover:shadow-sm-mirage-950;
+	}
+
+	.click {
+		@apply active:bg-treefrog-300/75;
+	}
+
+	.glass-bg {
+		@apply bg-mirage-900/35 backdrop-blur-sm;
+	}
+
+	.bg-pattern {
+		--s: 200px; /* control the size*/
+		--c1: #a2a6d7;
+		--c2: #bdc3e4;
+
+		--_g: #0000 52%, var(--c1) 54% 57%, #0000 59%;
+		background:
+			radial-gradient(farthest-side at -33.33% 50%, var(--_g)) 0 calc(var(--s) / 2),
+			radial-gradient(farthest-side at 50% 133.33%, var(--_g)) calc(var(--s) / 2) 0,
+			radial-gradient(farthest-side at 133.33% 50%, var(--_g)),
+			radial-gradient(farthest-side at 50% -33.33%, var(--_g)),
+			var(--c2);
+		background-size:
+			calc(var(--s) / 4.667) var(--s),
+			var(--s) calc(var(--s) / 4.667);
+	}
+}
+
+@theme {
+	--spacing: 0.25rem;
+
+	--color-mirage: #8a8aca;
+	--color-mirage-50: #f4f0ff;
+	--color-mirage-100: #e8ecf7;
+	--color-mirage-200: #d6dbef;
+	--color-mirage-300: #bdc3e4;
+	--color-mirage-400: #a2a6d7;
+	--color-mirage-500: #8a8aca;
+	--color-mirage-600: #7771ba;
+	--color-mirage-700: #6660a2;
+	--color-mirage-800: #544f84;
+	--color-mirage-900: #47456a;
+	--color-mirage-915: #363459;
+	--color-mirage-930: #252348;
+	--color-mirage-950: #191825;
+
+	--shadow-mirage-200: 1.5px 1.5px var(--color-mirage-200);
+	--shadow-mirage-950: 1.5px 1.5px var(--color-mirage-950);
+	--shadow-sm-mirage-200: 1px 1px var(--color-mirage-200);
+	--shadow-sm-mirage-950: 1px 1px var(--color-mirage-950);
+
+	--color-scarlet-50: #faf5f9;
+	--color-scarlet-100: #f6edf4;
+	--color-scarlet-200: #efdbea;
+	--color-scarlet-300: #e3bed8;
+	--color-scarlet-400: #d096be;
+	--color-scarlet-500: #bf75a6;
+	--color-scarlet-600: #a85688;
+	--color-scarlet-700: #914571;
+	--color-scarlet-800: #783c5e;
+	--color-scarlet-900: #663551;
+	--color-scarlet-950: #3c1b2e;
+
+	--color-royal-heath-50: #fbf4f8;
+	--color-royal-heath-100: #f9eaf4;
+	--color-royal-heath-200: #f4d6e9;
+	--color-royal-heath-300: #ecb5d7;
+	--color-royal-heath-400: #df87bc;
+	--color-royal-heath-500: #d163a2;
+	--color-royal-heath-600: #bd4584;
+	--color-royal-heath-700: #ae3772;
+	--color-royal-heath-800: #872d58;
+	--color-royal-heath-900: #712a4c;
+	--color-royal-heath-950: #44132a;
+
+	--color-orchid: #c37770;
+	--color-orchid-50: #fbf6f5;
+	--color-orchid-100: #f7eae9;
+	--color-orchid-200: #f1d9d7;
+	--color-orchid-300: #e6bfbb;
+	--color-orchid-400: #d49791;
+	--color-orchid-500: #c37770;
+	--color-orchid-600: #ad5d55;
+	--color-orchid-700: #904c45;
+	--color-orchid-800: #78413c;
+	--color-orchid-900: #663a36;
+	--color-orchid-950: #361c19;
+
+	--color-oxide: #b76449;
+	--color-oxide-50: #faf4f0;
+	--color-oxide-100: #f0e0d5;
+	--color-oxide-200: #dfbfa8;
+	--color-oxide-300: #ce9b7b;
+	--color-oxide-400: #c07a56;
+	--color-oxide-500: #b76449;
+	--color-oxide-600: #a14d3e;
+	--color-oxide-700: #873a36;
+	--color-oxide-800: #6f3132;
+	--color-oxide-900: #5c2b2c;
+	--color-oxide-950: #341415;
+
+	--color-dune: #ac8346;
+	--color-dune-50: #f8f5ee;
+	--color-dune-100: #eee8d3;
+	--color-dune-200: #ded0aa;
+	--color-dune-300: #cbb179;
+	--color-dune-400: #bb9754;
+	--color-dune-500: #ac8346;
+	--color-dune-600: #9e703e;
+	--color-dune-700: #774f31;
+	--color-dune-800: #65422e;
+	--color-dune-900: #57392c;
+	--color-dune-950: #321e16;
+
+	--color-treefrog: #639354;
+	--color-treefrog-50: #f5f9f4;
+	--color-treefrog-100: #e9f2e6;
+	--color-treefrog-200: #d3e5cd;
+	--color-treefrog-300: #b0cfa6;
+	--color-treefrog-400: #7dab6e;
+	--color-treefrog-500: #639354;
+	--color-treefrog-600: #4f7841;
+	--color-treefrog-700: #405f36;
+	--color-treefrog-800: #354d2e;
+	--color-treefrog-900: #2c4027;
+	--color-treefrog-950: #152112;
+
+	--animate-float: float 4s ease-in-out infinite;
+	@keyframes float {
+		0%,
+		100% {
+			transform: translate(-3px, 0px);
+		}
+
+		50% {
+			transform: translate(3px, -10px);
+		}
+	}
+
+	--animate-fade-in: fade-in 1s ease-in-out;
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+}

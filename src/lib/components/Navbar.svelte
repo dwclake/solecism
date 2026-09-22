@@ -1,7 +1,6 @@
 <script lang="ts">
 	import {
 		BookBookmark,
-		Lighthouse,
 		MessageSquare,
 		Newspaper,
 		NotebookPen,
@@ -19,7 +18,7 @@
 			<!-- These should be made into components, consider text instead of icons -->
 			<li>
 				<a href="/" class="bubble hover click">
-					<Lighthouse stroke-width={1.5} />
+					<Newspaper stroke-width={1.5} />
 					<p>Home</p>
 				</a>
 			</li>

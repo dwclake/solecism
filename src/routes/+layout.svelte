@@ -7,7 +7,10 @@
 	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<title>Solecism</title>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
 <div class="bg-pattern">
 	<header class="glass-bg">
